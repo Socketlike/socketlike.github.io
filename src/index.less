@@ -1,0 +1,127 @@
+@import (css)
+  url(https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import (css) url(https://unpkg.com/@catppuccin/palette/css/catppuccin.css);
+@import 'tooltip';
+
+html {
+  --font-family: 'Barlow', sans-serif;
+
+  &.dark {
+    --red: var(--ctp-mocha-red);
+    --sapphire: var(--ctp-mocha-sapphire);
+    --background: var(--ctp-mocha-base);
+    --background-highlighted: var(--ctp-mocha-surface0);
+    --background-highlighted-alt: var(--ctp-mocha-surface1);
+    --font-color: var(--ctp-mocha-text);
+  }
+
+  &.light {
+    --red: var(--ctp-latte-red);
+    --sapphire: var(--ctp-latte-sapphire);
+    --background: var(--ctp-latte-base);
+    --background-highlighted: var(--ctp-latte-surface0);
+    --background-highlighted-alt: var(--ctp-latte-surface1);
+    --font-color: var(--ctp-latte-text);
+  }
+
+  font-family: var(--font-family);
+  background-color: var(--background);
+  margin: 2px;
+
+  * {
+    color: var(--font-color);
+  }
+}
+
+body {
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+}
+
+.site-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--background-highlighted);
+  border-radius: 8px;
+
+  h2 {
+    height: 24px;
+    font-size: 24px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.site-body {
+  background-color: var(--background-highlighted);
+  border-radius: 8px;
+  display: flex;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.site-footer {
+  height: 100%;
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    a {
+      font-size: 16px;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      padding: 10px;
+      background-color: var(--background-highlighted);
+      border-radius: 8px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      .palette,
+      .github,
+      .heart {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+.palette > path {
+  color: var(--sapphire);
+}
+
+.heart > path,
+.name {
+  color: var(--red);
+}
+
+.block {
+  background-color: var(--background-highlighted-alt);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.bold {
+  font-weight: 600;
+}
