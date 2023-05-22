@@ -1,6 +1,5 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Main from './components/Main'
+import { getPage } from './components/pages'
 import './index.less'
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -9,5 +8,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const root = ReactDOM.createRoot(document.getElementById('root'))
 
-  root.render(<Main />)
+  root.render(getPage())
 })
