@@ -8,7 +8,7 @@ const github =
 export const SiteFooter = (): JSX.Element => (
   <div className='site-footer'>
     <div className='content'>
-      <a className='colorScheme' target='_blank' href='https://github.com/catppuccin'>
+      <a className='color-scheme' target='_blank' href='https://github.com/catppuccin'>
         <Icon path={mdiPalette} className='palette' />
         Color scheme from Catppuccin
       </a>

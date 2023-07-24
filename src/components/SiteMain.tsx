@@ -10,11 +10,12 @@ export const SiteMain = (props: { children: JSX.Element }): JSX.Element => {
   return (
     <div className='main'>
       <SiteHeader
-        invertTheme={() => {
+        invertTheme={(): void => {
           const newTheme = { dark: 'light', light: 'dark' }[theme] as 'dark' | 'light'
           ;(document.getElementById('html') as HTMLHtmlElement).classList.replace(theme, newTheme)
           window.localStorage.setItem('theme', newTheme)
           setTheme(newTheme)
+          window.dispatchEvent(new CustomEvent('themeChange', { detail: newTheme }))
         }}
         theme={theme}
       />
