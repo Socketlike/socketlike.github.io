@@ -1,8 +1,8 @@
 import React from 'react'
-import SiteHeader from './SiteHeader'
-import SiteFooter from './SiteFooter'
+import { SiteHeader } from './SiteHeader'
+import { SiteFooter } from './SiteFooter'
 
-export default (props: { body: React.ReactNode }) => {
+export const SiteMain = (props: { children: JSX.Element }): JSX.Element => {
   const [theme, setTheme] = React.useState<'dark' | 'light'>(
     window.localStorage.getItem('theme') as 'dark' | 'light',
   )
@@ -18,7 +18,7 @@ export default (props: { body: React.ReactNode }) => {
         }}
         theme={theme}
       />
-      <div className='site-body'>{props.body}</div>
+      <div className='site-body'>{props.children}</div>
       <SiteFooter />
     </div>
   )

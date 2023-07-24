@@ -1,12 +1,9 @@
 import fs from 'fs'
+import process from 'process'
 import esbuild from 'esbuild'
 import { lessLoader } from 'esbuild-plugin-less'
 
-const copyHTMLIndex = (sources = ['index.html']) => ({
-  name: 'copyHTMLIndex',
-  setup: (build) =>
-    build.onEnd(() => sources.forEach((source) => fs.cpSync(`src/${source}`, `dist/${source}`))),
-})
+const prod = process.argv.includes('--production')
 
 const copyAssets = () => ({
   name: 'copyAssets',
@@ -22,12 +19,12 @@ const builds = []
 
 builds.push(
   esbuild.build({
-    minify: true,
-    sourcemap: false,
+    minify: prod,
+    sourcemap: !prod,
     bundle: true,
     entryPoints: ['src/index.tsx'],
     outdir: 'dist/',
-    plugins: [copyHTMLIndex(['index.html', '404.html']), copyAssets(), lessLoader()],
+    plugins: [copyAssets(), lessLoader()],
   }),
 )
 

@@ -1,12 +1,12 @@
 import React from 'react'
 import { OverlayTrigger, Tooltip, OverlayTriggerProps } from 'react-bootstrap'
 
-export default (props: {
+export const TooltippedText = (props: {
   placement?: OverlayTriggerProps['placement']
   delay?: OverlayTriggerProps['delay']
   tooltip: React.ReactNode
-  children: JSX.Element
-}) => (
+  children: React.ReactNode
+}): JSX.Element => (
   <OverlayTrigger
     placement={props.placement || 'top'}
     delay={props.delay || { show: 250, hide: 400 }}
@@ -15,6 +15,6 @@ export default (props: {
         {props.tooltip}
       </Tooltip>
     )}>
-    {props.children}
+    <span className='block'>{props.children}</span>
   </OverlayTrigger>
 )
