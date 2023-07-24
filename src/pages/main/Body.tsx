@@ -16,11 +16,38 @@ export const Body = (): JSX.Element => (
       <br />
       Welcome to my GitHub Pages!
       <br />
-      There is mostly nothing here yet, as it is used for literally{' '}
-      <TooltippedText tooltip='This GitHub pages is used for hosting an unofficial Replugged manifest.json schema'>
-        almost
-      </TooltippedText>{' '}
-      nothing 😓
+      <br />
+      Down here is a list of possible pages that you can explore:
+      <br />
+      <ul>
+        <li>
+          <a className='block' href='./404'>
+            /404
+          </a>
+        </li>
+        <li>
+          <a className='block' href='./replugged'>
+            /replugged
+          </a>
+          <ul>
+            <li>
+              <a className='block' href='./replugged/addon.schema.json'>
+                /addon.schema.json
+              </a>
+            </li>
+            <li>
+              <a className='block' href='./replugged/plugin.schema.json'>
+                /plugin.schema.json
+              </a>
+            </li>
+            <li>
+              <a className='block' href='./replugged/theme.schema.json'>
+                /theme.schema.json
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </span>
   </div>
 )
