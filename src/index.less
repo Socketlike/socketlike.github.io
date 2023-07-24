@@ -8,6 +8,7 @@ html {
 
   &.dark {
     --red: var(--ctp-mocha-red);
+    --blue: var(--ctp-mocha-blue);
     --sapphire: var(--ctp-mocha-sapphire);
     --background: var(--ctp-mocha-base);
     --background-highlighted: var(--ctp-mocha-surface0);
@@ -17,6 +18,7 @@ html {
 
   &.light {
     --red: var(--ctp-latte-red);
+    --blue: var(--ctp-latte-blue);
     --sapphire: var(--ctp-latte-sapphire);
     --background: var(--ctp-latte-base);
     --background-highlighted: var(--ctp-latte-surface0);
@@ -31,6 +33,10 @@ html {
   * {
     color: var(--font-color);
   }
+}
+
+a {
+  color: var(--blue);
 }
 
 body {
