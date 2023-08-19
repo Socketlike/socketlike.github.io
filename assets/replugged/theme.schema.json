@@ -1,5 +1,5 @@
 {
-  "$id": "https://socketlike.github.io/replugged/plugin.schema.json",
+  "$id": "https://socketlike.github.io/replugged/theme.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Replugged Theme Schema",
   "description": "Schema for Replugged themes specifically.",
@@ -15,18 +15,18 @@
     },
     "id": {
       "type": "string",
-      "description": "The unique identifier of your plugin. This should be in reverse domain name notation and cannot be changed once your plugin is published."
+      "description": "The unique identifier of your theme. This should be in reverse domain name notation and cannot be changed once your theme is published."
     },
     "name": {
       "type": "string",
-      "description": "The name of your plugin."
+      "description": "The name of your theme."
     },
     "description": {
       "type": "string",
-      "description": "A short description of of your plugin. Will be displayed in the store, as well as the plugin settings page."
+      "description": "A short description of your theme. Will be displayed in the store, as well as the theme settings page."
     },
     "author": {
-      "description": "The author(s) of your plugin. Array cannot be empty.",
+      "description": "The author(s) of your theme. Array cannot be empty.",
       "anyOf": [
         { "$ref": "#/$def/author" },
         {
@@ -38,23 +38,23 @@
     },
     "version": {
       "type": "string",
-      "description": "The version of your plugin. We recommend the format `x.y.z`, though that is not required. This will be shown with a `v` prefix."
+      "description": "The version of your theme. We recommend the format `x.y.z`, though that is not required. This will be shown with a `v` prefix."
     },
     "updater": {
       "$ref": "#/$def/updater",
-      "description": "Where Replugged will check for updates to your plugin."
+      "description": "Where Replugged will check for updates to your theme."
     },
     "license": {
       "type": "string",
-      "description": "The license of your plugin. We recommend using SPDX identifiers, eg `MIT` or `GPL-3.0`."
+      "description": "The license of your theme. We recommend using SPDX identifiers, eg `MIT` or `GPL-3.0`."
     },
     "image": {
-      "description": "A URL or array of URLs to preview images of your plugin to be displayed in the store. Must be hosted on Discord's CDN (cdn.discordapp.com or media.discordapp.net) or Imgur.",
+      "description": "A URL or array of URLs to preview images of your theme to be displayed in the store. Must be hosted on Discord's CDN (cdn.discordapp.com or media.discordapp.net) or Imgur.",
       "anyOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }]
     },
     "source": {
       "type": "string",
-      "description": "A URL to the source code of your plugin. This will be displayed in the store and in the plugin settings card."
+      "description": "A URL to the source code of your theme. This will be displayed in the store and in the theme settings card."
     }
   },
   "$def": {
@@ -85,7 +85,7 @@
         },
         "id": {
           "type": "string",
-          "description": "The ID of the plugin in the source."
+          "description": "The ID of the theme in the source."
         }
       }
     }

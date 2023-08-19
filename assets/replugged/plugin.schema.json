@@ -31,7 +31,7 @@
     },
     "description": {
       "type": "string",
-      "description": "A short description of of your plugin. Will be displayed in the store, as well as the plugin settings page."
+      "description": "A short description of your plugin. Will be displayed in the store, as well as the plugin settings page."
     },
     "author": {
       "description": "The author(s) of your plugin. Array cannot be empty.",

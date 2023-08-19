@@ -35,7 +35,7 @@
     },
     "description": {
       "type": "string",
-      "description": "A short description of of your addon. Will be displayed in the store, as well as the addon settings page."
+      "description": "A short description of your addon. Will be displayed in the store, as well as the addon settings page."
     },
     "author": {
       "description": "The author(s) of your addon. Array cannot be empty.",
