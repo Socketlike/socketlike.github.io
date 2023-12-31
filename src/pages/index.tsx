@@ -1,16 +1,18 @@
 import React from 'react'
-import { render as render404 } from './404'
-import { render as renderIndex } from './main'
-import { render as renderReplugged } from './replugged'
 
-const pages = {
-  notFound: render404,
-  index: renderIndex,
-  replugged: renderReplugged,
+import { Config } from './Config'
+import { Main } from './Main'
+import { NotFound } from './NotFound'
+import { Replugged } from './Replugged'
+
+export const pages = {
+  config: Config,
+  main: Main,
+  notFound: NotFound,
+  replugged: Replugged,
 }
 
-export const render = (
-  identifier = (document.getElementById('identifier') as HTMLMetaElement).content || 'notFound',
-): JSX.Element => {
-  return pages[identifier]?.() || <div />
-}
+export const Page = () =>
+  pages[
+    (document.getElementById('identifier') as HTMLMetaElement).content as keyof typeof pages
+  ]?.() || <NotFound />
