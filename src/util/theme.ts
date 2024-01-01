@@ -41,7 +41,7 @@ export const apply = (theme: string): void => {
   else themeProperties.forEach((prop) => document.documentElement.style.removeProperty(prop))
 }
 
-export const setCustomColors = (colors: Theme) => {
+export const setCustomColors = (colors: Theme): void => {
   Object.entries(colors).forEach(([prop, value]) => localStorage.set(prop, value))
 
   if (document.documentElement.getAttribute('data-theme') === 'custom') apply('custom')

@@ -4,7 +4,7 @@ export const available = (): boolean => {
     window.localStorage.removeItem('_LOCAL_STORAGE_TEST')
 
     return true
-  } catch {
+  } catch (e) {
     return false
   }
 }
@@ -13,7 +13,7 @@ export const get = (key: string, fallback?: string): string | null => {
   try {
     const value = window.localStorage.getItem(key)
     return value !== null ? value : fallback ?? null
-  } catch {
+  } catch (e) {
     return typeof fallback === 'string' ? fallback : null
   }
 }
@@ -22,7 +22,7 @@ export const set = (key: string, value: string): boolean => {
   try {
     window.localStorage.setItem(key, value)
     return true
-  } catch {
+  } catch (e) {
     return false
   }
 }
