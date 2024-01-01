@@ -1,45 +1,95 @@
 import React from 'react'
 
 import { BaseSite } from '@components'
+import * as util from '@util'
 
 export const Config = (): React.ReactElement => {
-  const [theme, setTheme] = React.useState(window.localStorage.getItem('theme') || 'default')
+  const [theme, setTheme] = React.useState(util.localStorage.get('theme', 'default')!)
+  const [customColors, setCustomColors] = React.useState(util.theme.getCustomColors())
+  const localStorageAvailable = React.useMemo(() => util.localStorage.available(), [])
 
   return (
     <BaseSite>
       <div className='content'>
-        <div style={{ fontWeight: 'bold' }}>pages configuration</div>
+        <div className='text-bold text-large'>pages configuration</div>
         <br />
-        <span>color scheme (click to select)</span>
-        <ul>
+        {!localStorageAvailable && (
+          <>
+            <div>
+              <span className='text-yellow text-bold'>warning:</span> <code>localStorage</code> is{' '}
+              <span className='text-red text-bold'>off</span>. changes made here will{' '}
+              <span className='text-red text-bold'>not be saved</span>.
+            </div>
+            <br />
+          </>
+        )}
+        <span className='text-bold'>color scheme: </span>
+        <select
+          value={theme}
+          onChange={(event) => {
+            util.theme.set(event.currentTarget.value)
+
+            setTheme(event.currentTarget.value)
+          }}>
           {[
-            { value: 'default', name: 'default' },
-            { value: 'default-light', name: 'default (light)' },
-            { value: 'tokyo-night', name: 'tokyo night' },
-            { value: 'tokyo-night-light', name: 'tokyo night (light)' },
-            { value: 'gruvbox', name: 'gruvbox' },
-            { value: 'gruvbox-light', name: 'gruvbox (light)' },
-          ].map(({ value, name }) => (
-            <li key={value}>
-              {theme === value ? (
-                <span style={{ fontWeight: 'bold' }}>{name}</span>
-              ) : (
-                <a
-                  onClick={(event) => {
-                    event.stopPropagation()
-                    event.preventDefault()
-
-                    window.localStorage.setItem('theme', value)
-                    document.documentElement.setAttribute('data-theme', value)
-
-                    setTheme(value)
-                  }}>
-                  {name}
-                </a>
-              )}
-            </li>
+            ['default', 'default'],
+            ['default (light)', 'default-light'],
+            ['tokyo night', 'tokyo-night'],
+            ['tokyo night (light)', 'tokyo-night-light'],
+            ['gruvbox', 'gruvbox'],
+            ['gruvbox (light)', 'gruvbox-light'],
+            ['custom', 'custom'],
+          ].map(([name, key]) => (
+            <option value={key} key={key}>
+              {name}
+            </option>
           ))}
-        </ul>
+        </select>
+        <br />
+        <br />
+        {theme === 'custom' && (
+          <form
+            onSubmit={(event) => {
+              event.preventDefault()
+              event.stopPropagation()
+
+              const data = new FormData(event.currentTarget)
+
+              const theme = {} as util.theme.Theme
+
+              for (const [key, value] of data)
+                theme[key as keyof util.theme.Theme] = value as string | null
+
+              util.theme.setCustomColors(theme)
+
+              setCustomColors(theme)
+            }}>
+            <span className='text-bold'>custom colors (css syntax):</span>
+            <ul>
+              {[
+                ['background', '--background'],
+                ['foreground', '--foreground'],
+                ['foreground (focused)', '--foreground-focused'],
+                ['foreground (unfocused)', '--foreground-unfocused'],
+                ['red', '--red'],
+                ['green', '--green'],
+                ['yellow', '--yellow'],
+                ['gray', '--gray'],
+                ['light blue', '--lightblue'],
+              ].map(([name, key]) => (
+                <li className='margin-tb-6px' key={key}>
+                  <span>{name}: </span>
+                  <input
+                    type='text'
+                    name={key}
+                    defaultValue={customColors[key as keyof util.theme.Theme] || ''}
+                  />
+                </li>
+              ))}
+            </ul>
+            <input type='submit' value='save colors' />
+          </form>
+        )}
       </div>
     </BaseSite>
   )

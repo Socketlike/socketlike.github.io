@@ -6,8 +6,63 @@
     <meta id="identifier" name="identifier" content="config" />
     <link rel="stylesheet" href="/index.css" />
     <script src="/index.js" type="text/javascript"></script>
+    <script>
+      const element = document.getElementById('loading-content')
+      if (element) element.style.display = ''
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="site-header">
+        <fieldset class="block site-name">
+          <legend class="label">header</legend>
+          <span class="content">evie's pages</span>
+        </fieldset>
+        <fieldset class="block pages">
+          <legend class="label">pages</legend>
+          <a href="/">home</a>
+          <a href="/replugged/">replugged</a>
+          <span class="text-bold">config</span>
+        </fieldset>
+      </div>
+      <fieldset id="loading-content" class="block site-content" style="display: none">
+        <legend class="label">content</legend>
+        <span>loading...</span>
+      </fieldset>
+      <noscript>
+        <fieldset class="block site-content noscript">
+          <legend class="label">error</legend>
+          <span
+            >sorry, but <span class="text-bold text-yellow">JavaScript</span> is required to render
+            this page.</span
+          >
+          <br />
+          <br />
+          <span
+            >please (re-)enable <span class="text-bold text-yellow">JavaScript</span>.<br />i
+            promise you that there's nothing harmful on this page; see the
+            <a href="https://github.com/Socketlike/socketlike.github.io">source code</a>.</span
+          >
+          <br />
+          <br />
+          <span
+            >otherwise, you might as well close this page now as there is
+            <span class="text-bold text-red">nothing else for you here</span>.</span
+          >
+        </fieldset>
+      </noscript>
+      <div class="site-footer">
+        <fieldset class="block text">
+          <legend class="label">footer</legend>
+          <div class="content">made with <span class="text-red">love &lt;3</span> by evie</div>
+        </fieldset>
+        <fieldset class="block links">
+          <legend class="label">links</legend>
+          <div class="content">
+            <a href="https://github.com/Socketlike/socketlike.github.io">github</a>
+          </div>
+        </fieldset>
+      </div>
+    </div>
   </body>
 </html>

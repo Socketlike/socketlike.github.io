@@ -1,0 +1,44 @@
+.site-header {
+  display: flex;
+  max-width: 100%;
+
+  .block {
+    &.site-name {
+      flex-grow: 1;
+      user-select: none;
+
+      > :not(.label) {
+        font-size: large;
+      }
+
+      > .content {
+        font-weight: bold;
+        user-select: text;
+      }
+
+      .splash-text {
+        font-weight: normal;
+        color: var(--yellow);
+        max-width: 100%;
+        user-select: none;
+
+        .separator {
+          color: var(--gray);
+          user-select: none;
+        }
+
+        .content {
+          font-style: italic;
+          user-select: text;
+        }
+      }
+    }
+
+    &.pages {
+      align-items: flex-start;
+      user-select: none;
+      display: flex;
+      gap: 6px;
+    }
+  }
+}

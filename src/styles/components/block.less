@@ -1,0 +1,20 @@
+.block {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--foreground-unfocused);
+
+  max-width: 100%;
+
+  > legend.label {
+    color: var(--foreground-unfocused);
+    user-select: none;
+  }
+
+  &:hover {
+    border-color: var(--foreground-focused);
+
+    > legend.label {
+      color: var(--foreground-focused);
+    }
+  }
+}
