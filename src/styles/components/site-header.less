@@ -35,10 +35,11 @@
     }
 
     &.pages {
-      align-items: flex-start;
-      user-select: none;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 6px;
+      user-select: none;
+      align-items: start;
     }
   }
 }

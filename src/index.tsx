@@ -7,7 +7,7 @@ import * as util from '@util'
 
 import './styles/index.less'
 
-interface CustomWindow extends Window {
+export interface CustomWindow extends Window {
   React: typeof React
   ReactDOM: typeof ReactDOM
   components: typeof components
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!util.localStorage.available())
     console.error('localStorage access is disabled, options will not be saved')
 
-  util.theme.apply(util.localStorage.get('theme', 'custom')!)
+  util.theme.apply(util.localStorage.get('theme', 'default')!)
 
-  ReactDOM.createRoot(document.getElementById('root')!).render(<pages.Page />)
+  ReactDOM.createRoot(document.getElementById('root')!).render(<pages.PageWrapper />)
 })

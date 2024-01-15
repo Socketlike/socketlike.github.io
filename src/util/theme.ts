@@ -1,17 +1,5 @@
 import * as localStorage from './localStorage'
 
-export interface Theme {
-  '--background': string | null
-  '--foreground': string | null
-  '--foreground-focused': string | null
-  '--foreground-unfocused': string | null
-  '--red': string | null
-  '--green': string | null
-  '--yellow': string | null
-  '--gray': string | null
-  '--lightblue': string | null
-}
-
 const themeProperties: Array<keyof Theme> = [
   '--background',
   '--foreground',
@@ -25,7 +13,7 @@ const themeProperties: Array<keyof Theme> = [
 ]
 
 export const getCustomColors = (): Theme =>
-  themeProperties.reduce((acc, prop) => {
+  themeProperties.reduce<Theme>((acc, prop) => {
     acc[prop] = localStorage.get(prop)
 
     return acc
