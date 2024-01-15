@@ -3,7 +3,7 @@ import React from 'react'
 import { BaseSite } from '@components'
 
 export const Replugged: Page = {
-  match: (pathname) => pathname[0] === 'replugged',
+  match: (pathname) => pathname[0] === 'replugged' && !pathname[1],
   Page: (): React.ReactElement => (
     <BaseSite>
       <div className='content'>

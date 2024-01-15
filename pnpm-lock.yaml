@@ -53,6 +53,9 @@ dependencies:
   highlight.js:
     specifier: ^11.9.0
     version: 11.9.0
+  path-normalize:
+    specifier: ^6.0.13
+    version: 6.0.13
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -1777,6 +1780,11 @@ packages:
   /path-key@3.1.1:
     resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
     engines: {node: '>=8'}
+    dev: false
+
+  /path-normalize@6.0.13:
+    resolution: {integrity: sha512-PfC1Pc+IEhI77UEN731pj2nMs9gHAV36IA6IW6VdXWjoQesf+jtO9hdMUqTRS6mwR0T5rmyUrQzd5vw0VwL1Lw==}
+    engines: {node: '>=16.0.0'}
     dev: false
 
   /path-parse@1.0.7:

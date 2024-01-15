@@ -29,6 +29,7 @@
     "eslint-config-dmitmel": "github:dmitmel/eslint-config-dmitmel",
     "eslint-plugin-node": "^11.1.0",
     "highlight.js": "^11.9.0",
+    "path-normalize": "^6.0.13",
     "prettier": "^2.8.8",
     "random": "^4.1.0",
     "react": "^18.2.0",

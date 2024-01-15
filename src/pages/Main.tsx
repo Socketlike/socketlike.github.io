@@ -3,7 +3,7 @@ import React from 'react'
 import { BaseSite } from '@components'
 
 export const Main: Page = {
-  match: (pathname) => pathname.length === 0,
+  match: (pathname) => !pathname[0],
   Page: (): React.ReactElement => (
     <BaseSite>
       <div className='content'>
