@@ -1,13 +1,11 @@
 import React from 'react'
 import random from 'random'
 
-import { useInterval } from '@util'
+import { globalEvents } from '../EventEmitter'
+import { useInterval } from './useInterval'
+import { getModifiers } from './useModifiers'
 
-import { Block } from './Block'
-
-const splashTextUpdateTarget = new EventTarget()
-
-export const splashText = [
+export const splashes = [
   "everything went wrong and i don't know why",
   "i hope you're not just refreshing the page to see all of the splash text because that's silly",
   "i'm horrid at literature",
@@ -128,6 +126,7 @@ export const splashText = [
     ['toxic love', 'by One Hope and Vorsa'],
     ['under my sleeve', 'by One Hope'],
     ['your place', 'by Ren Downfelt'],
+    ['LEveL', 'by SawanoHiroyuki[nZk] and TOMORROW X TOGETHER'],
   ].map((entry) =>
     Array.isArray(entry)
       ? `also check out "${entry.shift()}", ${entry.join(' ')}!`
@@ -135,57 +134,36 @@ export const splashText = [
   ),
 ]
 
-// for debugging purposes
-export const forceUpdateSplashText = (): boolean =>
-  splashTextUpdateTarget.dispatchEvent(new CustomEvent('update'))
-
-export const useSplashText = (): string | (() => string) => {
-  const [current, setCurrent] = React.useState(random.choice(splashText)!)
-
-  useInterval(() => setCurrent(random.choice(splashText)!), 3600 * 1000)
-
-  React.useEffect(() => {
-    const listener = () => setCurrent(random.choice(splashText)!)
-
-    splashTextUpdateTarget.addEventListener('update', listener)
-
-    return () => splashTextUpdateTarget.removeEventListener('update', listener)
-  }, [])
-
-  return current
+export const specialSplashes = {
+  birthday: "it's my birthday!",
+  christmas: 'merry christmas!',
+  halloween: "i'm going to watch scary movies on the TV!",
+  newYear: 'happy new year!',
 }
 
-export const SiteHeader = (): React.ReactElement => {
-  const currentSplashText = useSplashText()
+export const getSplash = (): string => {
+  const modifierSplashes = getModifiers().map((key) => specialSplashes[key])
 
-  return (
-    <div className='site-header'>
-      <Block className='site-name' label='header'>
-        <span className='content'>evie's pages</span>{' '}
-        <span className='splash-text'>
-          <span className='separator'>|</span>{' '}
-          <span className='content'>
-            {typeof currentSplashText === 'function' ? currentSplashText() : currentSplashText}
-          </span>
-        </span>
-      </Block>
-      <Block className='pages' label='pages'>
-        {[
-          ['home', '/'],
-          ['replugged', '/replugged/'],
-          ['config', '/config'],
-        ].map(([name, path]) =>
-          location.pathname === path ? (
-            <span className='text-bold' key={path}>
-              {name}
-            </span>
-          ) : (
-            <a href={path} key={path}>
-              {name}
-            </a>
-          ),
-        )}
-      </Block>
-    </div>
-  )
+  let splashText =
+    modifierSplashes.length !== 0 ? random.choice(modifierSplashes) : random.choice(splashes)
+
+  if (typeof splashText === 'function') splashText = splashText()
+
+  return splashText!
+}
+
+export const useSplash = (): string => {
+  const [current, _setCurrent] = React.useState(getSplash())
+
+  const setCurrent = React.useCallback((value: React.SetStateAction<string>) => {
+    _setCurrent(value)
+
+    globalEvents.emit('updatedSplash', value as string)
+  }, [])
+
+  useInterval(() => setCurrent(getSplash()), 3600 * 1000)
+
+  React.useEffect(() => globalEvents.on('updateSplash', () => setCurrent(getSplash())), [])
+
+  return current
 }

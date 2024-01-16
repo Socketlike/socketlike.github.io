@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Block } from './Block'
+import { Block } from '@components/pure'
 
-export const SiteFooter = (): React.ReactElement => (
+export const Footer = (): React.ReactElement => (
   <div className='site-footer'>
     <Block className='text' label='footer'>
       <div className='content'>

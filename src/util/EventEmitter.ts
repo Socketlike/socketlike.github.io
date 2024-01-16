@@ -53,7 +53,18 @@ export class EventEmitter<EventMap extends Record<string, unknown>> {
     return this
   }
 
-  public emit<T extends keyof EventMap>(event: T & string, data?: unknown): void {
+  public emit<T extends keyof EventMap>(event: T & string, data?: EventMap[T]): void {
     this._target.dispatchEvent(new CustomEvent(event, { detail: data }))
   }
 }
+
+export const globalEvents = new EventEmitter<{
+  // emitted by user
+  updateSplash: void
+
+  // emitted by interval
+  updatedSplash: string
+
+  // emitted by page switch
+  pageUpdate: void
+}>()

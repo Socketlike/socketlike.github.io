@@ -78,7 +78,9 @@
 
         "@typescript-eslint/no-unnecessary-condition": "off",
 
-        "@typescript-eslint/prefer-reduce-type-parameter": "off"
+        "@typescript-eslint/prefer-reduce-type-parameter": "off",
+
+        "@typescript-eslint/no-unused-vars": "off"
       },
 
       "parserOptions": {
