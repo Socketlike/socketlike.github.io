@@ -35,11 +35,18 @@
     }
 
     &.pages {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
       gap: 6px;
       user-select: none;
-      align-items: start;
+      align-items: flex-start;
     }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .site-header .block.pages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
   }
 }

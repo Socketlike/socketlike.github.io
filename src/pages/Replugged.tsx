@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Anchor } from '@components'
+
 export const Replugged: Page = {
   match: (pathname) => pathname[0] === 'replugged' && !pathname[1],
   Page: (): React.ReactElement => (
@@ -13,17 +15,21 @@ export const Replugged: Page = {
       with one of these as the value:
       <ul>
         <li>
-          <a href='./addon.schema.json'>https://socketlike.github.io/replugged/addon.schema.json</a>{' '}
+          <Anchor real href='./addon.schema.json'>
+            {location.origin}/replugged/addon.schema.json
+          </Anchor>{' '}
           (generic addon, plugins + theme keys)
         </li>
         <li>
-          <a href='./plugin.schema.json'>
-            https://socketlike.github.io/replugged/plugin.schema.json
-          </a>{' '}
+          <Anchor real href='./plugin.schema.json'>
+            {location.origin}/replugged/plugin.schema.json
+          </Anchor>{' '}
           (plugin)
         </li>
         <li>
-          <a href='./theme.schema.json'>https://socketlike.github.io/replugged/theme.schema.json</a>{' '}
+          <Anchor real href='./theme.schema.json'>
+            {location.origin}/replugged/theme.schema.json
+          </Anchor>{' '}
           (theme)
         </li>
       </ul>

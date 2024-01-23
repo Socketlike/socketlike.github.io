@@ -27,7 +27,7 @@ export const Header = ({ pathname }: { pathname: string[] }): React.ReactElement
               {name}
             </span>
           ) : (
-            <Anchor href={path}>{name}</Anchor>
+            <Anchor key={path} href={path}>{name}</Anchor>
           ),
         )}
       </Block>
