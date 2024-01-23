@@ -15,19 +15,19 @@ export const Replugged: Page = {
       with one of these as the value:
       <ul>
         <li>
-          <Anchor real href='./addon.schema.json'>
+          <Anchor real href='/replugged/addon.schema.json'>
             {location.origin}/replugged/addon.schema.json
           </Anchor>{' '}
           (generic addon, plugins + theme keys)
         </li>
         <li>
-          <Anchor real href='./plugin.schema.json'>
+          <Anchor real href='/replugged/plugin.schema.json'>
             {location.origin}/replugged/plugin.schema.json
           </Anchor>{' '}
           (plugin)
         </li>
         <li>
-          <Anchor real href='./theme.schema.json'>
+          <Anchor real href='/replugged/theme.schema.json'>
             {location.origin}/replugged/theme.schema.json
           </Anchor>{' '}
           (theme)
