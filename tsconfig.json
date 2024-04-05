@@ -1,18 +1,11 @@
 {
-  "compilerOptions": {
-    "moduleResolution": "Node",
-    "target": "ES2022",
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "skipLibCheck": true,
-    "baseUrl": "./",
-    "paths": {
-      "@*": ["src/*"]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
     }
-  }
+  ]
 }

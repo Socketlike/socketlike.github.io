@@ -1,5 +1,5 @@
-export const classNameFactory = (...classNames: unknown[]): string =>
+export default (...classNames: unknown[]): string =>
   classNames
-    .map((className) => (typeof className === 'string' ? className.trim() : className))
-    .filter((className) => typeof className === 'string' && className)
+    .filter((className): className is string => typeof className === 'string')
+    .flatMap((className: string) => className.split(' ').map((className) => Boolean(className)))
     .join(' ')
