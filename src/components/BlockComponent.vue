@@ -22,7 +22,8 @@ defineProps<{
   max-width: 100%;
 
   > legend.label {
-    color: var(--foreground-unfocused);
+    background-color: var(--foreground-unfocused);
+    color: var(--background);
     user-select: none;
   }
 
@@ -30,7 +31,7 @@ defineProps<{
     border-color: var(--foreground-focused);
 
     > legend.label {
-      color: var(--foreground-focused);
+      background-color: var(--foreground-focused);
     }
   }
 }
