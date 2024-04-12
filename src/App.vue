@@ -1,38 +1,40 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import RouterLink from '@/components/RouterLink.vue'
-import Block from '@/components/BlockComponent.vue'
+import { hidden as hiddenRoutes } from '@/router/routes'
 </script>
 
 <template>
   <div class="header">
-    <Block className="text" label="header">
+    <section-block className="text" label="header">
       <span class="content">evie's pages</span>
-    </Block>
-    <Block className="pages" label="pages">
+    </section-block>
+    <section-block className="pages" label="pages">
       <RouterLink
-        v-for="route in $router.getRoutes()"
+        v-for="route in $router.getRoutes().filter(({ path }) => !hiddenRoutes.includes(path))"
         activeClass="active"
         :key="route.path"
         :to="route.path"
         >{{ route.name }}</RouterLink
       >
-    </Block>
+    </section-block>
   </div>
 
-  <Block className="content" label="content">
-    <RouterView />
-  </Block>
+  <div class="content">
+    <section-block className="main" label="content">
+      <RouterView />
+    </section-block>
+  </div>
 
   <div class="footer">
-    <Block className="text" label="footer">
-      <div class="content">made with <span class="text-red">love &lt;3</span> by evie</div>
-    </Block>
-    <Block className="links" label="links">
+    <section-block className="text" label="footer">
+      <div class="content">made with <span class="c-red">love &lt;3</span> by evie</div>
+    </section-block>
+    <section-block className="links" label="links">
       <div class="content">
         <a href="https://github.com/Socketlike/socketlike.github.io">github</a>
       </div>
-    </Block>
+    </section-block>
   </div>
 </template>
 
@@ -78,11 +80,16 @@ import Block from '@/components/BlockComponent.vue'
   }
 
   > .content {
+    display: flex;
     flex-grow: 1;
-    overflow: scroll;
 
     a {
       overflow-wrap: anywhere;
+    }
+
+    > .main {
+      flex-grow: 1;
+      overflow: scroll;
     }
   }
 
@@ -90,17 +97,15 @@ import Block from '@/components/BlockComponent.vue'
     display: flex;
     max-width: 100%;
 
-    .block {
-      &.text {
-        flex-grow: 1;
-      }
+    > .text {
+      flex-grow: 1;
+    }
 
-      &.links {
-        align-items: flex-start;
-        user-select: none;
-        display: flex;
-        gap: 6px;
-      }
+    > .links {
+      align-items: flex-start;
+      user-select: none;
+      display: flex;
+      gap: 6px;
     }
   }
 }

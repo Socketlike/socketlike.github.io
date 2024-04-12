@@ -1,0 +1,31 @@
+[data-tooltip] {
+  position: relative;
+  border-bottom: 1px dashed var(--lightblue);
+
+  &::after {
+    content: attr(data-tooltip);
+
+    display: none;
+
+    border: 1px solid var(--lightblue);
+    background-color: var(--background);
+    color: var(--foreground-focused);
+
+    width: max-content;
+    max-width: 170px;
+
+    padding: 8px;
+
+    position: absolute;
+    left: 0;
+    top: -200%;
+
+    pointer-events: none;
+
+    z-index: 9999;
+  }
+
+  &:hover::after {
+    display: block;
+  }
+}
