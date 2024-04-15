@@ -1,5 +1,3 @@
-// unused, but might be used in the future
-
 /**
  * @template EventMap (event name) -> (value)
  * @example
@@ -53,18 +51,16 @@ export class EventEmitter<EventMap extends Record<string, unknown>> {
     return this
   }
 
-  public emit<T extends keyof EventMap>(event: T & string, data?: EventMap[T]): void {
+  public emit<T extends keyof EventMap>(event: T & string, data?: unknown): void {
     this._target.dispatchEvent(new CustomEvent(event, { detail: data }))
   }
 }
 
-export const globalEvents = new EventEmitter<{
-  // emitted by user
-  updateSplash: void
-
-  // emitted by interval
-  updatedSplash: string
-
-  // emitted by page switch
-  pageUpdate: void
+export const events = new EventEmitter<{
+  themeUpdate: string
 }>()
+
+export default {
+  EventEmitter,
+  events,
+}

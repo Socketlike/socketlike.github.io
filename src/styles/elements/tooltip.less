@@ -1,0 +1,21 @@
+.v-popper--theme-tooltip {
+  &.v-popper__popper.v-popper__popper--shown {
+    transition: unset;
+  }
+
+  .v-popper__wrapper {
+    .v-popper__inner {
+      background-color: var(--background);
+      border: 1px solid var(--lightblue);
+      border-radius: 0;
+    }
+
+    .v-popper__arrow-container .v-popper__arrow-outer {
+      border-color: var(--lightblue);
+    }
+  }
+}
+
+.v-popper--has-tooltip {
+  text-decoration: underline dashed var(--lightblue) 1px;
+}

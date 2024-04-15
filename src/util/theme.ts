@@ -1,6 +1,16 @@
-import * as localStorage from './localStorage'
+import localStorage from './localStorage'
 
-const themeProperties: Array<keyof Theme> = [
+export const themes = [
+  null,
+  'light',
+  'gruvbox',
+  'gruvbox-light',
+  'tokyo-night',
+  'tokyo-night-light',
+  'custom',
+] as const
+
+export const properties = [
   '--background',
   '--foreground',
   '--foreground-focused',
@@ -10,33 +20,48 @@ const themeProperties: Array<keyof Theme> = [
   '--yellow',
   '--gray',
   '--lightblue',
-]
+] as const
 
-export const getCustomColors = (): Theme =>
-  themeProperties.reduce<Theme>((acc, prop) => {
-    acc[prop] = localStorage.get(prop)
+export const getTheme = (): (typeof themes)[number] =>
+  localStorage.getItem('theme') as (typeof themes)[number]
 
-    return acc
-  }, {} as Theme)
+export const getCustomTheme = (): Record<(typeof properties)[number], string> =>
+  localStorage.getMultipleItems(
+    properties.reduce<Record<string, string>>((acc, key) => {
+      acc[key] = ''
+      return acc
+    }, {}),
+  ) as Record<(typeof properties)[number], string>
 
-export const apply = (theme: string): void => {
-  document.documentElement.setAttribute('data-theme', theme)
+export const setTheme = (theme: (typeof themes)[number] | ''): boolean =>
+  theme ? localStorage.setItem('theme', theme as string) : localStorage.deleteItem('theme')
 
-  if (theme === 'custom')
-    Object.entries(getCustomColors()).forEach(([prop, value]) =>
-      document.documentElement.style.setProperty(prop, value),
-    )
-  else themeProperties.forEach((prop) => document.documentElement.style.removeProperty(prop))
+export const setCustomTheme = (
+  customTheme: Record<(typeof properties)[number], string>,
+): Record<string, boolean> => localStorage.setMultipleItems(customTheme)
+
+export const applyTheme = (theme: (typeof themes)[number] | ''): boolean => {
+  try {
+    if (!theme) window.document.documentElement.removeAttribute('data-theme')
+    else window.document.documentElement.setAttribute('data-theme', theme as string)
+
+    if (theme === 'custom')
+      Object.entries(getCustomTheme()).forEach(([key, value]) =>
+        window.document.documentElement.style.setProperty(key, value || ''),
+      )
+    else properties.forEach((prop) => window.document.documentElement.style.removeProperty(prop))
+  } catch (_) {
+    return false
+  }
+
+  return true
 }
 
-export const setCustomColors = (colors: Theme): void => {
-  Object.entries(colors).forEach(([prop, value]) => localStorage.set(prop, value))
-
-  if (document.documentElement.getAttribute('data-theme') === 'custom') apply('custom')
-}
-
-export const set = (theme: string): void => {
-  localStorage.set('theme', theme)
-
-  apply(theme)
+export default {
+  themes,
+  properties,
+  getTheme,
+  getCustomTheme,
+  setTheme,
+  applyTheme,
 }
