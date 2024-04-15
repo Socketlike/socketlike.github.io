@@ -2,6 +2,11 @@ import HomeView from '@/views/HomeView.vue'
 
 export default [
   {
+    path: '/:path(.*)*',
+    name: '404',
+    component: () => import('@/views/NotFoundView.vue'),
+  },
+  {
     path: '/',
     name: 'home',
     component: HomeView,
@@ -18,4 +23,4 @@ export default [
   },
 ]
 
-export const hidden = ['/test/styling']
+export const hidden = ['/test/styling', '/:path(.*)*']

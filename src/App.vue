@@ -83,6 +83,7 @@ import { hidden as hiddenRoutes } from '@/router/routes'
   > .content {
     display: flex;
     flex-grow: 1;
+    overflow: hidden;
 
     a {
       overflow-wrap: anywhere;
