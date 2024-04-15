@@ -45,7 +45,8 @@
     <br />
     <br />
     <br />
-    an overwhelming fear started to engulf you. <span class="c-red">it was really, really scary.</span>
+    an overwhelming fear started to engulf you.
+    <span class="c-red">it was really, really scary.</span>
     <br />
     <br />
     <br />
