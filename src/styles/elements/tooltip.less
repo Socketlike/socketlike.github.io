@@ -1,31 +1,21 @@
-[data-tooltip] {
-  position: relative;
-  border-bottom: 1px dashed var(--lightblue);
-
-  &::after {
-    content: attr(data-tooltip);
-
-    display: none;
-
-    border: 1px solid var(--lightblue);
-    background-color: var(--background);
-    color: var(--foreground-focused);
-
-    width: max-content;
-    max-width: 170px;
-
-    padding: 8px;
-
-    position: absolute;
-    left: 0;
-    top: -200%;
-
-    pointer-events: none;
-
-    z-index: 9999;
+.v-popper--theme-tooltip {
+  &.v-popper__popper.v-popper__popper--shown {
+    transition: unset;
   }
 
-  &:hover::after {
-    display: block;
+  .v-popper__wrapper {
+    .v-popper__inner {
+      background-color: var(--background);
+      border: 1px solid var(--lightblue);
+      border-radius: 0;
+    }
+
+    .v-popper__arrow-container .v-popper__arrow-outer {
+      border-color: var(--lightblue);
+    }
   }
+}
+
+.v-popper--has-tooltip {
+  text-decoration: underline dashed var(--lightblue) 1px;
 }

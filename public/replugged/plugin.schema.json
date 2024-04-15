@@ -1,0 +1,102 @@
+{
+  "$id": "https://socketlike.github.io/replugged/plugin.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Replugged Plugin Schema",
+  "description": "Schema for Replugged plugins specifically.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Must be `replugged-plugin`.",
+      "const": "replugged-plugin"
+    },
+    "renderer": {
+      "type": "string",
+      "description": "This is the path to the main entrypoint of your plugin (JavaScript). The plugin template will allow you to also use TypeScript and will handle compiling and updating the file location for you."
+    },
+    "plaintextPatches": {
+      "type": "string",
+      "description": "The path to the plaintext patches file (JavaScript)."
+    },
+    "reloadRequired": {
+      "type": "boolean",
+      "description": "Whether Replugged should prompt the user to reload once your plugin on installation. Defaults to `false` unless you specified a `plaintextPatches` file."
+    },
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of your plugin. This should be in reverse domain name notation and cannot be changed once your plugin is published."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of your plugin."
+    },
+    "description": {
+      "type": "string",
+      "description": "A short description of your plugin. Will be displayed in the store, as well as the plugin settings page."
+    },
+    "author": {
+      "description": "The author(s) of your plugin. Array cannot be empty.",
+      "anyOf": [
+        { "$ref": "#/$def/author" },
+        {
+          "type": "array",
+          "items": { "$ref": "#/$def/author" },
+          "minItems": 1
+        }
+      ]
+    },
+    "version": {
+      "type": "string",
+      "description": "The version of your plugin. We recommend the format `x.y.z`, though that is not required. This will be shown with a `v` prefix."
+    },
+    "updater": {
+      "$ref": "#/$def/updater",
+      "description": "Where Replugged will check for updates to your plugin."
+    },
+    "license": {
+      "type": "string",
+      "description": "The license of your plugin. We recommend using SPDX identifiers, eg `MIT` or `GPL-3.0`."
+    },
+    "image": {
+      "description": "A URL or array of URLs to preview images of your plugin to be displayed in the store. Must be hosted on Discord's CDN (cdn.discordapp.com or media.discordapp.net) or Imgur.",
+      "anyOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }]
+    },
+    "source": {
+      "type": "string",
+      "description": "A URL to the source code of your plugin. This will be displayed in the store and in the plugin settings card."
+    }
+  },
+  "$def": {
+    "author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The display name of the author."
+        },
+        "discordID": {
+          "type": "string",
+          "description": "The Discord ID of the author."
+        },
+        "github": {
+          "type": "string",
+          "description": "The GitHub username of the author."
+        }
+      },
+      "required": ["name"]
+    },
+    "updater": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "The type of the updater to use.",
+          "anyOf": [{ "const": "github" }, { "const": "store" }]
+        },
+        "id": {
+          "type": "string",
+          "description": "The ID of the plugin in the source."
+        }
+      }
+    }
+  },
+  "required": ["type", "id", "name", "description", "author", "version", "license"]
+}

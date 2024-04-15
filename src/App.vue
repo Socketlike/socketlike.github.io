@@ -13,6 +13,7 @@ import { hidden as hiddenRoutes } from '@/router/routes'
       <RouterLink
         v-for="route in $router.getRoutes().filter(({ path }) => !hiddenRoutes.includes(path))"
         activeClass="active"
+        v-tooltip="route.path === $route.path ? `you're here` : undefined"
         :key="route.path"
         :to="route.path"
         >{{ route.name }}</RouterLink

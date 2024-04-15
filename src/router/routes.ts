@@ -1,5 +1,4 @@
 import HomeView from '@/views/HomeView.vue'
-import FormattingGuideView from '@/views/FormattingGuideVIew.vue'
 
 export default [
   {
@@ -8,10 +7,15 @@ export default [
     component: HomeView,
   },
   {
-    path: '/formatting-guide',
-    name: 'formatting guide',
-    component: FormattingGuideView,
+    path: '/test/styling',
+    name: 'styling',
+    component: () => import('@/views/StylingTestView.vue'),
+  },
+  {
+    path: '/config',
+    name: 'config',
+    component: () => import('@/views/ConfigView.vue'),
   },
 ]
 
-export const hidden = ['/formatting-guide']
+export const hidden = ['/test/styling']

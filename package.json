@@ -15,6 +15,7 @@
     "check": "run-p types:check eslint:check prettier:check"
   },
   "dependencies": {
+    "floating-vue": "^5.2.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
