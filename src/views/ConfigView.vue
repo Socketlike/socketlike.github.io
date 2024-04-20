@@ -88,7 +88,11 @@ function getCurrentThemeColor(property: (typeof properties)[number]): string {
     </div>
   </section-block>
   <section-block v-else label="theme colors">
-    <span class="c-red-f">(hexadecimal values, prefixed with a #)</span>
+    <span class="c-red-f"
+      >(colors can be either a hexadecimal value or any
+      <a href="https://developer.mozilla.com/en-US/docs/Web/CSS/named-color">CSS named colors</a
+      >)</span
+    >
     <br />
     <form @submit="onCustomThemeChange">
       <div v-for="(value, key) in customTheme" :key="key">
