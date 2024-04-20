@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 import { available } from '@/util/localStorage'
 import {
   applyTheme,
@@ -12,7 +12,7 @@ import {
 } from '@/util/theme'
 
 const currentTheme = ref(getTheme() || '')
-const customTheme = reactive(getCustomTheme())
+const customTheme = ref(getCustomTheme())
 
 function onThemeChange(event: Event) {
   event.stopPropagation()
@@ -40,6 +40,8 @@ function onCustomThemeChange(event: Event) {
   setCustomTheme({ ...customTheme, ...theme })
 
   if (currentTheme.value === 'custom') applyTheme('custom')
+
+  customTheme.value = { ...customTheme.value, ...theme }
 }
 
 function getCurrentThemeColor(property: (typeof properties)[number]): string {
