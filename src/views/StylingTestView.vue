@@ -52,32 +52,28 @@ function onSubmit(event: Event) {
   <br />
 
   <section-block label="colors">
-    <div :style="{ color: 'var(--background)', backgroundColor: 'var(--foreground)' }">
-      foreground
+    <div :style="{ display: 'grid', gridTemplateColumns: '1fr 1fr' }">
+      <div :style="{ color: 'var(--bg)', backgroundColor: 'var(--fg)' }">foreground</div>
+      <div :style="{ color: 'var(--bg)', backgroundColor: 'var(--fg-focused)' }">(focused)</div>
+      <div :style="{ color: 'var(--fg-focused)', backgroundColor: 'var(--bg)' }">background</div>
+      <div :style="{ color: 'var(--fg-focused)', backgroundColor: 'var(--bg-focused)' }">
+        (focused)
+      </div>
+      <div :style="{ color: 'var(--fg-focused)', backgroundColor: 'var(--red)' }">red</div>
+      <div :style="{ color: 'var(--bg)', backgroundColor: 'var(--red-focused)' }">(focused)</div>
+      <div :style="{ color: 'var(--fg-focused)', backgroundColor: 'var(--green)' }">green</div>
+      <div :style="{ color: 'var(--bg)', backgroundColor: 'var(--green-focused)' }">(focused)</div>
+      <div :style="{ color: 'var(--fg-focused)', backgroundColor: 'var(--blue)' }">blue</div>
+      <div :style="{ color: 'var(--bg)', backgroundColor: 'var(--blue-focused)' }">(focused)</div>
+      <div :style="{ color: 'var(--fg-focused)', backgroundColor: 'var(--lightblue)' }">
+        light blue
+      </div>
+      <div :style="{ color: 'var(--bg)', backgroundColor: 'var(--lightblue-focused)' }">
+        (focused)
+      </div>
+      <div :style="{ color: 'var(--fg-focused)', backgroundColor: 'var(--yellow)' }">yellow</div>
+      <div :style="{ color: 'var(--bg)', backgroundColor: 'var(--yellow-focused)' }">(focused)</div>
     </div>
-    <div :style="{ color: 'var(--background)', backgroundColor: 'var(--foreground-focused)' }">
-      foreground (focused)
-    </div>
-    <div :style="{ color: 'var(--background)', backgroundColor: 'var(--foreground-unfocused)' }">
-      foreground (unfocused)
-    </div>
-    <div :style="{ color: 'var(--foreground)', backgroundColor: 'var(--background)' }">
-      background
-    </div>
-    <div :style="{ color: 'var(--background)', backgroundColor: 'var(--foreground)' }">white</div>
-    <div :style="{ color: 'var(--background)', backgroundColor: 'var(--red)' }">
-      red (urgent / errors)
-    </div>
-    <div :style="{ color: 'var(--background)', backgroundColor: 'var(--yellow)' }">
-      yellow (minor urgent / warnings)
-    </div>
-    <div :style="{ color: 'var(--background)', backgroundColor: 'var(--green)' }">
-      green (success)
-    </div>
-    <div :style="{ color: 'var(--background)', backgroundColor: 'var(--lightblue)' }">
-      light blue (informal / links)
-    </div>
-    <div :style="{ color: 'var(--background)', backgroundColor: 'var(--gray)' }">gray</div>
   </section-block>
 
   <br />
@@ -135,6 +131,9 @@ function onSubmit(event: Event) {
     <br />
     <section-block label="error" variant="error"
       >a quick brown fox jumps over the lazy dog</section-block
+    ><br />
+    <section-block
+      >unlabeled block<br /><br />a quick brown fox jumps over the lazy dog</section-block
     >
   </section-block>
 </template>

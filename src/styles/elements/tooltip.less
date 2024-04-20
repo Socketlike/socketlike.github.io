@@ -5,17 +5,18 @@
 
   .v-popper__wrapper {
     .v-popper__inner {
-      background-color: var(--background);
-      border: 1px solid var(--lightblue);
+      background-color: var(--bg);
+      color: var(--fg-focused);
+      border: 1px solid var(--lightblue-focused);
       border-radius: 0;
     }
 
     .v-popper__arrow-container .v-popper__arrow-outer {
-      border-color: var(--lightblue);
+      border-color: var(--lightblue-focused);
     }
   }
 }
 
 .v-popper--has-tooltip {
-  text-decoration: underline dashed var(--lightblue) 1px;
+  text-decoration: underline dashed var(--lightblue-focused) 1px;
 }

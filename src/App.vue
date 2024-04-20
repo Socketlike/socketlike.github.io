@@ -6,14 +6,15 @@ import { hidden as hiddenRoutes } from '@/router/routes'
 
 <template>
   <div class="header">
-    <section-block className="text" label="header">
+    <section-block className="text important">
       <span class="content">evie's pages</span>
     </section-block>
-    <section-block className="pages" label="pages">
+
+    <section-block className="pages">
       <RouterLink
         v-for="route in $router.getRoutes().filter(({ path }) => !hiddenRoutes.includes(path))"
-        activeClass="active"
         v-tooltip="route.path === $route.path ? `you're here` : undefined"
+        activeClass="active"
         :key="route.path"
         :to="route.path"
         >{{ route.name }}</RouterLink
@@ -22,16 +23,16 @@ import { hidden as hiddenRoutes } from '@/router/routes'
   </div>
 
   <div class="content">
-    <section-block className="main" label="content">
+    <section-block className="main" :label="$route.name">
       <RouterView />
     </section-block>
   </div>
 
   <div class="footer">
-    <section-block className="text" label="footer">
-      <div class="content">made with <span class="c-red">love &lt;3</span> by evie</div>
+    <section-block className="text important">
+      <div class="content">made with <span class="c-red-f">love &lt;3</span> by evie</div>
     </section-block>
-    <section-block className="links" label="links">
+    <section-block className="links">
       <div class="content">
         <a href="https://github.com/Socketlike/socketlike.github.io">github</a>
       </div>
@@ -44,6 +45,7 @@ import { hidden as hiddenRoutes } from '@/router/routes'
   > .header {
     display: flex;
     max-width: 100%;
+    gap: 6px;
 
     > .text {
       flex-grow: 1;
@@ -53,30 +55,13 @@ import { hidden as hiddenRoutes } from '@/router/routes'
         font-weight: bold;
         user-select: text;
       }
-
-      .splash-text {
-        font-weight: normal;
-        color: var(--yellow);
-        max-width: 100%;
-        user-select: none;
-
-        .separator {
-          color: var(--gray);
-          user-select: none;
-        }
-
-        .content {
-          font-style: italic;
-          user-select: text;
-        }
-      }
     }
 
     > .pages {
+      align-items: flex-start;
       display: flex;
       gap: 6px;
       user-select: none;
-      align-items: flex-start;
     }
   }
 
@@ -84,6 +69,7 @@ import { hidden as hiddenRoutes } from '@/router/routes'
     display: flex;
     flex-grow: 1;
     overflow: hidden;
+    padding-bottom: 6px;
 
     a {
       overflow-wrap: anywhere;
@@ -92,12 +78,14 @@ import { hidden as hiddenRoutes } from '@/router/routes'
     > .main {
       flex-grow: 1;
       overflow: scroll;
+      box-shadow: none;
     }
   }
 
   > .footer {
     display: flex;
     max-width: 100%;
+    gap: 6px;
 
     > .text {
       flex-grow: 1;
@@ -105,9 +93,9 @@ import { hidden as hiddenRoutes } from '@/router/routes'
 
     > .links {
       align-items: flex-start;
-      user-select: none;
       display: flex;
       gap: 6px;
+      user-select: none;
     }
   }
 }

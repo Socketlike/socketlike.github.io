@@ -1,25 +1,22 @@
 import localStorage from './localStorage'
 
-export const themes = [
-  null,
-  'light',
-  'gruvbox',
-  'gruvbox-light',
-  'tokyo-night',
-  'tokyo-night-light',
-  'custom',
-] as const
+export const themes = [null, 'light', 'gruvbox', 'gruvbox-light', 'tokyo-night', 'custom'] as const
 
 export const properties = [
-  '--background',
-  '--foreground',
-  '--foreground-focused',
-  '--foreground-unfocused',
+  '--bg',
+  '--bg-focused',
+  '--fg',
+  '--fg-focused',
   '--red',
+  '--red-focused',
   '--green',
+  '--green-focused',
+  '--blue',
+  '--blue-focused',
   '--yellow',
-  '--gray',
+  '--yellow-focused',
   '--lightblue',
+  '--lightblue-focused',
 ] as const
 
 export const getTheme = (): (typeof themes)[number] =>

@@ -6,19 +6,19 @@ input[type='range'] {
   vertical-align: middle;
 
   &::-moz-range-track {
-    background: var(--foreground-unfocused);
+    background: var(--bg-focused);
     height: 0.5rem;
   }
 
   &::-webkit-slider-runnable-track {
-    background: var(--foreground-unfocused);
+    background: var(--bg-focused);
     height: 0.5rem;
   }
 
   &::-moz-range-thumb {
     appearance: none;
 
-    background-color: var(--foreground);
+    background-color: var(--fg-focused);
 
     height: 12px;
     width: 12px;
@@ -33,7 +33,7 @@ input[type='range'] {
     -webkit-appearance: none;
     appearance: none;
 
-    background-color: var(--foreground);
+    background-color: var(--fg-focused);
 
     height: 12px;
     width: 12px;
@@ -46,8 +46,8 @@ button,
 input[type='button'],
 input[type='submit'],
 input[type='text'] {
-  background-color: var(--foreground-unfocused);
-  color: var(--foreground);
+  background-color: var(--fg-focused);
+  color: var(--bg-focused);
 
   font-family: monospace;
 
@@ -55,8 +55,8 @@ input[type='text'] {
   border: none;
 
   &:hover {
-    background-color: var(--foreground-focused);
-    color: var(--background);
+    background-color: var(--fg);
+    color: var(--bg);
   }
 
   &:focus {

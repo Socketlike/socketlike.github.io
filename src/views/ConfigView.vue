@@ -41,43 +41,74 @@ function onCustomThemeChange(event: Event) {
 
   if (currentTheme.value === 'custom') applyTheme('custom')
 }
+
+function getCurrentThemeColor(property: (typeof properties)[number]): string {
+  return window.getComputedStyle(window.document.documentElement).getPropertyValue(property)
+}
 </script>
 <template>
-  <div class="bold">config</div>
   <div v-if="!available()">
-    <br />
     <section-block label="localStorage access denied" variant="error"
       >any modifications you make here will not be saved.</section-block
     >
+    <br />
   </div>
-  <ul>
-    <li>
-      theme:
-      <select @change="onThemeChange">
-        <option
-          v-for="theme in themes"
-          :key="theme || ''"
-          :selected="(theme || '') === currentTheme"
-          :value="theme"
-        >
-          {{ theme || 'default' }}
-        </option>
-      </select>
-    </li>
 
-    <li v-if="currentTheme === 'custom'">
-      theme props
-      <span class="c-red">(css values <span class="bold">only</span>, no functions)</span>:
-      <br />
-      <form @submit="onCustomThemeChange">
-        <ul>
-          <li v-for="[key, value] of Object.entries(customTheme)" :key="key">
-            {{ key }}: <input type="text" :name="key" :value="value" />
-          </li>
-        </ul>
-        <br />
-        <button role="submit">save changes</button>
-      </form>
-    </li>
-  </ul>
+  <section-block label="theme">
+    select:
+    <select @change="onThemeChange">
+      <option
+        v-for="theme in themes"
+        :key="theme || ''"
+        :selected="(theme || '') === currentTheme"
+        :value="theme"
+      >
+        {{ theme || 'default' }}
+      </option>
+    </select>
+  </section-block>
+
+  <br />
+
+  <section-block v-if="currentTheme !== 'custom'" label="theme colors" variant="info">
+    <div
+      v-for="[property, value] of properties.map((property) => [
+        property,
+        getCurrentThemeColor(property),
+      ])"
+      :key="`${property}-${currentTheme}`"
+    >
+      {{ property }}:
+      <code class="color">
+        <div class="swatch" :style="{ backgroundColor: value }" />
+        {{ value }}</code
+      >
+    </div>
+  </section-block>
+  <section-block v-else label="theme colors">
+    <span class="c-red-f">(hexadecimal values, prefixed with a #)</span>
+    <br />
+    <form @submit="onCustomThemeChange">
+      <div v-for="(value, key) in customTheme" :key="key">
+        {{ key }}: <input type="text" :name="key" :value="value" />
+      </div>
+      <button role="submit">save changes</button>
+    </form>
+  </section-block>
 </template>
+
+<style scoped lang="less">
+.color {
+  align-items: center;
+  display: inline-flex;
+  gap: 4px;
+
+  .swatch {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    height: 10px;
+    width: 10px;
+    user-select: none;
+  }
+}
+</style>

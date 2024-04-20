@@ -21,6 +21,11 @@ export default [
     name: 'config',
     component: () => import('@/views/ConfigView.vue'),
   },
+  {
+    path: '/replugged',
+    name: 'replugged',
+    component: () => import('@/views/RepluggedView.vue'),
+  },
 ]
 
 export const hidden = ['/test/styling', '/:path(.*)*']
