@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import localStorage from '@/util/localStorage'
 
-const limboTriggered = ref(localStorage.getItem('limbo') === null)
+const limboTriggered = ref(localStorage.getItem('limbo') !== null)
 const shouldTriggerLimbo = ref(Math.random() <= 0.2)
 
 if (!limboTriggered.value && shouldTriggerLimbo.value) localStorage.setItem('limbo', '')
