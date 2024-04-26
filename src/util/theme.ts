@@ -1,8 +1,13 @@
+import * as R from 'remeda'
+import { computed, ref, watch } from 'vue'
+
 import localStorage from './localStorage'
 
 export const themes = [null, 'light', 'gruvbox', 'gruvbox-light', 'tokyo-night', 'custom'] as const
 
-export const properties = [
+export type Theme = (typeof themes)[number] | ''
+
+export const customThemeProperties = [
   '--bg',
   '--bg-focused',
   '--fg',
@@ -19,25 +24,31 @@ export const properties = [
   '--lightblue-focused',
 ] as const
 
-export const getTheme = (): (typeof themes)[number] =>
-  localStorage.getItem('theme') as (typeof themes)[number]
+/** deprecated */
+export const properties = customThemeProperties
 
-export const getCustomTheme = (): Record<(typeof properties)[number], string> =>
+export type CustomThemeProperty = (typeof properties)[number]
+
+export type CustomTheme = Record<CustomThemeProperty, string>
+
+export const getTheme = (): Theme => localStorage.getItem('theme') as Theme
+
+export const getCustomTheme = (): CustomTheme =>
   localStorage.getMultipleItems(
     properties.reduce<Record<string, string>>((acc, key) => {
       acc[key] = ''
       return acc
     }, {}),
-  ) as Record<(typeof properties)[number], string>
+  ) as CustomTheme
 
-export const setTheme = (theme: (typeof themes)[number] | ''): boolean =>
+export const setTheme = (theme: Theme): boolean =>
   theme ? localStorage.setItem('theme', theme as string) : localStorage.deleteItem('theme')
 
 export const setCustomTheme = (
-  customTheme: Record<(typeof properties)[number], string>,
+  customTheme: Record<CustomThemeProperty, string>,
 ): Record<string, boolean> => localStorage.setMultipleItems(customTheme)
 
-export const applyTheme = (theme: (typeof themes)[number] | ''): boolean => {
+export const applyTheme = (theme: Theme): boolean => {
   try {
     if (!theme) window.document.documentElement.removeAttribute('data-theme')
     else window.document.documentElement.setAttribute('data-theme', theme as string)
@@ -54,11 +65,44 @@ export const applyTheme = (theme: (typeof themes)[number] | ''): boolean => {
   return true
 }
 
+export function useTheme() {
+  const theme = ref<Theme>(getTheme() || '')
+  const customTheme = ref(getCustomTheme())
+  const currentThemeColors = computed(() =>
+    R.fromKeys(customThemeProperties, (prop) => {
+      if (theme.value === 'custom')
+        return (
+          customTheme.value[prop] ||
+          window.getComputedStyle(window.document.documentElement).getPropertyValue(prop) ||
+          'unset'
+        )
+
+      return (
+        window.getComputedStyle(window.document.documentElement).getPropertyValue(prop) || 'unset'
+      )
+    }),
+  )
+
+  watch(theme, () => {
+    setTheme(theme.value)
+    applyTheme(theme.value)
+  })
+
+  watch(customTheme, () => {
+    setCustomTheme(customTheme.value)
+
+    if (theme.value === 'custom') applyTheme('custom')
+  })
+
+  return { theme, customTheme, currentThemeColors }
+}
+
 export default {
+  applyTheme,
   themes,
   properties,
   getTheme,
   getCustomTheme,
   setTheme,
-  applyTheme,
+  useTheme,
 }

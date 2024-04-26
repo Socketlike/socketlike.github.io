@@ -1,29 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { available } from '@/util/localStorage'
 import {
-  applyTheme,
-  getCustomTheme,
-  getTheme,
-  properties,
-  setTheme,
-  setCustomTheme,
+  customThemeProperties,
+  useTheme,
   themes,
+  type Theme,
+  type CustomThemeProperty,
+  type CustomTheme,
 } from '@/util/theme'
 
-const currentTheme = ref(getTheme() || '')
-const customTheme = ref(getCustomTheme())
+const { theme: currentTheme, customTheme, currentThemeColors } = useTheme()
 
 function onThemeChange(event: Event) {
   event.stopPropagation()
 
-  const newTheme = (event.currentTarget as HTMLSelectElement).value as (typeof themes)[number] | ''
-
-  setTheme(newTheme)
-
-  applyTheme(getTheme())
-
-  currentTheme.value = newTheme || ''
+  currentTheme.value = (event.currentTarget as HTMLSelectElement).value as Theme | ''
 }
 
 function onCustomThemeChange(event: Event) {
@@ -32,29 +23,24 @@ function onCustomThemeChange(event: Event) {
 
   const data = new FormData(event.currentTarget as HTMLFormElement)
 
-  const theme = {} as Record<(typeof properties)[number], string>
-
-  for (const [key, value] of data)
-    theme[key as (typeof properties)[number]] = (value as string) || ''
-
-  setCustomTheme({ ...customTheme, ...theme })
-
-  if (currentTheme.value === 'custom') applyTheme('custom')
+  const theme = Array.from(data.entries())
+    .filter(([key]) => customThemeProperties.includes(key as CustomThemeProperty))
+    .reduce<CustomTheme>((acc, [key, value]) => {
+      acc[key as CustomThemeProperty] = value as string
+      return acc
+    }, {} as CustomTheme)
 
   customTheme.value = { ...customTheme.value, ...theme }
 }
-
-function getCurrentThemeColor(property: (typeof properties)[number]): string {
-  return window.getComputedStyle(window.document.documentElement).getPropertyValue(property)
-}
 </script>
 <template>
-  <div v-if="!available()">
+  <template v-if="!available()">
     <section-block label="localStorage access denied" variant="error"
       >any modifications you make here will not be saved.</section-block
     >
+
     <br />
-  </div>
+  </template>
 
   <section-block label="theme">
     select:
@@ -74,16 +60,13 @@ function getCurrentThemeColor(property: (typeof properties)[number]): string {
 
   <section-block v-if="currentTheme !== 'custom'" label="theme colors" variant="info">
     <div
-      v-for="[property, value] of properties.map((property) => [
-        property,
-        getCurrentThemeColor(property),
-      ])"
-      :key="`${property}-${currentTheme}`"
+      v-for="[prop, color] of Object.entries(currentThemeColors)"
+      :key="`${prop}-${currentTheme}`"
     >
-      {{ property }}:
+      {{ prop }}:
       <code class="color">
-        <div class="swatch" :style="{ backgroundColor: value }" />
-        {{ value }}</code
+        <div class="swatch" :style="{ backgroundColor: color }" />
+        {{ color }}</code
       >
     </div>
   </section-block>
@@ -94,10 +77,12 @@ function getCurrentThemeColor(property: (typeof properties)[number]): string {
       >)</span
     >
     <br />
+
     <form @submit="onCustomThemeChange">
       <div v-for="(value, key) in customTheme" :key="key">
         {{ key }}: <input type="text" :name="key" :value="value" />
       </div>
+
       <button role="submit">save changes</button>
     </form>
   </section-block>

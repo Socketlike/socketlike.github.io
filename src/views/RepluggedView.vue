@@ -1,6 +1,7 @@
 <template>
   <div>hi! welcome to my domain of <a href="https://replugged.dev">Replugged</a> shenanigans!</div>
   <br />
+
   <div>there's not much here yet, but i'm planning to make something to put here soon!</div>
   <br />
 

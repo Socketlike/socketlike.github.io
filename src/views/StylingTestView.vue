@@ -85,8 +85,10 @@ function onSubmit(event: Event) {
         ><input v-tooltip="`${rangeValue}%`" type="range" min="0" max="100" v-model="rangeValue" />
       </div>
       <br />
+
       <div><span>text: </span><input type="text" /></div>
       <br />
+
       <div>
         <span>select: </span
         ><select>
@@ -98,6 +100,7 @@ function onSubmit(event: Event) {
         </select>
       </div>
       <br />
+
       <div>
         <span>button: </span
         ><button
@@ -112,6 +115,7 @@ function onSubmit(event: Event) {
         </button>
       </div>
       <br />
+
       <button type="submit">submit data</button>
     </form>
   </section-block>
@@ -121,17 +125,21 @@ function onSubmit(event: Event) {
   <section-block label="section blocks">
     <section-block label="normal">a quick brown fox jumps over the lazy dog</section-block>
     <br />
+
     <section-block label="informal" variant="info"
       >a quick brown fox jumps over the lazy dog</section-block
     >
     <br />
+
     <section-block label="warning" variant="warning"
       >a quick brown fox jumps over the lazy dog</section-block
     >
     <br />
+
     <section-block label="error" variant="error"
       >a quick brown fox jumps over the lazy dog</section-block
     ><br />
+
     <section-block
       >unlabeled block<br /><br />a quick brown fox jumps over the lazy dog</section-block
     >

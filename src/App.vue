@@ -11,20 +11,30 @@ import { hidden as hiddenRoutes } from '@/router/routes'
     </section-block>
 
     <section-block className="pages">
-      <RouterLink
+      <router-link
         v-for="route in $router.getRoutes().filter(({ path }) => !hiddenRoutes.includes(path))"
         v-tooltip="route.path === $route.path ? `you're here` : undefined"
         activeClass="active"
         :key="route.path"
         :to="route.path"
-        >{{ route.name }}</RouterLink
+        >{{ route.name }}</router-link
       >
     </section-block>
   </div>
 
   <div class="content">
     <section-block className="main" :label="$route.name">
-      <RouterView />
+      <router-view v-slot="{ Component }">
+        <template v-if="Component">
+          <keep-alive>
+            <suspense>
+              <component :is="Component" />
+
+              <template #fallback>loading</template>
+            </suspense>
+          </keep-alive>
+        </template>
+      </router-view>
     </section-block>
   </div>
 
