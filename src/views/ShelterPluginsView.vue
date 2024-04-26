@@ -7,7 +7,9 @@ const { json: response, error } = useFetch<
 </script>
 
 <template>
-  here's a list of plugins i made for <a href="https://github.com/uwu/shelter">shelter</a>:
+  <div>
+    here's a list of plugins i made for <a href="https://github.com/uwu/shelter">shelter</a>:
+  </div>
   <br />
   <template v-if="response">
     <template
@@ -15,9 +17,11 @@ const { json: response, error } = useFetch<
       :key="`${name}-${manifest?.hash || `nohash-${Math.random().toString(36).slice(2)}`}`"
     >
       <section-block :label="name" variant="info">
-        by {{ manifest?.author || 'unknown' }}
+        <div>
+          by <code>{{ manifest?.author || 'unknown' }}</code>
+        </div>
         <br />
-        {{ manifest?.description || 'no description' }}
+        <section-block>{{ manifest?.description || 'no description' }}</section-block>
         <br />
       </section-block>
     </template>
