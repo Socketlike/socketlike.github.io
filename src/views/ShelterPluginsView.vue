@@ -27,4 +27,5 @@ const { json: response, error } = useFetch<
     <section-block label="stacktrace">{{ error?.toString?.() || 'unknown error' }}</section-block>
   </template>
   <template v-else>loading...</template>
+  <br />
 </template>

@@ -32,10 +32,10 @@ export default [
     component: () => import('@/views/ShelterView.vue'),
   },
   {
-    path: '/shelter/plugins/:plugin',
+    path: '/shelter/plugins',
     name: 'shelter plugins',
     component: () => import('@/views/ShelterPluginsView.vue'),
   },
 ]
 
-export const hidden = ['/test/styling', '/:path(.*)*', '/shelter/plugins/:plugin']
+export const hidden = ['/test/styling', '/:path(.*)*', '/shelter/plugins']
