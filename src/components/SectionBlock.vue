@@ -55,6 +55,7 @@ div.section-block {
   max-width: 100%;
   filter: brightness(80%);
   box-shadow: var(--bg) 3px 3px;
+  word-break: break-word;
 
   > legend.label {
     background-color: var(--fg);
