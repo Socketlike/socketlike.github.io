@@ -26,6 +26,16 @@ export default [
     name: 'replugged',
     component: () => import('@/views/RepluggedView.vue'),
   },
+  {
+    path: '/shelter',
+    name: 'shelter',
+    component: () => import('@/views/ShelterView.vue'),
+  },
+  {
+    path: '/shelter/plugins/:plugin',
+    name: 'shelter plugins',
+    component: () => import('@/views/ShelterPluginsView.vue'),
+  },
 ]
 
-export const hidden = ['/test/styling', '/:path(.*)*']
+export const hidden = ['/test/styling', '/:path(.*)*', '/shelter/plugins/:plugin']

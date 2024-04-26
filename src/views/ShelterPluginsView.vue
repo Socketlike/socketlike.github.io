@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useFetch } from '@/util'
+import { useFetch } from '@/composables'
 
 const { json: response, error } = useFetch<
   Record<string, { name?: string; author?: string; description?: string; hash?: string }>
@@ -7,12 +7,7 @@ const { json: response, error } = useFetch<
 </script>
 
 <template>
-  welcome to my domain of <a href="https://github.com/uwu/shelter">shelter</a>
-  <span v-tooltip="'well, currently it\'s just a list of my shelter plugins at the moment'"
-    >shenanigans</span
-  >!
-  <br />
-  here's a list of plugins i made for shelter:
+  here's a list of plugins i made for <a href="https://github.com/uwu/shelter">shelter</a>:
   <br />
   <template v-if="response">
     <template

@@ -1,6 +1,3 @@
-import * as R from 'remeda'
-import { computed, ref, watch } from 'vue'
-
 import localStorage from './localStorage'
 
 export const themes = [null, 'light', 'gruvbox', 'gruvbox-light', 'tokyo-night', 'custom'] as const
@@ -24,10 +21,7 @@ export const customThemeProperties = [
   '--lightblue-focused',
 ] as const
 
-/** deprecated */
-export const properties = customThemeProperties
-
-export type CustomThemeProperty = (typeof properties)[number]
+export type CustomThemeProperty = (typeof customThemeProperties)[number]
 
 export type CustomTheme = Record<CustomThemeProperty, string>
 
@@ -35,7 +29,7 @@ export const getTheme = (): Theme => localStorage.getItem('theme') as Theme
 
 export const getCustomTheme = (): CustomTheme =>
   localStorage.getMultipleItems(
-    properties.reduce<Record<string, string>>((acc, key) => {
+    customThemeProperties.reduce<Record<string, string>>((acc, key) => {
       acc[key] = ''
       return acc
     }, {}),
@@ -57,7 +51,10 @@ export const applyTheme = (theme: Theme): boolean => {
       Object.entries(getCustomTheme()).forEach(([key, value]) =>
         window.document.documentElement.style.setProperty(key, value || ''),
       )
-    else properties.forEach((prop) => window.document.documentElement.style.removeProperty(prop))
+    else
+      customThemeProperties.forEach((prop) =>
+        window.document.documentElement.style.removeProperty(prop),
+      )
   } catch (_) {
     return false
   }
@@ -65,44 +62,11 @@ export const applyTheme = (theme: Theme): boolean => {
   return true
 }
 
-export function useTheme() {
-  const theme = ref<Theme>(getTheme() || '')
-  const customTheme = ref(getCustomTheme())
-  const currentThemeColors = computed(() =>
-    R.fromKeys(customThemeProperties, (prop) => {
-      if (theme.value === 'custom')
-        return (
-          customTheme.value[prop] ||
-          window.getComputedStyle(window.document.documentElement).getPropertyValue(prop) ||
-          'unset'
-        )
-
-      return (
-        window.getComputedStyle(window.document.documentElement).getPropertyValue(prop) || 'unset'
-      )
-    }),
-  )
-
-  watch(theme, () => {
-    setTheme(theme.value)
-    applyTheme(theme.value)
-  })
-
-  watch(customTheme, () => {
-    setCustomTheme(customTheme.value)
-
-    if (theme.value === 'custom') applyTheme('custom')
-  })
-
-  return { theme, customTheme, currentThemeColors }
-}
-
 export default {
   applyTheme,
-  themes,
-  properties,
-  getTheme,
+  customThemeProperties,
   getCustomTheme,
+  getTheme,
+  themes,
   setTheme,
-  useTheme,
 }

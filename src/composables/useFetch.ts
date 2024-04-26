@@ -1,4 +1,4 @@
-import { ref, toValue, watchEffect, type Ref, onUnmounted } from 'vue'
+import { ref, onUnmounted, toValue, watchEffect, type Ref } from 'vue'
 
 export const useFetch = <JSONType = unknown>(
   url: Ref<string | URL> | string | URL,

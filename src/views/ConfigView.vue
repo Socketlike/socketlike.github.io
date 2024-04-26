@@ -2,12 +2,12 @@
 import { available } from '@/util/localStorage'
 import {
   customThemeProperties,
-  useTheme,
   themes,
   type Theme,
   type CustomThemeProperty,
   type CustomTheme,
 } from '@/util/theme'
+import { useTheme } from '@/composables'
 
 const { theme: currentTheme, customTheme, currentThemeColors } = useTheme()
 
