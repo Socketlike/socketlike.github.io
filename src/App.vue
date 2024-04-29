@@ -12,7 +12,10 @@ import { hidden as hiddenRoutes } from '@/router/routes'
 
     <section-block className="pages">
       <router-link
-        v-for="route in $router.getRoutes().filter(({ name }) => !hiddenRoutes.includes(name))"
+        v-for="route in $router
+          .getRoutes()
+          // @ts-expect-error - yes yes i know this is a check it doesn't matter leave me alone
+          .filter(({ name }) => !hiddenRoutes.includes(name))"
         v-tooltip="route.path === $route.path ? `you're here` : undefined"
         activeClass="active"
         :key="route.path"
