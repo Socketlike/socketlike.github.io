@@ -13,7 +13,7 @@ export default [
   },
   {
     path: '/test/styling',
-    name: 'styling',
+    name: 'styling test',
     component: () => import('@/views/StylingTestView.vue'),
   },
   {
@@ -36,6 +36,11 @@ export default [
     name: 'shelter plugins',
     component: () => import('@/views/ShelterPluginsView.vue'),
   },
+  {
+    path: '/entries/:entry(.*)?',
+    name: 'entries',
+    component: () => import('@/views/EntriesView.vue'),
+  },
 ]
 
-export const hidden = ['/test/styling', '/:path(.*)*', '/shelter/plugins']
+export const hidden = ['styling test', '404', 'shelter plugins']

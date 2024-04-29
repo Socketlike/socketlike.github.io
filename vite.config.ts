@@ -3,9 +3,16 @@ import { defineConfig } from 'vite'
 
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { plugin as markdown, Mode } from 'vite-plugin-markdown'
 
 export default defineConfig({
-  plugins: [vue(), vueJsx()],
+  plugins: [
+    vue(),
+    vueJsx(),
+    markdown({
+      mode: [Mode.VUE],
+    }),
+  ],
 
   build: {
     rollupOptions: {

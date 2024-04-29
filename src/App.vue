@@ -12,11 +12,11 @@ import { hidden as hiddenRoutes } from '@/router/routes'
 
     <section-block className="pages">
       <router-link
-        v-for="route in $router.getRoutes().filter(({ path }) => !hiddenRoutes.includes(path))"
+        v-for="route in $router.getRoutes().filter(({ name }) => !hiddenRoutes.includes(name))"
         v-tooltip="route.path === $route.path ? `you're here` : undefined"
         activeClass="active"
         :key="route.path"
-        :to="route.path"
+        :to="{ name: route.name }"
         >{{ route.name }}</router-link
       >
     </section-block>
