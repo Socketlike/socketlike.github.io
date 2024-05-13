@@ -14,6 +14,12 @@ export default defineConfig({
     }),
   ],
 
+  server: {
+    watch: {
+      ignored: ['!src/entries/**/*.md'],
+    },
+  },
+
   build: {
     rollupOptions: {
       input: {

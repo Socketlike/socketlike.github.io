@@ -3,6 +3,7 @@ import { type Component, type ComponentOptions } from 'vue'
 interface Markdown {
   attributes: {
     date: number
+    edited?: number
     [x: string]: unknown
   }
   VueComponent: ComponentOptions

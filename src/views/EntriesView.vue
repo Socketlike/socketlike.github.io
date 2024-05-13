@@ -73,6 +73,20 @@ const entry = computed(() => {
           })
         }}</code>
       </div>
+      <div v-if="typeof entries[entry].attributes?.edited === 'number'">
+        last edited on:
+        <code>{{
+          // @ts-expect-error - it's a number
+          new Date(entries[entry].attributes.edited).toLocaleString(undefined, {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hourCycle: 'h12',
+            hour: '2-digit',
+            minute: '2-digit',
+          })
+        }}</code>
+      </div>
     </section-block>
     <component :is="entries[entry].VueComponent"></component>
     <router-link

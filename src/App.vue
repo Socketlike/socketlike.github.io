@@ -29,13 +29,11 @@ import { hidden as hiddenRoutes } from '@/router/routes'
     <section-block className="main" :label="$route.name">
       <router-view v-slot="{ Component }">
         <template v-if="Component">
-          <keep-alive>
-            <suspense>
-              <component :is="Component" />
+          <suspense>
+            <component :is="Component" />
 
-              <template #fallback>loading</template>
-            </suspense>
-          </keep-alive>
+            <template #fallback>loading</template>
+          </suspense>
         </template>
       </router-view>
     </section-block>
