@@ -9,14 +9,17 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-    markdown({
+    /* markdown({
       mode: [Mode.VUE],
-    }),
+    }), */
   ],
 
   server: {
     watch: {
-      ignored: ['!src/entries/**/*.md'],
+      ignored: [
+        // '!src/entries/**/*.md',
+        '!src/assets/**/*.json',
+      ],
     },
   },
 

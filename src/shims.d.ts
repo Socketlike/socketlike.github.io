@@ -1,10 +1,11 @@
-declare module '*.md' {
-  const attributes: Record<string, unknown>
+declare class CustomWindow extends Window {
+  public __internals__: {
+    App: import('vue').Component
+    app: import('vue').App<Element>
 
-  import { Component, ComponentOptions } from 'vue'
+    router: import('@/router')
+    util: import('@/util')
 
-  const VueComponent: ComponentOptions
-  const VueComponentWith: (components: Record<string, Component>) => ComponentOptions
-
-  export { attributes, VueComponent, VueComponentWith }
+    vue: import('vue')
+  }
 }

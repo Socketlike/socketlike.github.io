@@ -1,4 +1,2 @@
-export * from './classNameFactory'
-export * from './EventEmitter'
-export * as localStorage from './localStorage'
-export * as theme from './theme'
+export { default as createElement } from './createElement'
+export { default as injectCSS } from './injectCSS'
