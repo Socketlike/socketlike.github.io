@@ -6,7 +6,7 @@ import { filter } from '@/router'
   <div class="wrapper">
     <div class="header">
       evie's pages
-      <span class="breadcrumb">{{ window.location.pathname }} </span>
+      <span class="breadcrumb">{{ $route.name }}</span>
     </div>
     <div class="nav">
       <router-link

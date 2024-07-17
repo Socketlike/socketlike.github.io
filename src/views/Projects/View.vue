@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { reactive } from 'vue'
 
 import list from './list'
 
@@ -21,12 +21,16 @@ const state = reactive([false])
         {{ label.text }}
       </span>
 
-      <template v-else-if="label.length > 0" v-for="({ text, style, tooltip }, index) of label">
+      <template
+        v-else-if="label.length > 0"
+        v-for="({ text, style, tooltip }, index) of label"
+        :key="index"
+      >
         <span class="label" :style="style" v-tooltip="tooltip">{{ text }}</span
         ><template v-if="index !== label.length">{{ ' ' }}</template>
       </template>
     </template>
-    <br />
+    <brk />
     <ul class="meta" :style="`display: ${state[index] ? 'block' : 'none'}`">
       <li class="inner">
         {{ description || 'no description' }}
@@ -62,8 +66,6 @@ const state = reactive([false])
 
   margin-right: 8px;
 
-  user-select: none;
-
   &:hover {
     color: blanchedalmond;
 
@@ -75,8 +77,6 @@ const state = reactive([false])
   color: darkgray;
 
   font-size: 12px;
-
-  user-select: none;
 
   &:before {
     color: darkgray;

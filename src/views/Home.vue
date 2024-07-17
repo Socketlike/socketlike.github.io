@@ -1,17 +1,17 @@
 <template>
   welcome to my github pages
-  <br v-for="_ in 3" />
+  <brk :for="3" />
   sorry i don't have much to say;
-  <br v-for="_ in 3" />
+  <brk :for="3" />
   even about myself or anything about this site in particular
-  <br v-for="_ in 2" />
+  <brk :for="2" />
   because it is nothing interesting
-  <br v-for="_ in 6" />
+  <brk :for="6" />
   this site has had 3 iterations so far;
-  <br v-for="_ in 2" />
+  <brk :for="2" />
   you are currently looking at the third iteration of this site; which is written in
   <a href="//v3.vuejs.org">[vue 3]</a>
-  <br v-for="_ in 3" />
+  <brk :for="3" />
   as for the previous two iterations:
   <ul>
     <li>
@@ -33,8 +33,8 @@
       >; which, probably, caused it to have a lot of janky wiring
     </li>
   </ul>
-  <br />
+  <brk />
   feel free to look and poke around with anything you see on this site!
-  <br v-for="_ in 2" />
+  <brk :for="2" />
   <div style="color: gray; font-size: 2px">window.__internals__</div>
 </template>

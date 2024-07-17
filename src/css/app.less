@@ -22,6 +22,14 @@
 
     justify-content: space-between;
 
+    &:not(.no-wrap) {
+      margin-top: 4px;
+    }
+
+    .no-wrap {
+      margin-bottom: 4px;
+    }
+
     .header,
     .footer {
       background-color: var(--background-color);
@@ -49,10 +57,15 @@
 
         font-weight: normal;
 
-        &:before {
-          color: darkgray;
+        max-width: 87.6em;
 
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        &:before {
           content: '> ';
+          color: darkgray;
         }
       }
     }

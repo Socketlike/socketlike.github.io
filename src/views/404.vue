@@ -1,11 +1,17 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const pathname = computed(() => window.location.pathname)
+</script>
+
 <template>
   <div class="highlight">something is wrong.</div>
-  <br />
+  <brk />
   <div>you tried to access a resource that does not exist.</div>
-  <br />
+  <brk />
   <div>did you make a typo?</div>
-  <br />
-  <div style="color: gray">&gt; could not resolve "{{ window.location.pathname }}"</div>
+  <brk />
+  <div style="color: gray">&gt; could not resolve "{{ pathname }}"</div>
 </template>
 
 <style scoped lang="less">

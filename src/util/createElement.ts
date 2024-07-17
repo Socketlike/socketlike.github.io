@@ -1,5 +1,3 @@
-import type { HtmlHTMLAttributes } from 'vue'
-
 export default (
   type: string,
   props?: Record<string, any>,
