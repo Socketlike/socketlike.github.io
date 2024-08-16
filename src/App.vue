@@ -22,6 +22,16 @@ import { filter } from '@/router'
     </div>
   </div>
 
+  <div class="section" v-if="$route.name === 'home'">
+    <div class="header">important</div>
+
+    <div class="wrapper">
+      due to problems with my laptop (which is the only computer i possess),
+      <brk :for="2" />
+      i will no longer be able to maintain any of my projects for an indefinite period.
+    </div>
+  </div>
+
   <main>
     <router-view v-slot="{ Component }">
       <template v-if="Component">

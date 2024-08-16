@@ -95,6 +95,7 @@
     }
   }
 
+  > .section,
   > main {
     background-color: var(--background-color);
 
@@ -109,5 +110,27 @@
 
     word-break: break-all;
     word-wrap: break-word;
+  }
+
+  > .section {
+    border: 2px solid var(--important);
+
+    height: fit-content;
+
+    overflow: visible;
+
+    padding: 0;
+
+    > .header {
+      background-color: var(--important);
+
+      padding: 4px;
+
+      color: var(--background-color-solid);
+    }
+
+    > .wrapper {
+      padding: 10px;
+    }
   }
 }
