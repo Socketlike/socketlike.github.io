@@ -15,22 +15,17 @@
   as for the previous two iterations:
   <ul>
     <li>
-      <a
-        href="//github.com/Socketlike/socketlike.github.io/tree/c01f306114b7b3e6de751b94f5e6afd83183a529/src"
-        v-tooltip="'(last commit: c01f306)'"
-        >[the first iteration]</a
-      >
+      <a href="//github.com/Socketlike/socketlike.github.io/tree/c01f306114b7b3e6de751b94f5e6afd83183a529/src"
+        v-tooltip="'(last commit: c01f306)'">[the first iteration]</a>
       was written in <a href="//react.dev">[react]</a>; which, probably, had some serious
       performance issues
     </li>
     <li>
-      <a
-        href="//github.com/Socketlike/socketlike.github.io/tree/6b29b402b4af63e86ddf77d36794c76f316e0a99/src"
-        >[the second iteration]</a
-      >
+      <a href="//github.com/Socketlike/socketlike.github.io/tree/6b29b402b4af63e86ddf77d36794c76f316e0a99/src">[the
+        second iteration]</a>
       was written in vue 3 and was tailored to look and feel the same as
-      <span class="note" v-tooltip="'which was composed of mostly jank'">[the first iteration]</span
-      >; which, probably, caused it to have a lot of janky wiring
+      <span class="note" v-tooltip="'which was composed of mostly jank'">[the first iteration]</span>; which, probably,
+      caused it to have a lot of janky wiring
     </li>
   </ul>
   <brk />
