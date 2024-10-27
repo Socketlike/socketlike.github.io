@@ -1,10 +1,24 @@
 :root {
   --background-color: rgba(30, 30, 30, 0.5);
-  --background-color-solid: #303030;
+  --background-color-solid: #303030; 
+  --background-color-hover: var(--background-floating-solid);
+  
   --background-floating: rgba(20, 20, 20, 0.9);
   --background-floating-solid: #202020;
+  --background-floating-hover: var(--background-color-solid);
+
   --note: yellow;
+
   --important: violet;
+
+  --link: cyan;
+  --link-hover: darkcyan;
+  --link-broken: gray;
+  --link-no-href: lightpink;
+  --link-no-href-hover: lightcoral;
+
+  --interactable: lightgreen;
+  --interactable-hover: limegreen;
 }
 
 body,
@@ -35,13 +49,13 @@ body {
 }
 
 a {
-  color: cyan;
+  color: var(--link);
 
   text-decoration: none;
 
   &.broken:after,
   &[href='']:after {
-    color: gray;
+    color: var(--link-broken);
 
     content: '(broken link)';
 
@@ -51,7 +65,7 @@ a {
   }
 
   &:not([href]) {
-    color: lightpink;
+    color: var(--link-no-href);
 
     &:after {
       &:extend(a.broken:after);
@@ -60,14 +74,14 @@ a {
     }
 
     &:hover {
-      color: lightcoral;
+      color: var(--link-no-href-hover);
 
       text-decoration: none;
     }
   }
 
   &:hover {
-    color: darkcyan;
+    color: var(--link-hover);
 
     text-decoration: underline;
   }

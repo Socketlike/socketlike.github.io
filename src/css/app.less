@@ -1,14 +1,14 @@
-@media screen and (width <= 767px) {
+/* @media screen and (width <= 767px) {
   #app {
-    > .wrapper:not(.no-wrap) {
+    > .wrapper-header {
       flex-direction: column;
 
-      .nav {
+      > .nav {
         justify-content: space-between;
       }
     }
   }
-}
+} */
 
 #app {
   display: flex;
@@ -17,60 +17,15 @@
 
   height: 100%;
 
-  > .wrapper {
+  > .wrapper-header,
+  > .wrapper-footer {
     display: flex;
 
     justify-content: space-between;
 
-    &:not(.no-wrap) {
-      margin-top: 4px;
-    }
+    margin-top: 4px;
 
-    .no-wrap {
-      margin-bottom: 4px;
-    }
-
-    .header,
-    .footer {
-      background-color: var(--background-color);
-
-      font-size: 14px;
-      font-weight: 800;
-
-      margin: 5px;
-      padding: 10px;
-    }
-
-    .header {
-      align-items: center;
-
-      display: flex;
-
-      gap: 8px;
-
-      justify-content: center;
-
-      .breadcrumb {
-        color: gray;
-
-        font-size: 12px;
-
-        font-weight: normal;
-
-        max-width: 87.6em;
-
-        overflow: hidden;
-
-        text-overflow: ellipsis;
-
-        &:before {
-          content: '> ';
-          color: darkgray;
-        }
-      }
-    }
-
-    .nav {
+    > .nav {
       display: flex;
 
       flex-wrap: wrap;
@@ -95,20 +50,149 @@
     }
   }
 
-  > .section,
-  > main {
+  > .wrapper-header {
+    flex-direction: row;
+    position: relative;
+
+    > .nav-button {
+      background-color: var(--background-color);
+      color: var(--interactable);
+
+      margin: 5px;
+      padding: 10px;
+
+      user-select: none;
+
+      &.open,
+      &:hover {
+        color: var(--interactable-hover);
+      }
+    }
+
+    > .nav {
+      background-color: var(--background-floating);
+
+      border: 2px solid var(--interactable);
+
+      display: none;
+
+      gap: 10px;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      padding: 10px;
+
+      position: absolute;
+
+      right: 0;
+      top: 90%;
+
+      z-index: 9999;
+
+      &.open {
+        display: grid;
+      }
+
+      a {
+        background-color: none;
+
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  > .wrapper-footer > .footer,
+  > .wrapper-header > .header {
+    background-color: var(--background-color);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    margin: 5px;
+    padding: 10px;
+  }
+
+  > .wrapper-header > .header {
+    align-items: center;
+
+    display: flex;
+
+    gap: 8px;
+
+    justify-content: center;
+  }
+
+  > .breadcrumbs-wrapper {
+    background-color: var(--background-floating-solid);
+
+    margin: 5px;
+    margin-bottom: 0;
+
+    padding: 5px;
+
+    position: relative;
+
+    > .breadcrumbs {
+      color: darkgray;
+
+      overflow: scroll hidden;
+
+      scrollbar-width: none;
+
+      white-space: nowrap;
+
+      > .breadcrumb:not(:first-child):before {
+        content: ' > ';
+        color: gray;
+      }
+    }
+
+    > .left-overlay,
+    > .right-overlay {
+      position: absolute;
+
+      top: 0;
+
+      width: 20px;
+      height: 100%;
+    }
+
+    > .left-overlay {
+      left: 0;
+    }
+
+    > .right-overlay {
+      right: 0;
+    }
+
+    &.left-scrollable > .left-overlay {
+      background-image: linear-gradient(to right, #434343, transparent);
+    }
+
+    &.right-scrollable > .right-overlay {
+      background-image: linear-gradient(to left, #434343, transparent);
+    }
+  }
+
+  > .wrapper-main {
     background-color: var(--background-color);
 
     height: 100%;
 
     margin: 5px;
+    margin-top: 0;
+
     padding: 10px;
 
-    overflow: scroll;
+    overflow: hidden scroll;
 
     scrollbar-width: none;
+  }
 
-    overflow-wrap: anywhere;
+  > .section,
+  > .wrapper-main > main {
+    overflow: visible;
   }
 
   > .section {
@@ -116,8 +200,7 @@
 
     height: fit-content;
 
-    overflow: visible;
-
+    margin: 5px;
     padding: 0;
 
     > .header {

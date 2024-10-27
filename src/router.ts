@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, type RouteRecordNormalized } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '@/views/Home.vue'
 
@@ -9,6 +9,7 @@ export default createRouter({
       name: '404',
       path: '/:void(.*)*',
       component: () => import('@/views/404.vue'),
+      meta: { hidden: true },
     },
     {
       name: 'home',
@@ -21,13 +22,9 @@ export default createRouter({
       component: () => import('@/views/Projects/View.vue'),
     },
     {
-      name: 'util',
-      path: '/util',
+      name: 'epiphanies',
+      path: '/epips',
       component: () => import('@/views/Util.vue'),
     },
   ].sort(({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB)),
 })
-
-export const filter = (route: RouteRecordNormalized): boolean => {
-  return route.name !== '404'
-}

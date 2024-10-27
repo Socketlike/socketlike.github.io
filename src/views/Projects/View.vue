@@ -3,7 +3,7 @@ import { reactive } from 'vue'
 
 import list from './list'
 
-const state = reactive([false])
+const state = reactive([] as boolean[])
 </script>
 
 <template>
