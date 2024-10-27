@@ -2,13 +2,15 @@
 import { ref, onMounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
+import AlertRhombusFill from '@pictogrammers/memory-svg/svg/alert-rhombus-fill.svg'
+
+/*
 const breadcrumbs = ref<HTMLDivElement | null>(null)
 const breadcrumbsWrapper = ref<HTMLDivElement | null>(null)
+*/
 
 const main = ref<HTMLDivElement | null>(null)
 const mainWrapper = ref<HTMLDivElement | null>(null)
-
-const navOpen = ref(false)
 
 const router = useRouter()
 const currentRoute = useRoute()
@@ -35,6 +37,8 @@ const scrollHandler = (
   }
 }
 
+/*
+
 const breadcrumbsScrollHandler = ({ target }: Event): void =>
   scrollHandler(target as HTMLDivElement, breadcrumbsWrapper.value!, true)
 
@@ -45,6 +49,8 @@ onMounted((): void => {
 watch(currentRoute, (): void => {
   queueMicrotask(() => breadcrumbsScrollHandler({ target: breadcrumbs.value! } as unknown as Event))
 })
+
+*/
 </script>
 
 <template>
@@ -66,7 +72,7 @@ watch(currentRoute, (): void => {
 
       </template>
 </v-tooltip> -->
-    <div @click='navOpen = !navOpen' :class="`nav-button ${navOpen ? 'open' : ''}`">
+    <!-- <div @click='navOpen = !navOpen' :class="`nav-button ${navOpen ? 'open' : ''}`">
       nav <{{ navOpen ? 'close' : 'open' }}>
     </div>
 
@@ -78,19 +84,27 @@ watch(currentRoute, (): void => {
         )" :key="route.path" :to="{ name: route.name }">
         [{{ route.name }}]
       </router-link>
+</div> -->
+
+    <div class="nav">
+      <router-link v-for="route in router
+        .getRoutes()
+        .filter((route) => !route.meta.hidden && !route.meta.child && route.name !== currentRoute.name)"
+        :key="route.path" :to="{ name: route.name }"> [{{ route.name }}] </router-link>
     </div>
   </div>
 
-  <div class="section" v-if="currentRoute.name === 'home'">
-    <div class="header">important</div>
+  <content-section collapsible type="important" v-if="currentRoute.name === 'home'">
+    <template #header>
+      <AlertRhombusFill class="inline" style="width: 1.25em" /> notice
+    </template>
 
-    <div class="wrapper">
-      due to problems with my laptop (which is the only computer i possess),
-      <brk :for="2" />
-      i will no longer be able to maintain any of my projects for an indefinite period.
-    </div>
-  </div>
+    due to problems with my laptop (which was the only computer i had),
+    <brk :for="2" />
+    i will no longer be able to maintain any of my projects for an indefinite period.
+  </content-section>
 
+  <!--
   <div class="breadcrumbs-wrapper" ref="breadcrumbsWrapper">
     <div class="left-overlay" />
     <div class="right-overlay" />
@@ -101,20 +115,27 @@ watch(currentRoute, (): void => {
       </span>
     </div>
   </div>
+-->
 
-  <div class="wrapper-main" ref="mainWrapper">
-    <main ref="main">
-      <router-view v-slot="{ Component }">
-        <template v-if="Component">
-          <suspense>
-            <component :is="Component" />
+  <content-section class="wrapper-main" ref="mainWrapper">
+    <template #header>
+      <span v-for="{ name } in currentRoute.matched" class="breadcrumb" :key="name">
+        {{ name }}
+      </span>
+    </template>
 
-            <template #fallback>loading</template>
-          </suspense>
-        </template>
-      </router-view>
-    </main>
-  </div>
+    <router-view v-slot="{ Component }">
+      <template v-if="Component">
+        <suspense>
+          <component :is="Component" />
+
+          <template #fallback>
+            loading...
+          </template>
+        </suspense>
+      </template>
+    </router-view>
+  </content-section>
 
   <div class="wrapper-footer">
     <div class="nav">

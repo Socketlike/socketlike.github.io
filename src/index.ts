@@ -4,6 +4,7 @@ import FloatingVue from 'floating-vue'
 import App from '@/App.vue'
 
 import BreakLine from '@/components/BreakLine.vue'
+import ContentSection from '@/components/ContentSection.vue'
 
 import * as util from '@/util'
 import router from '@/router'
@@ -26,4 +27,4 @@ window.__internals__ = {
 }
 
 /* eslint-disable-next-line vue/multi-word-component-names */
-app.component('brk', BreakLine).use(router).use(FloatingVue).mount('#app')
+app.component('brk', BreakLine).component('content-section', ContentSection).use(router).use(FloatingVue).mount('#app')

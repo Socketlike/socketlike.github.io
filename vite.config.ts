@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // import { plugin as markdown, Mode } from 'vite-plugin-markdown'
+import svg from 'vite-svg-loader'
 
 export default defineConfig({
   plugins: [
@@ -12,6 +13,7 @@ export default defineConfig({
     /* markdown({
       mode: [Mode.VUE],
     }), */
+    svg(),
   ],
 
   server: {

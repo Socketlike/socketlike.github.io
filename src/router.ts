@@ -24,7 +24,7 @@ export default createRouter({
     {
       name: 'epiphanies',
       path: '/epips',
-      component: () => import('@/views/Util.vue'),
+      component: () => import('@/views/Epiphanies.vue'),
     },
   ].sort(({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB)),
 })
