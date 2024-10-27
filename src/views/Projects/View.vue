@@ -12,13 +12,22 @@ const state = reactive([] as boolean[])
     <template v-if="label">
       <span class="label" v-if="typeof label === 'string'">{{ label }}</span>
 
-      <span class="label" v-else-if="!Array.isArray(label)" :style="label.style" v-tooltip="label.tooltip">
+      <span
+        class="label"
+        v-else-if="!Array.isArray(label)"
+        :style="label.style"
+        v-tooltip="label.tooltip"
+      >
         {{ label.text }}
       </span>
 
-      <template v-else-if="label.length > 0" v-for="({ text, style, tooltip }, index) of label" :key="index">
-        <span class="label" :style="style" v-tooltip="tooltip">{{ text }}</span><template
-          v-if="index !== label.length">{{ ' ' }}</template>
+      <template
+        v-else-if="label.length > 0"
+        v-for="({ text, style, tooltip }, index) of label"
+        :key="index"
+      >
+        <span class="label" :style="style" v-tooltip="tooltip">{{ text }}</span
+        ><template v-if="index !== label.length">{{ ' ' }}</template>
       </template>
     </template>
     <brk />
@@ -40,7 +49,8 @@ const state = reactive([] as boolean[])
           links:
           <ul>
             <li v-for="({ label, href }, index) of link" :key="index">
-              <a :href="href">{{ label }}</a><template v-if="link.length - 1 !== index">,</template>
+              <a :href="href">{{ label }}</a
+              ><template v-if="link.length - 1 !== index">,</template>
             </li>
           </ul>
         </li>

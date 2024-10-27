@@ -87,17 +87,22 @@ watch(currentRoute, (): void => {
 </div> -->
 
     <div class="nav">
-      <router-link v-for="route in router
-        .getRoutes()
-        .filter((route) => !route.meta.hidden && !route.meta.child && route.name !== currentRoute.name)"
-        :key="route.path" :to="{ name: route.name }"> [{{ route.name }}] </router-link>
+      <router-link
+        v-for="route in router
+          .getRoutes()
+          .filter(
+            (route) => !route.meta.hidden && !route.meta.child && route.name !== currentRoute.name,
+          )"
+        :key="route.path"
+        :to="{ name: route.name }"
+      >
+        [{{ route.name }}]
+      </router-link>
     </div>
   </div>
 
   <content-section collapsible type="important" v-if="currentRoute.name === 'home'">
-    <template #header>
-      <AlertRhombusFill class="inline" style="width: 1.25em" /> notice
-    </template>
+    <template #header> <AlertRhombusFill class="inline" style="width: 1.25em" /> notice </template>
 
     due to problems with my laptop (which was the only computer i had),
     <brk :for="2" />
@@ -129,9 +134,7 @@ watch(currentRoute, (): void => {
         <suspense>
           <component :is="Component" />
 
-          <template #fallback>
-            loading...
-          </template>
+          <template #fallback> loading... </template>
         </suspense>
       </template>
     </router-view>
@@ -143,7 +146,7 @@ watch(currentRoute, (): void => {
     </div>
     <div class="footer">
       made with <span style="color: crimson">{{ 'love <3' }}</span> by
-          <span style="color: beige">evie</span>
+      <span style="color: beige">evie</span>
     </div>
   </div>
 </template>

@@ -5,10 +5,10 @@ import ChevronDown from '@pictogrammers/memory-svg/svg/chevron-down.svg'
 import ChevronUp from '@pictogrammers/memory-svg/svg/chevron-up.svg'
 
 const props = defineProps<{
-  type?: string;
+  type?: string
 
-  collapsible?: boolean;
-  collapsed?: boolean;
+  collapsible?: boolean
+  collapsed?: boolean
 }>()
 
 const collapsed = ref(Boolean(props.collapsed))
@@ -21,7 +21,11 @@ const collapsed = ref(Boolean(props.collapsed))
         <slot name="header" />
       </div>
 
-      <component class="collapse-button inline" v-if="props.collapsible" :is="collapsed ? ChevronUp : ChevronDown" />
+      <component
+        class="collapse-button inline"
+        v-if="props.collapsible"
+        :is="collapsed ? ChevronUp : ChevronDown"
+      />
     </div>
 
     <div class="wrapper" v-if="!props.collapsible || !collapsed">

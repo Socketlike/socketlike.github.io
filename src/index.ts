@@ -27,4 +27,9 @@ window.__internals__ = {
 }
 
 /* eslint-disable-next-line vue/multi-word-component-names */
-app.component('brk', BreakLine).component('content-section', ContentSection).use(router).use(FloatingVue).mount('#app')
+app
+  .component('brk', BreakLine)
+  .component('content-section', ContentSection)
+  .use(router)
+  .use(FloatingVue)
+  .mount('#app')
