@@ -7,7 +7,10 @@ export const available = ((): boolean => {
 
       return true
     }
-  } catch (e) {}
+  } catch (e) {
+    // i needed to have something here to make the lint
+    // not trip! anyways, how's your day?
+  }
 
   return false
 })()
