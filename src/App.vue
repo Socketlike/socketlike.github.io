@@ -15,6 +15,8 @@ const mainWrapper = ref<HTMLDivElement | null>(null)
 const router = useRouter()
 const currentRoute = useRoute()
 
+/*
+
 const scrollHandler = (
   target: HTMLDivElement,
   wrapper: HTMLDivElement,
@@ -36,8 +38,6 @@ const scrollHandler = (
     else wrapper.classList.remove('bottom-scrollable')
   }
 }
-
-/*
 
 const breadcrumbsScrollHandler = ({ target }: Event): void =>
   scrollHandler(target as HTMLDivElement, breadcrumbsWrapper.value!, true)
@@ -102,7 +102,9 @@ watch(currentRoute, (): void => {
   </div>
 
   <content-section collapsible type="important" v-if="currentRoute.name === 'home'">
-    <template #header> <AlertRhombusFill class="inline" style="width: 1.25em" /> notice </template>
+    <template #header>
+      <AlertRhombusFill class="inline" style="width: 1.25em" /> important
+    </template>
 
     due to problems with my laptop (which was the only computer i had),
     <brk :for="2" />

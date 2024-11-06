@@ -1,0 +1,13 @@
+@keyframes background-scroll {
+  100% {
+    background-position: 100vw 0;
+  }
+}
+
+html[data-theme='omori'] body {
+  background-image: url('../../assets/background-omori.png');
+  background-size: contain;
+  background-position: 0 0;
+
+  animation: background-scroll 30s linear infinite;
+}

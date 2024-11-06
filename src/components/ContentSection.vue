@@ -16,8 +16,15 @@ const collapsed = ref(Boolean(props.collapsed))
 
 <template>
   <div class="section" :data-type="props.type">
-    <div class="header" @click="collapsed = !collapsed">
-      <div class="wrapper">
+    <div
+      class="header"
+      @click="
+        () => {
+          if (props.collapsible) collapsed = !collapsed
+        }
+      "
+    >
+      <div class="wrapper" v-if="$slots.header">
         <slot name="header" />
       </div>
 
@@ -28,8 +35,14 @@ const collapsed = ref(Boolean(props.collapsed))
       />
     </div>
 
-    <div class="wrapper" v-if="!props.collapsible || !collapsed">
+    <div :class="['wrapper', collapsed && 'collapsed']">
       <slot />
     </div>
   </div>
 </template>
+
+<style scoped lang="less">
+.section .wrapper.collapsed {
+  display: none;
+}
+</style>

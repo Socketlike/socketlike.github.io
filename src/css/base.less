@@ -7,6 +7,8 @@
   --background-floating-solid: #202020;
   --background-floating-hover: var(--background-color-solid);
 
+  --background-lighter-solid: #404040;
+
   --note: yellow;
 
   --important: violet;
@@ -19,6 +21,9 @@
 
   --interactable: lightgreen;
   --interactable-hover: limegreen;
+
+  --text-color: #fff;
+  --text-darker-color: #bbb;
 }
 
 body,
@@ -33,15 +38,16 @@ body {
   background-position: center center;
   background-size: cover;
 
-  color: #fff;
+  color: var(--text-color);
 
   display: flex;
 
   flex-direction: column;
 
   font-family: monospace;
-
   font-size: 14px;
+
+  word-break: break-word;
 
   max-height: 100%;
 }
