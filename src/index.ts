@@ -46,9 +46,7 @@ const themeStore = stores.theme.useThemeStore()
 vue.watchEffect(() => {
   appDOM?.setAttribute?.('data-theme', themeStore.theme as string)
 
-  document.documentElement.setAttribute(
-    'data-theme', themeStore.theme as string
-  )
+  document.documentElement.setAttribute('data-theme', themeStore.theme as string)
 })
 
 vue.watchEffect(() => {
