@@ -5,6 +5,7 @@ declare class CustomWindow extends Window {
 
     router: import('@/router')
     util: import('@/util')
+    stores: import('@/stores')
 
     vue: import('vue')
   }

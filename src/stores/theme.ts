@@ -13,9 +13,9 @@ export const useThemeStore = defineStore('theme', () => {
 
   const reduceMotion = ref<boolean>(ls.get('reduce-motion', 'false') === 'true')
 
-  const setTheme = (newTheme: (typeof themes)[number]): boolean => {
-    if (themes.includes(newTheme)) {
-      theme.value = newTheme
+  const setTheme = (newTheme?: (typeof themes)[number]): boolean => {
+    if (themes.includes(newTheme!)) {
+      theme.value = newTheme!
 
       return ls.set('neo-theme', newTheme as string)
     }
