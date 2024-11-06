@@ -33,7 +33,13 @@ const themeStore = theme.useThemeStore()
     </template>
 
     theme:
-    <select :value="themeStore.theme" @change="(e) => themeStore.setTheme(e.target?.value)">
+    <select
+      :value="themeStore.theme"
+      @change="
+        // @ts-expect-error - can't fix this
+        (e) => themeStore.setTheme(e.target?.value)
+      "
+    >
       <option v-for="t in theme.themes" :key="t" :value="t">{{ t }}</option>
     </select>
 
