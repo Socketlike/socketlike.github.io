@@ -32,7 +32,6 @@ window.__internals__ = {
   vue,
 }
 
- 
 app
   .component('Brk', BreakLine)
   .component('content-section', ContentSection)
