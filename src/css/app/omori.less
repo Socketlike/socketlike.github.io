@@ -1,13 +1,221 @@
 @keyframes background-scroll {
   100% {
-    background-position: 100vw 0;
+    background-position: 512px 0;
   }
 }
 
 html[data-theme='omori'] body {
   background-image: url('../../assets/background-omori.png');
-  background-size: contain;
+  background-size: auto;
   background-position: 0 0;
 
-  animation: background-scroll 30s linear infinite;
+  animation: background-scroll var(--omori-background-animation-time) linear infinite;
+}
+
+#app[data-theme='omori'] {
+  display: flex;
+
+  flex-direction: column;
+  gap: 16px;
+
+  height: 100%;
+  margin: 8px;
+
+  box-sizing: border-box;
+
+  svg.inline {
+    display: inline;
+
+    vertical-align: text-bottom;
+  }
+}
+
+#app[data-theme='omori'] > .wrapper-header {
+  display: flex;
+
+  flex-direction: column;
+  gap: 4px;
+
+  > .header {
+    background-color: black;
+
+    font-weight: 800;
+
+    border: 4px solid white;
+    outline: 1px solid black;
+    padding: 8px;
+
+    max-width: fit-content;
+
+    box-sizing: border-box;
+  }
+
+  > .nav {
+    background-color: black;
+
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 8px;
+
+    border: 4px solid white;
+    outline: 1px solid black;
+    padding: 8px;
+  }
+}
+
+#app[data-theme='omori'] .section {
+  > .header {
+    background-color: black;
+
+    font-weight: 800;
+
+    display: flex;
+
+    border: 4px solid white;
+    outline: 1px solid black;
+    padding: 8px;
+
+    user-select: none;
+
+    svg {
+      fill: currentColor;
+    }
+
+    > .wrapper {
+      display: inline;
+
+      flex: 1;
+    }
+
+    > .collapse-button {
+      width: 16px;
+    }
+  }
+
+  &[data-type='important'] {
+    > .wrapper {
+      border-color: var(--important);
+    }
+
+    > .header {
+      border-color: var(--important);
+      color: var(--important);
+    }
+  }
+
+  &[data-type='interactable'] {
+    > .wrapper {
+      border-color: var(--interactable);
+    }
+
+    > .header {
+      border-color: var(--interactable);
+      color: var(--interactable);
+    }
+  }
+
+  &[data-type='note'] {
+    > .wrapper {
+      border-color: var(--note);
+    }
+
+    > .header {
+      border-color: var(--note);
+      color: var(--note);
+    }
+  }
+
+  &[data-type="this is using the <a> color. if you're seeing this, hi!"] {
+    > .wrapper {
+      border-color: var(--link);
+    }
+
+    > .header {
+      border-color: var(--link);
+      color: var(--link);
+    }
+  }
+
+  > .wrapper {
+    background-color: black;
+
+    border: 4px solid white;
+    outline: 1px solid black;
+    margin-top: 4px;
+    padding: 12px;
+
+    box-sizing: border-box;
+  }
+}
+
+#app[data-theme='omori'] > .wrapper-main {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  > .header > .wrapper > .breadcrumb:not(:first-child):before {
+    content: ' > ';
+
+    font-size: smaller;
+
+    vertical-align: baseline;
+  }
+}
+
+#app[data-theme='omori'] > .wrapper-footer {
+  display: flex;
+
+  gap: 4px;
+  justify-content: space-between;
+
+  > .nav,
+  > .footer {
+    background-color: black;
+
+    border: 4px solid white;
+    outline: 1px solid black;
+    padding: 8px;
+
+    box-sizing: border-box;
+  }
+}
+
+#app[data-theme='omori'] {
+  select,
+  .select {
+    background-color: black;
+    color: white;
+
+    font-family: monospace;
+
+    border: 4px solid white;
+    outline: 1px solid black;
+    padding: 4px;
+
+    box-sizing: border-box;
+  }
+
+  button.switch {
+    background-color: black;
+    color: white;
+
+    font-family: monospace;
+
+    border: 4px solid white;
+    outline: 1px solid black;
+    padding: 4px 8px;
+
+    box-sizing: border-box;
+
+    &.on:before {
+      content: 'on';
+    }
+
+    &.off:before {
+      content: 'off';
+    }
+  }
 }

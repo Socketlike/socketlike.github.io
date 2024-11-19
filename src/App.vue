@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { computed, ref } from 'vue'
+import { useRouter, useRoute, type RouteRecordRaw } from 'vue-router'
 
 import AlertRhombusFill from '@pictogrammers/memory-svg/svg/alert-rhombus-fill.svg'
 
@@ -51,51 +51,45 @@ watch(currentRoute, (): void => {
 })
 
 */
+
+const filter = (route: RouteRecordRaw): boolean =>
+  !route.meta?.hidden && !route.meta?.childOf && route.name !== currentRoute.name
+
+const navList = ref(router.options.routes.filter(filter))
+
+const breadcrumbs = computed(() => {
+  if (!currentRoute)
+    return []
+
+  const res = [currentRoute.name] as string[]
+
+  let parentGetter = currentRoute.meta.childOf
+
+  while (typeof parentGetter === 'function') {
+    const parent = parentGetter()
+
+    res.unshift(parent.name)
+
+    parentGetter = parent.meta?.childOf
+  }
+
+  return res
+})
+
+const overrideBreadcrumbs = ref('')
+
+router.afterEach(() => {
+  navList.value = router.options.routes.filter(filter)
+  overrideBreadcrumbs.value = ''
+})
 </script>
 
 <template>
   <div class="wrapper-header">
     <div class="header">evie's pages</div>
-    <!--    <v-tooltip class="menu" :triggers="['click']">
-      <div class="label">
-        menu
-      </div>
-
-      <template #popper>
-        <router-link v-for="route in router
-          .getRoutes()
-          .filter(
-            (route) => !route.meta.hidden && !route.meta.child && route.name !== currentRoute.name,
-          )" :key="route.path" :to="{ name: route.name }">
-          [{{ route.name }}]
-        </router-link>
-
-      </template>
-</v-tooltip> -->
-    <!-- <div @click='navOpen = !navOpen' :class="`nav-button ${navOpen ? 'open' : ''}`">
-      nav <{{ navOpen ? 'close' : 'open' }}>
-    </div>
-
-    <div :class="`nav ${navOpen ? 'open' : ''}`">
-      <router-link v-for="route in router
-        .getRoutes()
-        .filter(
-          (route) => !route.meta.hidden && !route.meta.child && route.name !== currentRoute.name,
-        )" :key="route.path" :to="{ name: route.name }">
-        [{{ route.name }}]
-      </router-link>
-</div> -->
 
     <div class="nav">
-      <router-link
-        v-for="route in router
-          .getRoutes()
-          .filter(
-            (route) => !route.meta.hidden && !route.meta.child && route.name !== currentRoute.name,
-          )"
-        :key="route.path"
-        :to="{ name: route.name }"
-      >
+      <router-link v-for="route in navList" :key="route.path" :to="route">
         [{{ route.name }}]
       </router-link>
     </div>
@@ -111,22 +105,10 @@ watch(currentRoute, (): void => {
     i will no longer be able to maintain any of my projects for an indefinite period.
   </content-section>
 
-  <!--
-  <div class="breadcrumbs-wrapper" ref="breadcrumbsWrapper">
-    <div class="left-overlay" />
-    <div class="right-overlay" />
-
-    <div class="breadcrumbs" ref="breadcrumbs" @scroll="breadcrumbsScrollHandler">
-      <span v-for="{ name } in currentRoute.matched" class="breadcrumb" :key="name">
-        {{ name }}
-      </span>
-    </div>
-  </div>
--->
-
   <content-section class="wrapper-main" ref="mainWrapper">
     <template #header>
-      <span v-for="{ name } in currentRoute.matched" class="breadcrumb" :key="name">
+      <span class='breadcrumb' v-for="name in (!overrideBreadcrumbs ? breadcrumbs : overrideBreadcrumbs.split(','))"
+        :key="name">
         {{ name }}
       </span>
     </template>
@@ -134,7 +116,8 @@ watch(currentRoute, (): void => {
     <router-view v-slot="{ Component }">
       <template v-if="Component">
         <suspense>
-          <component :is="Component" />
+          <component @overrideBreadcrumbs="(breadcrumbs) => overrideBreadcrumbs = String(breadcrumbs)"
+            :is="Component" />
 
           <template #fallback> loading... </template>
         </suspense>
@@ -148,7 +131,7 @@ watch(currentRoute, (): void => {
     </div>
     <div class="footer">
       made with <span style="color: crimson">{{ 'love <3' }}</span> by
-      <span style="color: beige">evie</span>
+          <span style="color: beige">evie</span>
     </div>
   </div>
 </template>

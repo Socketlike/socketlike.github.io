@@ -58,3 +58,16 @@ vue.watchEffect(() => {
     document.documentElement.removeAttribute('data-reduce-motion')
   }
 })
+
+const resizeListener = () => {
+  const clientSize = document.documentElement.getBoundingClientRect()
+
+  document.documentElement.style.setProperty(
+    '--omori-background-animation-time',
+    `${((Math.max(Number(clientSize?.width) || 0, 512)) / 512) * 5 || 5}s`,
+  )
+}
+
+addEventListener('resize', resizeListener)
+
+resizeListener()

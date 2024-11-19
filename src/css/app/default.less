@@ -102,6 +102,18 @@
 
 #app[data-theme='default'] > .wrapper-main {
   flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  > .header > .wrapper > .breadcrumb:not(:first-child):before {
+    content: ' > ';
+
+    font-size: smaller;
+
+    vertical-align: baseline;
+  }
 }
 
 #app[data-theme='default'] > .wrapper-footer {
