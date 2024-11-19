@@ -32,9 +32,9 @@ window.__internals__ = {
   vue,
 }
 
-/* eslint-disable-next-line vue/multi-word-component-names */
+ 
 app
-  .component('brk', BreakLine)
+  .component('Brk', BreakLine)
   .component('content-section', ContentSection)
   .use(router)
   .use(pinia)
@@ -64,7 +64,7 @@ const resizeListener = () => {
 
   document.documentElement.style.setProperty(
     '--omori-background-animation-time',
-    `${((Math.max(Number(clientSize?.width) || 0, 512)) / 512) * 5 || 5}s`,
+    `${(Math.max(Number(clientSize?.width) || 0, 512) / 512) * 5 || 5}s`,
   )
 }
 

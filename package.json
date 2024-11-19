@@ -8,8 +8,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "types:check": "vue-tsc --build --force",
-    "eslint:check": "eslint . --ext .vue,.js,.jsx,.cjs.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
-    "eslint:fix": "run-p \"eslint:check --fix\" --",
+    "eslint:check": "eslint .",
     "prettier:check": "prettier -c src/",
     "prettier:fix": "prettier -w src/",
     "check": "run-p types:check eslint:check prettier:check"
@@ -25,6 +24,8 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.3",
+    "@eslint/js": "^9.15.0",
     "@rushstack/eslint-patch": "^1.10.4",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^22.9.0",

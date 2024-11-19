@@ -58,8 +58,7 @@ const filter = (route: RouteRecordRaw): boolean =>
 const navList = ref(router.options.routes.filter(filter))
 
 const breadcrumbs = computed(() => {
-  if (!currentRoute)
-    return []
+  if (!currentRoute) return []
 
   const res = [currentRoute.name] as string[]
 
@@ -95,7 +94,7 @@ router.afterEach(() => {
     </div>
   </div>
 
-  <content-section collapsible type="important" v-if="currentRoute.name === 'home'">
+  <content-section v-if="currentRoute.name === 'home'" collapsible type="important">
     <template #header>
       <AlertRhombusFill class="inline" style="width: 1.25em" /> important
     </template>
@@ -105,10 +104,13 @@ router.afterEach(() => {
     i will no longer be able to maintain any of my projects for an indefinite period.
   </content-section>
 
-  <content-section class="wrapper-main" ref="mainWrapper">
+  <content-section ref="mainWrapper" class="wrapper-main">
     <template #header>
-      <span class='breadcrumb' v-for="name in (!overrideBreadcrumbs ? breadcrumbs : overrideBreadcrumbs.split(','))"
-        :key="name">
+      <span
+        v-for="name in !overrideBreadcrumbs ? breadcrumbs : overrideBreadcrumbs.split(',')"
+        :key="name"
+        class="breadcrumb"
+      >
         {{ name }}
       </span>
     </template>
@@ -116,8 +118,12 @@ router.afterEach(() => {
     <router-view v-slot="{ Component }">
       <template v-if="Component">
         <suspense>
-          <component @overrideBreadcrumbs="(breadcrumbs) => overrideBreadcrumbs = String(breadcrumbs)"
-            :is="Component" />
+          <component
+            :is="Component"
+            @override-breadcrumbs="
+              (breadcrumbs: unknown) => (overrideBreadcrumbs = String(breadcrumbs))
+            "
+          />
 
           <template #fallback> loading... </template>
         </suspense>
@@ -131,7 +137,7 @@ router.afterEach(() => {
     </div>
     <div class="footer">
       made with <span style="color: crimson">{{ 'love <3' }}</span> by
-          <span style="color: beige">evie</span>
+      <span style="color: beige">evie</span>
     </div>
   </div>
 </template>

@@ -24,14 +24,14 @@ const collapsed = ref(Boolean(props.collapsed))
         }
       "
     >
-      <div class="wrapper" v-if="$slots.header">
+      <div v-if="$slots.header" class="wrapper">
         <slot name="header" />
       </div>
 
       <component
-        class="collapse-button inline"
-        v-if="props.collapsible"
         :is="collapsed ? ChevronUp : ChevronDown"
+        v-if="props.collapsible"
+        class="collapse-button inline"
       />
     </div>
 

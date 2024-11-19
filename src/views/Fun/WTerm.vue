@@ -2,12 +2,10 @@
 import { onMounted, reactive } from 'vue'
 
 const emit = defineEmits<{
-  overrideBreadcrumbs: string
+  (e: 'overrideBreadcrumbs', value: string): void
 }>()
 
-const history = reactive([
-  'hi',
-])
+const history = reactive(['hi'])
 
 onMounted(() => {
   emit('overrideBreadcrumbs', ['wterm', 'user'].toString())

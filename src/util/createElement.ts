@@ -16,7 +16,7 @@ export default (
         continue
       }
 
-      // @ts-expect-error
+      // @ts-expect-error -- it doesn't really matter if `key` doesn't exist in element
       element[key] = props[key]
     }
 
