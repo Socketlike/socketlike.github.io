@@ -2,16 +2,26 @@ import { type Ref, ref, watch } from 'vue'
 
 import { defineStore } from 'pinia'
 
-import { parse } from 'shell-quote'
+import { type ParseEntry, parse } from 'shell-quote'
 
 import * as ls from '@/util/localStorage'
 
-const builtins: Record<string, (args: string[], context: { terminalView: Ref<string[]>, environment: Ref<Record<string, string>>, username: Ref<string>, device: Ref<string> }) => void> = {
+const builtins: Record<
+  string,
+  (
+    args: ParseEntry[],
+    context: {
+      terminalView: Ref<string[]>
+      environment: Ref<Record<string, string>>
+      username: Ref<string>
+      device: Ref<string>
+    },
+  ) => void
+> = {
   echo: (args, { terminalView }) => {
     const content = args.join(' ')
 
-    if (content)
-      terminalView.value.push(content)
+    if (content) terminalView.value.push(content)
   },
 
   clear: (_, { terminalView }) => {
@@ -31,10 +41,9 @@ const builtins: Record<string, (args: string[], context: { terminalView: Ref<str
       case 'username': {
         switch (args[1]) {
           case 'set': {
-            if (!args[2])
-              terminalView.value.push('fatal: given empty username')
+            if (!args[2]) terminalView.value.push('fatal: given empty username')
             else {
-              username.value = args[2]
+              username.value = args[2] as unknown as string
 
               terminalView.value.push(`set username to "${args[2]}"`)
             }
@@ -76,12 +85,13 @@ export const useTerminalStore = defineStore('terminal', () => {
   })
 
   const handle = (str: string) => {
-    const [exec, ...args] = parse(str, environment)
+    const [exec, ...args] = parse(
+      str,
+      environment as unknown as { readonly [x: string]: string },
+    ) as [string, ...ParseEntry[]]
 
-    if (exec in builtins)
-      builtins[exec](args, { terminalView, environment, username, device })
-    else
-      terminalView.value.push(`fatal: unknown command "${exec}"`)
+    if (exec in builtins) builtins[exec](args, { terminalView, environment, username, device })
+    else terminalView.value.push(`fatal: unknown command "${exec}"`)
 
     if (str !== commandHistory.value[commandHistory.value.length - 1])
       commandHistory.value.push(str)
@@ -92,7 +102,7 @@ export const useTerminalStore = defineStore('terminal', () => {
   }
 
   const _parse = (str: string) => {
-    return parse(str, environment)
+    return parse(str, environment as unknown as { readonly [x: string]: string })
   }
 
   return {

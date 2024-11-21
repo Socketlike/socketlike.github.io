@@ -6,7 +6,7 @@ const emit = defineEmits<{
   (e: 'overrideBreadcrumbs', value: string): void
 }>()
 
-const inputElement = ref<HTMLSpanElement>(null)
+const inputElement = ref<HTMLSpanElement>()
 
 const { commandHistory, handle, prompt, terminalView } = terminal.useTerminalStore()
 
@@ -23,54 +23,56 @@ onMounted(() => {
   <div class="terminal-view" @click="inputElement?.focus?.()">
     <div v-for="(line, index) in terminalView" :key="index">{{ line }}</div>
     <span class="prompt">{{ prompt() }}</span>
-    <span class="input" contenteditable ref="inputElement" @keydown="(e) => {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault()
-        e.stopPropagation()
+    <span
+      class="input"
+      contenteditable
+      ref="inputElement"
+      @keydown="
+        (e) => {
+          if (!e.target) return
 
-        handle(e.target.textContent)
+          const target = e.target as HTMLSpanElement
 
-        e.target.textContent = ''
+          if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault()
+            e.stopPropagation()
 
-        currentHistory = -1
-        buf = ''
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault()
-        e.stopPropagation()
+            handle(target.textContent || '')
 
-        if (currentHistory >= commandHistory.length - 1)
-          return
+            target.textContent = ''
 
-        if (currentHistory === -1)
-          buf = e.target.textContent
+            currentHistory = -1
+            buf = ''
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault()
+            e.stopPropagation()
 
-        currentHistory++
+            if (currentHistory >= commandHistory.length - 1) return
 
-        e.target.textContent = commandHistory[
-          commandHistory.length - 1 - currentHistory
-        ]
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault()
-        e.stopPropagation()
+            if (currentHistory === -1) buf = target.textContent || ''
 
-        if (currentHistory === -1)
-          return
+            currentHistory++
 
-        currentHistory--
+            target.textContent = commandHistory[commandHistory.length - 1 - currentHistory]
+          } else if (e.key === 'ArrowDown') {
+            e.preventDefault()
+            e.stopPropagation()
 
-        if (currentHistory === -1)
-          e.target.textContent = buf
-        else
-          e.target.textContent = commandHistory[
-            commandHistory.length - 1 - currentHistory
-          ]
-      }
-    }"></span>
+            if (currentHistory === -1) return
+
+            currentHistory--
+
+            if (currentHistory === -1) target.textContent = buf
+            else target.textContent = commandHistory[commandHistory.length - 1 - currentHistory]
+          }
+        }
+      "
+    ></span>
   </div>
 </template>
 
 <style scoped lang="less">
 .input {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 </style>
