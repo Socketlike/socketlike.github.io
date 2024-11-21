@@ -18,6 +18,7 @@
     "floating-vue": "^5.2.2",
     "markdown-it": "^14.1.0",
     "pinia": "^2.2.6",
+    "shell-quote": "^1.8.1",
     "typescript": "^5.6.3",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.5.12",

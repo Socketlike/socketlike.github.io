@@ -8,5 +8,6 @@ declare class CustomWindow extends Window {
     stores: import('@/stores')
 
     vue: import('vue')
+    shellQuote: import('shell-quote')
   }
 }

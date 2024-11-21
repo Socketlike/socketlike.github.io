@@ -1,6 +1,7 @@
 import * as vue from 'vue'
 import { createPinia } from 'pinia'
 import FloatingVue from 'floating-vue'
+import shellQuote from 'shell-quote'
 
 import App from '@/App.vue'
 
@@ -30,6 +31,7 @@ window.__internals__ = {
   stores,
 
   vue,
+  shellQuote,
 }
 
 app
