@@ -2,8 +2,8 @@
 
 do you know me? i probably don't know you. no one ever checks these webpages anyways! why do i bother..\
 \
-anyways, again, i'm **evie**. am <span placeholder="age"></span> year old.\
-i'm a girl that really really loves procrastination. chronically tired, occasionally wired.\
+anyways, again, i'm **evie**. am <span placeholder="age"></span> years old.\
+i'm a girl who really really loves procrastination. chronically tired, occasionally wired.\
 \
 because of that i haven't been doing anything of value.\
 i'd just randomly get an idea for something cool and get in the mood to make it happen\
