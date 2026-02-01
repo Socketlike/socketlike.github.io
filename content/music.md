@@ -5,7 +5,7 @@
 
 yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now <span class="mutter">(has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)</span>.
 
-but if for some reason you don't wanna click on that link here are the top ~40 songs i like the most in that playlist:
+but if for some reason you don't wanna click on that link here are the top ~41 songs i like the most in that playlist:
 
 ## by DIGITAL DESCENDANT ([spotify](https://open.spotify.com/artist/7EQqyAUZByxMFtC0Nz88EV), [youtube](https://www.youtube.com/channel/UCPa78LlIvBiDozF6iAuNPqg))
 
@@ -51,10 +51,9 @@ songs here are mostly from the [whitepine series (you should watch whitepine it'
 
 ## by nicopatty ([spotify](https://open.spotify.com/artist/3XvcSIeFlzkRTVGjGchOd3), [youtube](https://www.youtube.com/@nicopatty))
 
-3/2 [regretevator](https://www.roblox.com/games/4972273297/Regretevator) and 1/3 [nico's nextbots](https://www.roblox.com/games/10118559731/nicos-nextbots)
+1/2 [regretevator](https://www.roblox.com/games/4972273297/Regretevator) and 1/2 [nico's nextbots](https://www.roblox.com/games/10118559731/nicos-nextbots)
 
 - turbulence ([spotify](https://open.spotify.com/track/4ODsMudbgZONmG6q2GYpVz), [youtube](https://www.youtube.com/watch?v=ig_IPVHuMDY))
-- seraphic takedown ([youtube](https://www.youtube.com/watch?v=TY_GeniI7qU)) <span class="mutter">(would have been in the playlist if he actually uploaded it `>:(`)</span>
 - grand piano ([spotify](https://open.spotify.com/track/06jzSCMLK5rHyDL2kGQnCn), [youtube](https://www.youtube.com/watch?v=TDbbiLXYPLY))
 
 ## by others
@@ -75,4 +74,5 @@ the majority of these are from [regretevator](https://www.roblox.com/games/49722
 ## honorary mentions
 
 - [hatred (block tales) cover](https://www.youtube.com/watch?v=B2RkodVm3Ks) by [kirbcicle](https://www.youtube.com/@kirbcicle9527)
+- [seraphic takedown](https://www.youtube.com/watch?v=TY_GeniI7qU) by [nicopatty](https://www.youtube.com/@nicopatty)
 - [kerosene drifter (draft2)](https://discord.com/channels/306216790546055168/1417986712596119622/1418236319599038556) by Iglooghost ([discord](https://discord.gg/cyfk5Cv59q))
