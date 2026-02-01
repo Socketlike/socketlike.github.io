@@ -5,7 +5,7 @@
 
 yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now <span class="mutter">(has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)</span>.
 
-but if for some reason you don't wanna click on that link here are the top ~41 songs i like the most in that playlist:
+but if for some reason you don't wanna click on that link here are the top ~39 songs i like the most in that playlist:
 
 ## by DIGITAL DESCENDANT ([spotify](https://open.spotify.com/artist/7EQqyAUZByxMFtC0Nz88EV), [youtube](https://www.youtube.com/channel/UCPa78LlIvBiDozF6iAuNPqg))
 
@@ -72,6 +72,8 @@ the majority of these are from [regretevator](https://www.roblox.com/games/49722
 - escape - alt. version ([spotify](https://open.spotify.com/track/3Y8le2p8JmNsnUqY9SBjF4), [youtube](https://www.youtube.com/watch?v=Wm-xhdrRIU8)) by jacal ([spotify](https://open.spotify.com/artist/1kgoGhvV1nEGVHFhY4VbcH), [youtube](https://www.youtube.com/channel/UCMOS8CWbvUO8aW8A33Jz9LQ))
 
 ## honorary mentions
+
+not in the playlist but i still like them
 
 - [hatred (block tales) cover](https://www.youtube.com/watch?v=B2RkodVm3Ks) by [kirbcicle](https://www.youtube.com/@kirbcicle9527)
 - [seraphic takedown](https://www.youtube.com/watch?v=TY_GeniI7qU) by [nicopatty](https://www.youtube.com/@nicopatty)
