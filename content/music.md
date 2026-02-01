@@ -3,7 +3,7 @@
 ... you can find them [here](https://open.spotify.com/playlist/7Gfvs4A320zPRQG1DG51nx), on spotify.
 > *evie, spotify **fucking** sucks! why aren't you using something else?????*
 
-yes i know spotify may not be the most upright company but there are not that many good alternatives.
+yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now <span class="mutter">(has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)</span>.
 
 but if for some reason you don't wanna click on that link here are the top ~40 songs i like the most in that playlist:
 
