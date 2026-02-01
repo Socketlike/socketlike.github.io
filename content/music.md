@@ -75,3 +75,4 @@ the majority of these are from [regretevator](https://www.roblox.com/games/49722
 ## honorary mentions
 
 - [hatred (block tales) cover](https://www.youtube.com/watch?v=B2RkodVm3Ks) by [kirbcicle](https://www.youtube.com/@kirbcicle9527)
+- [kerosene drifter (draft2)](https://discord.com/channels/306216790546055168/1417986712596119622/1418236319599038556) by Iglooghost ([discord](https://discord.gg/cyfk5Cv59q))
