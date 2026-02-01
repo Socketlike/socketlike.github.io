@@ -6,6 +6,7 @@
     --fg: #bcb1cf;
     --fg-1: #e4c8f5;
     --fg-2: #7a6c83;
+    --fg-3: #ccabe7;
 
     --evil: #e97979;
     --chaotic-evil: #884c4c;
@@ -35,22 +36,30 @@ main {
   background-color: var(--bg-1);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: var(--fg-1);
+  
+  border-bottom: 2px dashed var(--fg-2);
+}
+
 h1 {
   margin: 0 0 20px 0;
   
   padding-bottom: 8px;
 }
 
+h2 {
+  margin: 0 0 16px 0;
+
+  color: var(--fg-3);
+  
+  padding-bottom: 6px;
+}
+
 h3 {
   margin: 0 0 12px 0;
 
   padding-bottom: 4px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--fg-1);
-  
-  border-bottom: 2px dashed var(--fg-2);
 }
 
 p {

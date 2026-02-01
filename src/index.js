@@ -1,6 +1,7 @@
 (() => {
   const CONTENTS = {
     main: "/content/index.md",
+    music: "/content/music.md",
     "not-found": "/content/not-found.md"
   }
 

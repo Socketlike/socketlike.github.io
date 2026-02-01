@@ -35,6 +35,6 @@ yes i **DO** play minecraft sometimes. yes i play on hypixel.\
 you **CAN** also find me on roblox <span class="mutter">(daydreamyevie)</span>\
 note that i do not have my joins on and if you friend me randomly there is a non zero but **VERY** low chance that i will hear you out.\
 \
-i loop [this spotify playlist](https://open.spotify.com/playlist/7Gfvs4A320zPRQG1DG51nx) almost daily. infact i'm having it play right now.\
+here's a post about [what music i listen to](/music). you can also click on it on the nav panel.
 \
 <span class="rapid">kthxforreadingallofthisgoodbye!</span>
