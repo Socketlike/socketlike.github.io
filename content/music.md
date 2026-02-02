@@ -32,6 +32,7 @@ songs here are mostly from the [whitepine series (you should watch whitepine it'
 
 - nettle tree ([spotify (unofficial reupload)](https://open.spotify.com/track/4AllGUcvEn26XkmpaQOYMe), [youtube](https://www.youtube.com/watch?v=qse-2sGv9IU))
 - rumcherry ([spotify (unofficial reupload)](https://open.spotify.com/track/5IV3TZiGUazcmnn6NPYpsm), [youtube](https://www.youtube.com/watch?v=wV39RYW9Nhw))
+- pignut hickory ([spotify (unofficial reupload)](https://open.spotify.com/track/6uT43X4jXhh1e8jmz4AWqX), [youtube](https://www.youtube.com/watch?v=i3w9el4S54w))
 - pin oak ([spotify (unofficial reupload)](https://open.spotify.com/track/65jXAalN3FGtHyVLT5jj70), [youtube](https://www.youtube.com/watch?v=A84JMfOG_Rg))
 - mountain ash ([spotify (unofficial reupload)](https://open.spotify.com/track/7od4EclQXFDmHhi5btAwac), [youtube](https://www.youtube.com/watch?v=rCxWLe8I6us))
 - synced up ([spotify (unofficial reupload)](https://open.spotify.com/track/5OjqsGegjkYRzpxH95Iab5), [youtube](https://www.youtube.com/watch?v=MMBGSjS38no))
