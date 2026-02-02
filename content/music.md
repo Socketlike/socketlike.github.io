@@ -5,7 +5,7 @@
 
 yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now <span class="mutter">(has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)</span>.
 
-but if for some reason you don't wanna click on that link here are the top ~39 songs i like the most in that playlist:
+but if for some reason you don't wanna click on that link here are the top ~40 songs i like the most in that playlist:
 
 ## by DIGITAL DESCENDANT ([spotify](https://open.spotify.com/artist/7EQqyAUZByxMFtC0Nz88EV), [youtube](https://www.youtube.com/channel/UCPa78LlIvBiDozF6iAuNPqg))
 
