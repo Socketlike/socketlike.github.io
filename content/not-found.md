@@ -2,13 +2,12 @@
 
 > *i don't know!!! evie save me!!!!!!!*
 
-dOES IT LOOK LIKE <span class="angry">I KNOW????</span> go FIGURE IT OUT YOURSELF
+dOES IT LOOK LIKE [-angry I KNOW????] go FIGURE IT OUT YOURSELF
 
 > *what if i can't??*
 
 i don't care! have fun .
 
-<span class="mutter">
+[-mutter
 check your URL.<br>
-if at first you don't URL, URL again.
-</span>
+if at first you don't URL, URL again.]

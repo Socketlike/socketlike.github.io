@@ -1,38 +1,31 @@
-(() => {
-  const CONTENTS = {
+import { marked } from 'https://cdn.jsdelivr.net/npm/marked@17.0.1/lib/marked.esm.js'
+import { parsePlaceholder } from './placeholder.js'
+
+const CONTENTS = {
     main: "/content/index.md",
     music: "/content/music.md",
     "not-found": "/content/not-found.md"
-  }
+}
 
-  const marked = window.marked
+const main = document.querySelector('main')
 
-  const main = document.querySelector('main')
-
-  const path = location.pathname.slice(1).split('/')
-  const content = path?.[0]
+const path = location.pathname.slice(1).split('/')
+const content = path?.[0]
     ? path.reduce((prev, cur) => prev?.[cur], CONTENTS) || CONTENTS['not-found']
     : CONTENTS.main
 
-  if (content)
+if (content)
     fetch(content)
-      .then(async (r) => {
-        main.innerHTML = marked.parse(await r.text())
+        .then(async (r) => main.innerHTML = marked.parse(
+            parsePlaceholder(await r.text())
+        ))
+        .catch(console.error)
 
-        const age = (Date.now() / 1000 - 1171040400) / 31536000
-        const agePlaceholder = `${Math.floor(age)}${age - Math.floor(age) >= .8 ? ` (almost ${Math.ceil(age)})` : ''}`
-        main.querySelectorAll('[placeholder=age]').forEach((e) => {
-          e.textContent = agePlaceholder
-        })
-      })
-      .catch(console.error)
+const sidebar = document.querySelector('nav')
 
-  const sidebar = document.querySelector('nav')
+sidebar.style.display = 'block'
+sidebar.style.width = `calc(${main.getBoundingClientRect().x}px - 32px - 32px)`
 
-  sidebar.style.display = 'block'
-  sidebar.style.width = `calc(${main.getBoundingClientRect().x}px - 32px - 32px)`
-
-  window.onresize = () => {
+window.onresize = () => {
     sidebar.style.width = `calc(${main.getBoundingClientRect().x}px - 32px - 32px)`
-  }
-})()
+}

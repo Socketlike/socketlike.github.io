@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.png">
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="/src/test.css">
+  </head>
+
+  <body>
+    <main>
+      <audio id="music" src="https://static.wikitide.net/nullscapewiki/f/f2/Your_New_Prision.mp3"></audio>
+
+      <div id="audio-toast">
+        <img src="https://f4.bcbits.com/img/a2987520415_10.jpg">
+
+        <div>
+          <div class="title">Your New Prison</div>
+          <div class="artist">DIGITAL DESCENDANT</div>
+        </div>
+      </div>
+
+      <div id="begin-popup">
+        <h2>are you ready</h2>
+
+        <p>to begin a painful experience</p>
+
+        <button>yes</button>
+      </div>
+    </main>
+
+    <script defer>
+      const main = document.querySelector('main')
+
+      const beginPopup = document.getElementById('begin-popup')
+      const audioToast = document.getElementById('audio-toast')
+      const music = document.getElementById('music')
+
+      const beginButton = beginPopup.querySelector('button')
+
+      let debounce = false
+
+      music.volume = 0.25
+      music.loop = true
+
+      function spawnWakeup(last = false) {
+        const wakeUp = document.createElement('button')
+        wakeUp.innerText = 'wake up'
+        wakeUp.style.transform = 'translate(-50%, -50%)'
+        wakeUp.style.position = 'absolute'
+        wakeUp.style.left = `${Math.random() * 100}svw`
+        wakeUp.style.top = `${Math.random() * 100}svh`
+        wakeUp.onclick = last ? () => wakeUp.remove() : () => !wakeUp.remove() && spawnWakeup(Math.random() > 0.75)
+
+        main.appendChild(wakeUp)
+      }
+
+      beginButton.onclick = () => {
+        if (!debounce)
+          debounce = true
+        else
+          return
+
+        beginButton.remove()
+
+        console.log('a')
+
+        const popupDisappearAnimation = beginPopup.animate(
+          [{ opacity: "0" }],
+          { duration: 2000, iterations: 1, fill: 'forwards', easing: 'cubic-bezier(0.76, 0, 0.24, 1)' }
+        )
+
+          popupDisappearAnimation.onfinish = () => {
+            beginPopup.remove()
+
+            music.play()
+
+            audioToast.animate(
+              [{ transform: "translateX(-102%)" }],
+              { duration: 1000, iterations: 1, fill: 'forwards', easing: 'cubic-bezier(0.76, 0, 0.24, 1)' }
+            )
+
+            setTimeout(() => audioToast.animate(
+              [{ transform: "translateX(0%)" }],
+              { duration: 1000, iterations: 1, fill: 'forwards', easing: 'cubic-bezier(0.5, 0, 0.75, 0)' }
+            ), 5000)
+
+            spawnWakeup(Math.random() > 0.75)
+          }
+      }
+    </script>
+  </body>
+</html>

@@ -3,7 +3,7 @@
 ... you can find them [here](https://open.spotify.com/playlist/7Gfvs4A320zPRQG1DG51nx), on spotify.
 > *evie, spotify **fucking** sucks! why aren't you using something else?????*
 
-yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now <span class="mutter">(has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)</span>.
+yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now [-mutter (has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)].
 
 but if for some reason you don't wanna click on that link here are the top ~40 songs i like the most in that playlist:
 
@@ -68,8 +68,6 @@ the majority of these are from [regretevator](https://www.roblox.com/games/49722
 - vs him ([spotify](https://open.spotify.com/track/0tZOSQ6geo5oyN1pZxRfFj), [youtube](https://www.youtube.com/watch?v=Oag-4kvETpA)) by GorillaWeb ([spotify](https://open.spotify.com/artist/6fpFx6z9CGwncqrh0HvlCq), [youtube](https://www.youtube.com/channel/UCnpPB7VM9_PcMz8FXw3flYQ))
 - express lane ([spotify](https://open.spotify.com/track/0dm0KVSlg2mo2T2VrGKRvy), [youtube](https://www.youtube.com/watch?v=YpGSLfGsxBc)) by GorillaWeb ([spotify](https://open.spotify.com/artist/6fpFx6z9CGwncqrh0HvlCq), [youtube](https://www.youtube.com/channel/UCnpPB7VM9_PcMz8FXw3flYQ))
 - ruined ([spotify](https://open.spotify.com/track/0YI2ItvDM9ygwWtW8yd6pQ), [youtube](https://www.youtube.com/watch?v=WCgf9H9WP_8)) by Ageless Muse ([spotify](https://open.spotify.com/artist/28zRcmAer44ky1BVGpmlrJ), [youtube](https://www.youtube.com/channel/UCOo5Zb7pfUKnvlaIsJqHlsw))
-- aggressive menace ([spotify](https://open.spotify.com/track/0eDjgRDnMUtAkaYmFU9xtJ), [youtube](https://www.youtube.com/watch?v=7jHkYmEys-U)) by MadInstance ([spotify](https://open.spotify.com/artist/08nujyEvxioh6ye29aAby8), [youtube](https://www.youtube.com/@Madinstance))
-- parasitic purge ([spotify](https://open.spotify.com/track/4kFH13dUAXYixuGJdRIZ3t), [youtube](https://www.youtube.com/watch?v=G2VuI_ckbdI)) by River347 ([spotify](https://open.spotify.com/artist/2twLH3DsCkbjW4lnkUoQnJ), [youtube](https://www.youtube.com/channel/UC_pgD3ua7dE0wfyyoGqjKFA))
 - escape - alt. version ([spotify](https://open.spotify.com/track/3Y8le2p8JmNsnUqY9SBjF4), [youtube](https://www.youtube.com/watch?v=Wm-xhdrRIU8)) by jacal ([spotify](https://open.spotify.com/artist/1kgoGhvV1nEGVHFhY4VbcH), [youtube](https://www.youtube.com/channel/UCMOS8CWbvUO8aW8A33Jz9LQ))
 
 ## honorary mentions
