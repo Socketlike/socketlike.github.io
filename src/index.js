@@ -1,5 +1,5 @@
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked@17.0.1/lib/marked.esm.js'
-import { parsePlaceholder } from './placeholder.js'
+import preprocess from '/src/preprocessor.js'
 
 const CONTENTS = {
     main: "/content/index.md",
@@ -17,7 +17,7 @@ const content = path?.[0]
 if (content)
     fetch(content)
         .then(async (r) => main.innerHTML = marked.parse(
-            parsePlaceholder(await r.text())
+            preprocess(await r.text())
         ))
         .catch(console.error)
 

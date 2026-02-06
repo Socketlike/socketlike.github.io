@@ -5,7 +5,7 @@
 
 yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now [-mutter (has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)].
 
-but if for some reason you don't wanna click on that link here are the top ~40 songs i like the most in that playlist:
+but if for some reason you don't wanna click on that link here are some songs i like the most in that playlist:
 
 ## by DIGITAL DESCENDANT ([spotify](https://open.spotify.com/artist/7EQqyAUZByxMFtC0Nz88EV), [youtube](https://www.youtube.com/channel/UCPa78LlIvBiDozF6iAuNPqg))
 
@@ -78,3 +78,4 @@ not in the playlist but i still like them
 - [seraphic takedown](https://www.youtube.com/watch?v=TY_GeniI7qU) by [nicopatty](https://www.youtube.com/@nicopatty)
 - [kerosene drifter (draft2)](https://discord.com/channels/306216790546055168/1417986712596119622/1418236319599038556) by Iglooghost ([discord](https://discord.gg/cyfk5Cv59q))
 - [cogito ergo sum ~ conviction](https://www.youtube.com/watch?v=tbD2zkynxcc) by [FPLester](https://www.youtube.com/@FPLester)
+- [ultrasonic faith](https://www.youtube.com/watch?v=JbsIbBnh0Sg) by [Phill C](https://philliscrezilez.bandcamp.com)
