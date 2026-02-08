@@ -2,43 +2,16 @@
   "name": "socketlike.github.io",
   "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "run-p types:check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "types:check": "vue-tsc --build --force",
-    "eslint:check": "eslint . --ext .vue,.js,.jsx,.cjs.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
-    "eslint:fix": "run-p \"eslint:check --fix\" --",
-    "prettier:check": "prettier -c src/",
-    "prettier:fix": "prettier -w src/",
-    "check": "run-p types:check eslint:check prettier:check"
+  "packageManager": "pnpm@10.29.1",
+  "engines": {
+    "node": ">=24.13.0"
   },
-  "dependencies": {
-    "floating-vue": "^5.2.2",
-    "markdown-it": "^14.1.0",
-    "pinia": "^2.1.7",
-    "remeda": "^1.61.0",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+  "scripts": {
+    "build": "node scripts/build.js",
+    "make-content-index": "node scripts/make-content-index.js",
+    "run-server": "node scripts/run.js"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.3.3",
-    "@tsconfig/node20": "^20.1.2",
-    "@types/node": "^20.11.28",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vue/eslint-config-prettier": "^8.0.0",
-    "@vue/eslint-config-typescript": "^12.0.0",
-    "@vue/tsconfig": "^0.5.1",
-    "eslint": "^8.49.0",
-    "eslint-plugin-vue": "^9.17.0",
-    "less": "^4.2.0",
-    "npm-run-all2": "^6.1.2",
-    "prettier": "^3.0.3",
-    "typescript": "~5.4.0",
-    "vite": "^5.1.6",
-    "vite-plugin-markdown": "^2.2.0",
-    "vue-tsc": "^2.0.6"
+    "http-server": "^14.1.1"
   }
 }
