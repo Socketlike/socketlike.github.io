@@ -1,52 +1,52 @@
 name: Deploy
 
 on:
-  push:
-    branches: ['main']
-  workflow_dispatch:
+    push:
+        branches: ['main']
+    workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+    contents: read
+    pages: write
+    id-token: write
 
 concurrency:
-  group: 'pages'
-  cancel-in-progress: false
+    group: 'pages'
+    cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
+        runs-on: ubuntu-latest
 
-    steps:
-      -
-        name: download
-        uses: actions/checkout@v4
-      -
-        name: setup pages
-        uses: actions/configure-pages@v4
-      -
-        name: setup node
-        uses: actions/setup-node@v6
-        with:
-          - version: '>=24.13.0'
-      -
-        name: setup pnpm
-        uses: pnpm/action-setup@v4
-      -
-        name: make content index
-        run: |
-          pnpm make-content-index
-      -
-        name: upload
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: './'
-      -
-        name: deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+        steps:
+            -
+                name: download
+                uses: actions/checkout@v4
+            -
+                name: setup pages
+                uses: actions/configure-pages@v4
+            -
+                name: setup node
+                uses: actions/setup-node@v6
+                with:
+                    node-version: '>=24.13.0'
+            -
+                name: setup pnpm
+                uses: pnpm/action-setup@v4
+            -
+                name: make content index
+                run: |
+                    pnpm make-content-index
+            -
+                name: upload
+                uses: actions/upload-pages-artifact@v4
+                with:
+                    path: './'
+            -
+                name: deploy
+                id: deployment
+                uses: actions/deploy-pages@v4
