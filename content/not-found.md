@@ -1,4 +1,12 @@
 # what are you trying to find???
+<p class="github-only">
+  <b>hi curious github user skimming through my page's source code</b>
+  <br>
+  this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
+  <br>
+  consider viewing this document on my github pages instead!
+  <br>
+</p>
 
 > *i don't know!!! evie save me!!!!!!!*
 

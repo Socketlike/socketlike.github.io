@@ -1,4 +1,12 @@
 # the music i listen to
+<p class="github-only">
+  <b>hi curious github user skimming through my page's source code</b>
+  <br>
+  this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
+  <br>
+  consider viewing this document on my github pages instead!
+  <br>
+</p>
 
 ... you can find them [here](https://open.spotify.com/playlist/7Gfvs4A320zPRQG1DG51nx), on spotify.
 > *evie, spotify **fucking** sucks! why aren't you using something else?????*

@@ -1,5 +1,6 @@
 import { marked } from 'https://cdn.jsdelivr.net/npm/marked@17.0.1/lib/marked.esm.js'
 import preprocess from '/src/preprocessor.js'
+import postprocess from '/src/postprocessor.js'
 
 const CONTENTS = {
     main: "/content/index.md",
@@ -16,9 +17,12 @@ const content = path?.[0]
 
 if (content)
     fetch(content)
-        .then(async (r) => main.innerHTML = marked.parse(
-            preprocess(await r.text())
-        ))
+        .then(async (r) => main.replaceChildren(
+                ...postprocess(marked.parse(
+                    preprocess(await r.text())
+                ))
+            )
+        )
         .catch(console.error)
 
 const sidebar = document.querySelector('nav')

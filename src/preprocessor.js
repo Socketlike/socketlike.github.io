@@ -18,6 +18,8 @@ const preprocessors = Object.freeze(
 
 export default (content) =>
     preprocessors.reduce(
-        (content, { filter, replacer }) => content.replace(filter, replacer),
+        (content, postprocessor) => typeof postprocessor === 'function'
+            ? postprocessor(content) || content
+            : content.replace(postprocessor.filter, postprocessor.replacer),
         content
     )
