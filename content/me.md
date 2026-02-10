@@ -1,4 +1,4 @@
-# i truly am the most repulsive person in this earth
+# i truly am the most repulsive person on this earth
 <p class="github-only">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
@@ -9,7 +9,7 @@
 
 just a couple hours ago as of the time writing this post [-time 1770719731552],\
 i have destroyed almost if not all of the builds of an old "housing" of mine,\
-[-mutter (a [minecraft](https://minecraft.net) building plot world thing with a limited size hosted on the <a href="https://hypixel.net">hypixel network</a>, sorta like those "creative" worlds sometimes seen on minecraft servers)]\
+[-mutter (a <a href="https://minecraft.net">minecraft</a> building plot world thing with a limited size hosted on the <a href="https://hypixel.net">hypixel network</a>, sorta like those "creative" worlds sometimes seen on minecraft servers)]\
 solely because i wanted more space for building.
 
 the reason why i chose to destroy this "housing" was because i was completely maxed out on the amount of "housings" that i could have, and this "housing" was... pretty abandoned.\
