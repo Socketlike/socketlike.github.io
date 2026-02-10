@@ -38,6 +38,10 @@ jobs:
                 name: setup pnpm
                 uses: pnpm/action-setup@v4
             -
+                name: install dependencies
+                run: |
+                    pnpm i
+            -
                 name: make content index
                 run: |
                     pnpm make-content-index

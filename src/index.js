@@ -11,7 +11,7 @@ const contents = {
 const main = document.querySelector('main')
 
 const path = location.pathname.slice(1)
-const content = path ? contents[path] || 'not-found.md' : 'index.md'
+const content = path ? contents[path]?.path || '/content/not-found.md' : '/content/index.md'
 
 const sidebar = document.querySelector('nav')
 
@@ -19,11 +19,12 @@ sidebar.style.display = 'block'
 sidebar.style.width = `calc(${main.getBoundingClientRect().x}px - 32px - 32px)`
 sidebar.append(
     ...Object
-        .keys(contents)
-        .flatMap((k) => {
+        .entries(contents)
+        .filter(([_, { metadata }]) => !metadata?.unlinked)
+        .flatMap(([name, { metadata }]) => {
             const e = document.createElement('a')
-            e.innerText = k
-            e.href = k
+            e.innerText = name
+            e.href = metadata?.path || name
 
             return [e, ' ']
         })
@@ -34,10 +35,12 @@ addEventListener('resize', () => {
 })
 
 if (content)
-    fetch('/content/' + content)
-        .then(async (r) => main.replaceChildren(
+    fetch(content)
+        .then(async (r) => await r.text())
+        .then((text) => text.replace(/---[\r\n].*?[\r\n]---/s, ''))
+        .then((text) => main.replaceChildren(
                 ...postprocess(marked.parse(
-                    preprocess(await r.text())
+                    preprocess(text)
                 ))
             )
         )

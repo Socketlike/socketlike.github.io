@@ -1,3 +1,6 @@
+---
+path: '/'
+---
 # hi i'm evelyn nightshade
 <p class="github-only">
   <b>hi curious github user skimming through my page's source code</b>
