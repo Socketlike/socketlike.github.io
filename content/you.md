@@ -1,3 +1,6 @@
+---
+unlinked: true
+---
 # speaking of which...
 <p class="github-only">
   <b>hi curious github user skimming through my page's source code</b>
