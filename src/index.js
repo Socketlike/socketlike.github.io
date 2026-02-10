@@ -23,8 +23,10 @@ sidebar.append(
         .filter(([_, { metadata }]) => !metadata?.unlinked)
         .flatMap(([name, { metadata }]) => {
             const e = document.createElement('a')
-            e.innerText = name
-            e.href = metadata?.path || name
+            e.innerText = metadata?.name || name
+
+            const path = metadata?.path || name
+            e.href = path.startsWith('/') ? path : '/' + path
 
             return [e, ' ']
         })

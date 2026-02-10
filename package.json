@@ -7,7 +7,6 @@
     "node": ">=24.13.0"
   },
   "scripts": {
-    "build": "node scripts/build.js",
     "make-content-index": "node scripts/make-content-index.js",
     "run-server": "node scripts/run.js"
   },

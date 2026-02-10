@@ -10,9 +10,9 @@ path: '/'
   consider viewing this document on my github pages instead!
 </p>
 
-do you know me? i probably don't know you. no one ever checks these webpages anyways! why do i bother..\
+do you know [me](/me)? i probably don't know you.
 \
-anyways, again, my name is *evelyn nightshade*. it's a really odd name, but it's [one that i gave myself](https://youtube.com/watch?v=eoq2e4h_avs). if that's a mouthful for you, you can call me *evie*. anyways, let's move on with the introductions.\
+again, my name is *evelyn nightshade*. it's a really odd name, but it's [one that i gave myself](https://youtube.com/watch?v=eoq2e4h_avs). if that's a mouthful for you, you can call me *evie*. anyways, let's move on with the introductions.\
 am {age} years old.\
 i'm a girl who really really loves procrastination. chronically tired, occasionally wired.\
 \

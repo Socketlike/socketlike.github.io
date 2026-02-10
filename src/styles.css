@@ -149,6 +149,23 @@ a:visited {
   color: var(--chaotic-good);
 }
 
+.timestamp {
+  font-size: 12px;
+  font-style: italic;
+
+  color: var(--fg-2);
+  
+  vertical-align: middle;
+}
+
+.timestamp::before {
+  content: '(';
+}
+
+.timestamp::after {
+  content: ')';
+}
+
 /* blockquote {
   margin: 0;
   padding-left: 10px;
