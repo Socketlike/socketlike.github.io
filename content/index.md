@@ -10,7 +10,7 @@ path: '/'
   consider viewing this document on my github pages instead!
 </p>
 
-do you know [me](/me)? i probably don't know you.
+do you know [me](/me)? i probably don't know [you](/you).
 \
 again, my name is *evelyn nightshade*. it's a really odd name, but it's [one that i gave myself](https://youtube.com/watch?v=eoq2e4h_avs). if that's a mouthful for you, you can call me *evie*. anyways, let's move on with the introductions.\
 am {age} years old.\
