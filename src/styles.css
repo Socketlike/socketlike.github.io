@@ -135,7 +135,7 @@ nav {
 
   position: absolute;
 
-  right: 16px;
+  right: -100%;
   top: 8px;
 
   background-color: var(--bg-1);
