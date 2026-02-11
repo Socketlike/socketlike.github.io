@@ -41,7 +41,7 @@ body {
 main {
   padding: 24px;
 
-  min-height: calc(100svh - 48px - 56px - 48px - 8px);
+  min-height: calc(100svh - 48px - 56px - 56px - 8px);
 
   background-color: var(--bg-1);
   box-shadow: var(--bg-1) 0 0 16px 4px;
@@ -192,7 +192,7 @@ nav #nav-container {
 }
 
 footer {
-  height: 48px;
+  height: 56px;
   box-sizing: border-box;
   padding: 8px 16px;
 
