@@ -1,5 +1,5 @@
 ---
-unlinked: true
+delisted: true
 ---
 # speaking of which...
 <p class="github-only">

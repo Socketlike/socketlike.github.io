@@ -1,5 +1,5 @@
 ---
-unlinked: true
+delisted: true
 ---
 # i truly am the most repulsive person on this earth
 <p class="github-only">

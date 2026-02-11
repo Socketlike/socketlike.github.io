@@ -20,7 +20,7 @@ sidebar.style.width = `calc(${main.getBoundingClientRect().x}px - 32px - 32px)`
 sidebar.append(
     ...Object
         .entries(contents)
-        .filter(([_, { metadata }]) => !metadata?.unlinked)
+        .filter(([_, { metadata }]) => !metadata?.delisted)
         .flatMap(([name, { metadata }]) => {
             const e = document.createElement('a')
             e.innerText = metadata?.name || name
