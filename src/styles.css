@@ -46,8 +46,6 @@ main {
   background-color: var(--bg-1);
   box-shadow: var(--bg-1) 0 0 16px 4px;
 
-  position: relative;
-
   z-index: 0;
 }
 
@@ -61,6 +59,8 @@ main {
   display: flex;
   position: initial;
   justify-content: space-between;
+
+  position: relative;
 
   user-select: none;
 }
