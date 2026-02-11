@@ -22,6 +22,6 @@ are you someone i trust?\
 are you someone i care about?
 <br><br><br>
 ultimately, it does not matter.\
-all identity is lost through the cover of the web browser. [-matter (technically isn't true but still)]
+all identity is lost through the cover of the web browser. [-mutter (technically isn't true but still)]
 
 henceforth all content will not be directed towards a single audience but it will be for everyone.
