@@ -1,3 +1,6 @@
+---
+unlinked: true
+---
 # i truly am the most repulsive person on this earth
 <p class="github-only">
   <b>hi curious github user skimming through my page's source code</b>
@@ -44,7 +47,7 @@ but\
 at least they *existed*.
 
 i guess the actions of oneself really does speak up about the personality of themselves\
-i truly felt nothing during the destruction of this minecraft world\
+i truly felt nothing during the destruction of this minecraft world
 
 nothing.\
 ***nothing at all.***
