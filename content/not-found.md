@@ -22,3 +22,5 @@ i don't care! have fun .
 [-mutter
 check your URL.<br>
 if at first you don't URL, URL again.]
+
+[go back]({history -1})

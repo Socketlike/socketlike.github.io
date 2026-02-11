@@ -1,6 +1,6 @@
 # y ay!! i'm [ONE] year closer to [the destruction of my current lifeforce]!!!
 
-as of today [-time long 1770656400000]
+as of today {timestamp long 1770656400000}
 i'm now 19!!! what an honor.\
 [-mutter how did i even live for this long]
 
@@ -14,4 +14,4 @@ truly an extravagant birthday!! hopefully there won't be more to come.
 
 [-mutter and yes the day went on as usual...]
 
-[go back](/occasions)
+[go back]({previousPath})

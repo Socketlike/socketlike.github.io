@@ -50,7 +50,7 @@ besides, at least i feel compelled to *do something*! *to make something*! **for
 
 this webpage is my passion project. that just sounds so corny doesn't it.\
 i've felt fun making this webpage. that's what matters, doesn't it?\
-it's just pure fun, making something from nothing.
+it's just fun, making something from nothing.
 
 that's what matters. having fun.\
-[-mutter <i>i've never felt so fun in my life.</i>]
+[-mutter <i>i've never felt so much fun in my life.</i>]

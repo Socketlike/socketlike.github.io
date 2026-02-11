@@ -1,15 +1,31 @@
 const preprocessors = Object.freeze(
     [
         {
-            filter: /\{age\}/g,
+            filter: /{age}/g,
             replacer: () => {
                 const age = (Date.now() / 1000 - 1171040400) / 31536000
                 return `${Math.floor(age)}${age - Math.floor(age) >= .8 ? ` (almost ${Math.ceil(age)})` : ''}`
             }
         },
 
+        { // go back, like literally go back on the path tree, not history
+            filter: /{previousPath(?:\s+-([0-9])+)?}/g,
+            replacer: (_, amount = 1) =>
+                location.pathname
+                    .split('/')
+                    .slice(0, -Number(amount))
+                    .join('/')
+                || '/'
+        },
+
+        { // history "link" hack - part 1
+            filter: /{history\s+(?:(-))?([0-9]+)}/g,
+            replacer: (_, neg, amount) =>
+                `/__secretevilpathnoonewoulduseonpurpose_history_${neg || ''}${amount}`
+        },
+
         {
-            filter: /\[-time(\slong)?\s+([0-9]+)\s*\]/g,
+            filter: /{timestamp(\slong)?\s+([0-9]+)}/g,
             replacer: (_, modifier = '', timestamp) => {
                 const long = new Intl.DateTimeFormat(undefined, {
                         weekday: 'long',

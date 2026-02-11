@@ -10,7 +10,7 @@ delisted: true
   consider viewing this document on my github pages instead!
 </p>
 
-just a couple hours ago as of the time writing this post [-time 1770719731552],\
+just a couple hours ago as of the time writing this post {timestamp 1770719731552},\
 i have destroyed almost if not all of the builds of an old "housing" of mine,\
 [-mutter (a <a href="https://minecraft.net">minecraft</a> building plot world thing with a limited size hosted on the <a href="https://hypixel.net">hypixel network</a>, sorta like those "creative" worlds sometimes seen on minecraft servers)]\
 solely because i wanted more space for building.
