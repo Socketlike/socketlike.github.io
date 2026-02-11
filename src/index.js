@@ -13,11 +13,53 @@ const main = document.querySelector('main')
 const path = location.pathname.slice(1)
 const content = path ? contents[path]?.path || '/content/not-found.md' : '/content/index.md'
 
-const sidebar = document.querySelector('nav')
+const nav = document.querySelector('nav')
+const navContainer = document.getElementById('nav-container')
+const navButton = document.getElementById('nav-button')
+const navCloseButton = document.getElementById('nav-close-button')
 
-sidebar.style.display = 'block'
-sidebar.style.width = `calc(${main.getBoundingClientRect().x}px - 32px - 32px)`
-sidebar.append(
+const responsiveEvent = window.matchMedia("only screen and (max-width: 768px)")
+
+let navHidden = responsiveEvent.matches
+
+const recalcNavSize = () =>
+    nav.style.width = `calc(${main.getBoundingClientRect().x}px - 32px)`
+
+const recalcNavRight = (immediate = false) => {
+    const outside = responsiveEvent.matches
+        ? '-100%'
+        : `calc(-${main.getBoundingClientRect().x}px - 32px - 2px)`
+
+    const inside = responsiveEvent.matches
+        ? '0'
+        : '16px'
+
+    if (immediate)
+        nav.classList.toggle('no-transition', true)
+
+    nav.style.right = navHidden ? outside : inside
+
+    if (immediate)
+        setTimeout(
+            () => nav.classList.toggle('no-transition', false),
+            100
+        )
+}
+
+const toggleNav = (force = undefined) => {
+    navHidden = (force !== undefined && !force) || !navHidden
+    nav.classList.toggle('hidden', navHidden)
+    recalcNavRight()
+}
+
+const recalcNav = (immediate = false) => {
+    recalcNavSize()
+    recalcNavRight(immediate)
+}
+
+recalcNav(true)
+
+navContainer.replaceChildren(
     ...Object
         .entries(contents)
         .filter(([_, { metadata }]) => !metadata?.delisted)
@@ -32,9 +74,9 @@ sidebar.append(
         })
 )
 
-addEventListener('resize', () => {
-    sidebar.style.width = `calc(${main.getBoundingClientRect().x}px - 32px - 32px)`
-})
+navButton.addEventListener('click', toggleNav)
+navCloseButton.addEventListener('click', () => toggleNav(false))
+responsiveEvent.addEventListener('change', recalcNav)
 
 if (content)
     fetch(content)
