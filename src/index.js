@@ -112,7 +112,7 @@ if (changelog)
             
             const hashLabel = document.createElement('code')
             hashLabel.className = 'hash'
-            hashLabel.classList.toggle('latest', title.includes('origin/HEAD'))
+            hashLabel.classList.toggle('latest', title.includes('origin/main'))
             hashLabel.classList.toggle('local-latest', title.includes('HEAD ->'))
             hashLabel.textContent = hash.substring(0, 7)
             hashLabel.title = hash
