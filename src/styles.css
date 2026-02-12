@@ -8,6 +8,7 @@
         --bg: #261d2d;
         --bg-1: #18121d;
         --bg-2: #0d0912;
+        --bg-o-backdrop: #0d0912c4;
         
         --fg: #bcb1cf;
         --fg-1: #e4c8f5;
@@ -271,7 +272,7 @@ footer {
     
     z-index: 2;
 
-    transition: 1s cubic-bezier(0.76, 0, 0.24, 1) backdrop-filter;
+    transition: 1s cubic-bezier(0.76, 0, 0.24, 1) background-color;
 
     display: none;
 }
@@ -398,7 +399,7 @@ code {
     }
 
     nav:not(.hidden) ~ #nav-overlay {
-        backdrop-filter: blur(20px);
+        background-color: var(--bg-o-backdrop);
         pointer-events: all;
     }
 
