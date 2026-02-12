@@ -8,12 +8,15 @@
   },
   "scripts": {
     "make-content-index": "node scripts/make-content-index.js",
+    "make-changelog": "node scripts/make-changelog.js",
+    "make-404": "node scripts/make-404.js",
     "run-server": "node scripts/run.js"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
   },
   "dependencies": {
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "shelljs": "^0.10.0"
   }
 }

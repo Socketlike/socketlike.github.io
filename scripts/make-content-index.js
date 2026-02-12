@@ -44,8 +44,7 @@ const _default = async () => {
         .then((list) => writeFile('content/index.json', JSON.stringify(list)))
 }
 
-if (import.meta.main) {
-    _default()
-}
+if (import.meta.main)
+    await _default()
 
 export default _default

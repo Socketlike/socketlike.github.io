@@ -80,7 +80,7 @@ responsiveEvent.addEventListener('change', recalcNav)
 
 if (content)
     fetch(content)
-        .then(async (r) => await r.text())
+        .then((r) => r.text())
         .then((text) => text.replace(/---[\r\n].*?[\r\n]---/s, ''))
         .then((text) => main.replaceChildren(
                 ...postprocess(marked.parse(
@@ -89,3 +89,11 @@ if (content)
             )
         )
         .catch(console.error)
+
+const changelog = await fetch('/content/changelog.json')
+        .then((r) => r.json())
+        .catch(console.error)
+
+if (changelog) {
+    
+}
