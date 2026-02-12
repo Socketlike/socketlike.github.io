@@ -1,328 +1,417 @@
 @font-face {
-  font-family: "Meditative";
-  src: url("/resources/Meditative.ttf") format("truetype");
+    font-family: "Meditative";
+    src: url("/resources/Meditative.ttf") format("truetype");
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    --bg: #261d2d;
-    --bg-1: #18121d;
-    --bg-2: #0d0912;
-
-    --fg: #bcb1cf;
-    --fg-1: #e4c8f5;
-    --fg-2: #7a6c83;
-    --fg-3: #ccabe7;
-
-    --greater-love: #debef8;
-    --love: #c692f1;
-    --evil: #e97979;
-    --chaotic-evil: #884c4c;
-    --intended-chaotic-evil: #9b3d3d;
-    --slight-evil: #ebeb8d;
-    --good: #7bdf7b;
-    --lawful-good: #8181d3;
-    --chaotic-good: #8c64cc;
-  }
+    html {
+        --bg: #261d2d;
+        --bg-1: #18121d;
+        --bg-2: #0d0912;
+        
+        --fg: #bcb1cf;
+        --fg-1: #e4c8f5;
+        --fg-2: #7a6c83;
+        --fg-3: #ccabe7;
+        
+        --greater-love: #debef8;
+        --love: #c692f1;
+        --evil: #e97979;
+        --chaotic-evil: #884c4c;
+        --intended-chaotic-evil: #9b3d3d;
+        --slight-evil: #ebeb8d;
+        --good: #7bdf7b;
+        --lawful-good: #8181d3;
+        --chaotic-good: #8c64cc;
+    }
 }
 
 body {
-  padding: 0 25%;
-  margin: 0;
-
-  background-color: var(--bg);
-  color: var(--fg);
-
-  font-family: 'Rubik', sans-serif;
-
-  overflow-x: hidden;
+    padding: 0 25%;
+    margin: 0;
+    
+    background-color: var(--bg);
+    color: var(--fg);
+    
+    font-family: 'Rubik', sans-serif;
+    
+    overflow-x: hidden;
 }
 
 main {
-  padding: 24px;
-
-  min-height: calc(100svh - 48px - 56px - 56px - 8px);
-
-  background-color: var(--bg-1);
-  box-shadow: var(--bg-1) 0 0 16px 4px;
-
-  z-index: 0;
+    padding: 24px;
+    
+    min-height: calc(100svh - 48px - 56px - 56px - 8px);
+    
+    background-color: var(--bg-1);
+    box-shadow: var(--bg-1) 0 0 16px 4px;
+    
+    z-index: 0;
 }
 
 .header {
-  padding: 12px 16px 12px 24px;
-  margin-top: 8px;
-
-  background-color: var(--bg-2);
-  box-shadow: var(--bg-2) 0 20px 20px 2px;
-
-  display: flex;
-  position: initial;
-  justify-content: space-between;
-
-  position: relative;
-
-  user-select: none;
+    padding: 12px 16px 12px 24px;
+    margin-top: 8px;
+    
+    background-color: var(--bg-2);
+    box-shadow: var(--bg-2) 0 20px 20px 2px;
+    
+    display: flex;
+    position: initial;
+    justify-content: space-between;
+    
+    position: relative;
+    
+    user-select: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--fg-1);
-  
-  border-bottom: 2px dashed var(--fg-2);
+    color: var(--fg-1);
+    
+    border-bottom: 2px dashed var(--fg-2);
 }
 
 h1 {
-  margin: 0 0 20px 0;
-  
-  padding-bottom: 8px;
+    margin: 0 0 20px 0;
+    
+    padding-bottom: 8px;
 }
 
 h2 {
-  margin: 0 0 16px 0;
-
-  color: var(--fg-3);
-  
-  padding-bottom: 6px;
+    margin: 0 0 16px 0;
+    
+    color: var(--fg-3);
+    
+    padding-bottom: 6px;
 }
 
 h3 {
-  margin: 0 0 12px 0;
-
-  padding-bottom: 4px;
+    margin: 0 0 12px 0;
+    
+    padding-bottom: 4px;
 }
 
 p {
-  font-size: 16px;
-  line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .header a {
-  border-bottom: none;
-  margin: 0;
-  padding: 0;
-
-  text-decoration: none !important;
-  font-size: 28px;
-  font-family: "Meditative";
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    
+    text-decoration: none !important;
+    font-size: 28px;
+    font-family: "Meditative";
 }
 
 .header svg {
-  height: 24px;
-  aspect-ratio: 1;
-  padding: 4px;
-
-  border-radius: 4px;
-
-  align-self: center;
-
-  cursor: pointer;
+    height: 24px;
+    aspect-ratio: 1;
+    padding: 4px;
+    
+    border-radius: 4px;
+    
+    align-self: center;
+    
+    cursor: pointer;
 }
 
 .header svg:hover {
-  background-color: var(--bg);
+    background-color: var(--bg);
 }
 
 blockquote {
-  margin: 0;
-
-  color: var(--fg-2);
-
-  text-align: right;
+    margin: 0;
+    
+    color: var(--fg-2);
+    
+    text-align: right;
 }
 
+#changelog,
 nav {
-  display: block;
+    display: block;
+    
+    position: absolute;
+    
+    right: -100%;
+    top: 8px;
+    
+    background-color: var(--bg-1);
+    z-index: 3;
+}
 
-  position: absolute;
+#changelog {
+    right: unset;
+    
+    left: 16px;
 
-  right: -100%;
-  top: 8px;
-
-  background-color: var(--bg-1);
+    z-index: 1;
 }
 
 nav:not(.no-transition) {
-  transition: 1s cubic-bezier(0.76, 0, 0.24, 1) right;
+    transition: 1s cubic-bezier(0.76, 0, 0.24, 1) right;
 }
 
+#changelog .title,
 nav .title {
-  background-color: var(--bg-2);
-  
-  padding: 14px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
+    background-color: var(--bg-2);
+    
+    padding: 14px;
+    
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+    
+    position: relative;
+    box-shadow: var(--bg-2) 0 10px 20px 2px;
 }
 
+#changelog h3,
 nav h3 {
-  border-bottom: none;
-  margin: 0;
-  padding: 0;
-
-  font-family: "Meditative";
-  font-weight: normal;
-  font-size: 22px;
-
-  user-select: none;
-  cursor: pointer;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    
+    font-family: "Meditative";
+    font-weight: normal;
+    font-size: 22px;
+    
+    user-select: none;
 }
 
 nav svg {
-  height: 24px;
-  aspect-ratio: 1;
-  padding: 4px;
-
-  border-radius: 4px;
-
-  align-self: center;
-
-  cursor: pointer;
+    height: 24px;
+    aspect-ratio: 1;
+    padding: 4px;
+    
+    border-radius: 4px;
+    
+    align-self: center;
+    
+    cursor: pointer;
 }
 
 nav svg:hover {
-  background-color: var(--bg);
+    background-color: var(--bg);
 }
 
+#changelog #changelog-container,
 nav #nav-container {
-  padding: 16px;
+    padding: 16px;
+    
+    white-space: break-spaces;
+}
 
-  white-space: break-spaces;
+#changelog #changelog-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    white-space: nowrap;
+}
+
+#changelog-container .line {
+    width: 100%;
+    
+    display: flex;
+    gap: 1rex;
+}
+
+#changelog-container .line .hash {
+    background-color: var(--fg-2);
+    color: var(--bg-1);
+    
+    padding: 0 4px;
+    border-radius: 4px;
+    
+    height: fit-content;
+    
+    font-weight: bold;
+}
+
+#changelog-container .line .changelog-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#changelog-container .line .hash.local-latest {
+    background-color: var(--slight-evil);
+}
+
+#changelog-container .line .hash.latest {
+    background-color: var(--chaotic-good);
 }
 
 footer {
-  height: 56px;
-  box-sizing: border-box;
-  padding: 8px 16px;
+    height: 56px;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    
+    display: flex;
+    justify-content: space-between;
+    
+    background-color: var(--bg-2);
+    
+    box-shadow: var(--bg-2) 0 -20px 20px 2px;
+}
 
-  display: flex;
-  justify-content: space-between;
+#nav-overlay {
+    position: fixed;
+    height: 100dvh;
+    width: 100dvw;
 
-  background-color: var(--bg-2);
+    top: 0;
+    left: 0;
 
-  box-shadow: var(--bg-2) 0 -20px 20px 2px;
+    pointer-events: none;
+    
+    z-index: 2;
+
+    transition: 1s cubic-bezier(0.76, 0, 0.24, 1) backdrop-filter;
+
+    display: none;
 }
 
 .mutter {
-  color: var(--fg-2);
-
-  font-size: .8em;
-  font-style: italic;
+    color: var(--fg-2);
+    
+    font-size: .8em;
+    font-style: italic;
 }
 
 .love {
-  color: var(--love);
-
-  font-weight: bold;
+    color: var(--love);
+    
+    font-weight: bold;
 }
 
 .angry {
-  color: var(--evil);
-
-  font-weight: bold;
+    color: var(--evil);
+    
+    font-weight: bold;
 }
 
 .me {
-  background-clip: text;
-  color: transparent !important;
-  background-image: linear-gradient(90deg, var(--love), var(--greater-love));
+    background-clip: text;
+    color: transparent !important;
+    background-image: linear-gradient(90deg, var(--love), var(--greater-love));
 }
 
 .rapid {
-  color: var(--slight-evil);
-
-  font-style: italic;
-
-  letter-spacing: -0.05em;
-  word-break: break-all;
+    color: var(--slight-evil);
+    
+    font-style: italic;
+    
+    letter-spacing: -0.05em;
+    word-break: break-all;
 }
 
 a {
-  color: var(--chaotic-evil);
+    color: var(--chaotic-evil);
 }
 
 a[dead] {
-  color: var(--intended-chaotic-evil) !important;
-
-  text-decoration: line-through;
+    color: var(--intended-chaotic-evil) !important;
+    
+    text-decoration: line-through;
 }
 
 a[dead]:after {
-  content: '(dead)';
-
-  display: inline-block;
-  
-  margin-left: .25em;
-
-  font-size: 12px;
+    content: '(dead)';
+    
+    display: inline-block;
+    
+    margin-left: .25em;
+    
+    font-size: 12px;
 }
 
 a:not(:any-link):not([dead]):after {
-  content: '(no href)';
-  
-  margin-left: .25em;
-
-  font-size: 12px;
+    content: '(no href)';
+    
+    margin-left: .25em;
+    
+    font-size: 12px;
 }
 
 a:any-link {
-  color: var(--lawful-good);
+    color: var(--lawful-good);
 }
 
 a:visited {
-  color: var(--chaotic-good);
+    color: var(--chaotic-good);
 }
 
 .timestamp {
-  font-size: 12px;
-  font-style: italic;
-
-  color: var(--fg-2);
-  
-  vertical-align: middle;
+    font-size: 12px;
+    font-style: italic;
+    
+    color: var(--fg-2);
+    
+    vertical-align: middle;
 }
 
 .timestamp::before {
-  content: '(';
+    content: '(';
 }
 
 .timestamp::after {
-  content: ')';
+    content: ')';
+}
+
+code {
+    font-family: 'JetBrains Mono', monospace;
 }
 
 @media only screen and (max-width: 768px) {
-  body {
-    padding: 0 8px;
-  }
-
-  nav {
-    top: 0;
-    position: fixed;
-
-    width: 80% !important;
-    max-width: 80%;
-    height: 100%;
+    body {
+        padding: 0 8px;
+    }
     
-    box-shadow: var(--bg-2) 10px 0 0 10px 2px;
+    nav {
+        top: 0;
+        position: fixed;
+        
+        width: 80% !important;
+        max-width: 80%;
+        height: 100%;
+        
+        box-shadow: var(--bg-2) 10px 0 0 10px 2px;
+        
+        z-index: 9999;
+    }
+    
+    nav #nav-container {
+        height: 100%;
+    }
+    
+    nav.hidden {
+        box-shadow: none;
+    }
 
-    z-index: 9999;
-  }
+    #nav-overlay {
+        display: block;
+    }
 
-  nav #nav-container {
-    height: 100%;
-  }
+    nav:not(.hidden) ~ #nav-overlay {
+        backdrop-filter: blur(20px);
+        pointer-events: all;
+    }
 
-  nav.hidden {
-    box-shadow: none;
-  }
+    #changelog {
+        display: none;
+    }
 }
 
 /* blockquote {
-  margin: 0;
-  padding-left: 10px;
+margin: 0;
+padding-left: 10px;
 
-  border-left: 4px solid #e4c8f5;
+border-left: 4px solid #e4c8f5;
 
-  background-color: var(--bg);
+background-color: var(--bg);
 } */

@@ -17,13 +17,22 @@ const nav = document.querySelector('nav')
 const navContainer = document.getElementById('nav-container')
 const navButton = document.getElementById('nav-button')
 const navCloseButton = document.getElementById('nav-close-button')
+const navOverlay = document.getElementById('nav-overlay')
+
+const changelogRoot = document.getElementById('changelog')
+const changelogContainer = document.getElementById('changelog-container')
 
 const responsiveEvent = window.matchMedia("only screen and (max-width: 768px)")
 
 let navHidden = responsiveEvent.matches
+nav.classList.toggle('hidden', navHidden)
 
-const recalcNavSize = () =>
-    nav.style.width = `calc(${main.getBoundingClientRect().x}px - 32px)`
+const recalcResponsiveSize = () => {
+    const sideWidth = `calc(${main.getBoundingClientRect().x}px - 32px)`
+
+    nav.style.width = sideWidth
+    changelogRoot.style.width = sideWidth
+}
 
 const recalcNavRight = (immediate = false) => {
     const outside = responsiveEvent.matches
@@ -52,12 +61,12 @@ const toggleNav = (force = undefined) => {
     recalcNavRight()
 }
 
-const recalcNav = (immediate = false) => {
-    recalcNavSize()
+const recalcResponsive = (immediate = false) => {
+    recalcResponsiveSize()
     recalcNavRight(immediate)
 }
 
-recalcNav(true)
+recalcResponsive(true)
 
 navContainer.replaceChildren(
     ...Object
@@ -76,7 +85,8 @@ navContainer.replaceChildren(
 
 navButton.addEventListener('click', toggleNav)
 navCloseButton.addEventListener('click', () => toggleNav(false))
-responsiveEvent.addEventListener('change', recalcNav)
+responsiveEvent.addEventListener('change', recalcResponsive)
+navOverlay.addEventListener('click', () => toggleNav(false))
 
 if (content)
     fetch(content)
@@ -94,6 +104,28 @@ const changelog = await fetch('/content/changelog.json')
         .then((r) => r.json())
         .catch(console.error)
 
-if (changelog) {
-    
-}
+if (changelog)
+    changelogContainer.replaceChildren(
+        ...changelog.map(([hash, title]) => {
+            const line = document.createElement('div')
+            line.className = 'line'
+            
+            const hashLabel = document.createElement('code')
+            hashLabel.className = 'hash'
+            hashLabel.classList.toggle('latest', title.includes('origin/HEAD'))
+            hashLabel.classList.toggle('local-latest', title.includes('HEAD ->'))
+            hashLabel.textContent = hash.substring(0, 7)
+            hashLabel.title = hash
+
+            const titleLabel = document.createElement('div')
+            titleLabel.className = 'changelog-title'
+            titleLabel.textContent = title.includes('origin/HEAD') || title.includes('HEAD ->')
+                ? title.replace(/^\(.+\)/, '')
+                : title
+            titleLabel.title = title
+
+            line.append(hashLabel, titleLabel)
+
+            return line
+        })
+    )

@@ -4,10 +4,10 @@ import { writeFile } from 'node:fs/promises'
 const _default = () => writeFile(
     'content/changelog.json',
     JSON.stringify(
-        shell.exec('git log --oneline -5', { silent: true }).stdout
+        shell.exec('git log --oneline --no-abbrev-commit --decorate=short -5', { silent: true }).stdout
             .trim()
             .split('\n')
-            .map((log) => [log.substring(0, 7), log.substring(8)])
+            .map((log) => [log.substring(0, 40), log.substring(41)])
     )
 )
 
