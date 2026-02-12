@@ -1,10 +1,8 @@
 import { createServer } from 'http-server'
 
-import make404 from './make-404.js'
-import makeContentIndex from './make-content-index.js'
-import makeChangelog from './make-changelog.js'
+import makeAssets from './make-assets.js'
 
-await make404()
-await makeContentIndex()
-await makeChangelog()
+await makeAssets(true)
+
 createServer().listen(8080)
+console.log('listening on 8080')

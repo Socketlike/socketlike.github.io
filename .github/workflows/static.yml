@@ -42,9 +42,9 @@ jobs:
                 run: |
                     pnpm i
             -
-                name: make content index
+                name: make assets
                 run: |
-                    pnpm make-content-index
+                    pnpm make-assets
             -
                 name: upload
                 uses: actions/upload-pages-artifact@v4

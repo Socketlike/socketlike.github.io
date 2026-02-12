@@ -10,6 +10,7 @@
     "make-content-index": "node scripts/make-content-index.js",
     "make-changelog": "node scripts/make-changelog.js",
     "make-404": "node scripts/make-404.js",
+    "make-assets": "node scripts/make-assets.js",
     "run-server": "node scripts/run.js"
   },
   "devDependencies": {
