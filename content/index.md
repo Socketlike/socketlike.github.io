@@ -26,13 +26,13 @@ i used to be obsessed with tinkering with web technologies but i've lost interes
 \
 \
 it's a miracle i'm even making this webpage right now .
-> *hey evie! hi evie! isn't this supposed to be the index page? where's the list of pages?*
+> {dialogue} *hey evie! hi evie! isn't this supposed to be the index page? where's the list of pages?*
 
 shut the [-angry HELL] up! [-mutter when did i ever let YOU speak? who even are you? get out of here!!!]\
 **anyways** they're in that submenu accessible through the menu button on the top right of the page .\
 i don't have a good design for a nav thingy yet so you get that for now.
 
-> *why is this webpage so damn empty?? blahblahblahblah*
+> {dialogue} *why is this webpage so damn empty?? blahblahblahblah*
 
 [-angry because i haven't figured out what to add yet okay shut UP you're so-]\
 whoops lost my composure there! anyways this webpage is to remain mostly empty until i figure out what to add to it. goodbye!

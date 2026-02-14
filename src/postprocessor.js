@@ -3,6 +3,20 @@ const postprocessors = Object.freeze(
         (root) => root
             .querySelectorAll('.github-only')
             .forEach((e) => e.remove()),
+
+        (root) => root
+            .querySelectorAll('[blockquote-dialogue]')
+            .forEach((e) => {
+                if (e?.parentNode?.parentNode?.tagName === 'BLOCKQUOTE')
+                    e.parentNode.parentNode.classList.add('dialogue')
+
+                e.remove()
+            }),
+        
+        // make img alts also show up as a tooltip on pc
+        (root) => root
+            .querySelectorAll('img[alt]')
+            .forEach((e) => e.title = e.alt),
         
         // history "link" hack - part 2
         (root) => root

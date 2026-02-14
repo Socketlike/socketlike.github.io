@@ -11,11 +11,11 @@ delisted: true
   <br>
 </p>
 
-> *i don't know!!! evie save me!!!!!!!*
+> {dialogue} *i don't know!!! evie save me!!!!!!!*
 
 dOES IT LOOK LIKE [-angry I KNOW????] go FIGURE IT OUT YOURSELF
 
-> *what if i can't??*
+> {dialogue} *what if i can't??*
 
 i don't care! have fun .
 

@@ -32,7 +32,7 @@ then, on the *"frontend"*, i just have the webpage pull that list using a fetch 
 does it all make sense yet?\
 no?
 
-> *evie, you know, there are better ways to make a website. like buying a vps, and then putting a real web server on there...*
+> {dialogue} *evie, you know, there are better ways to make a website. like buying a vps, and then putting a real web server on there...*
 
 oh yeah.\
 you're right...\
@@ -42,7 +42,7 @@ it's not like, my family is [-angry struggling] to keep up with my college tuiti
 
 moving on...
 
-> *evie, even so, you know, there are better ways to make a static webpage... like generating html from markdown files or whatever...*
+> {dialogue} *evie, even so, you know, there are better ways to make a static webpage... like generating html from markdown files or whatever...*
 
 but that's ***no fun***, is it?\
 my webpage would just be another *slop project*, with no [-rapid challenge] to it..\

@@ -48,6 +48,12 @@ const preprocessors = Object.freeze(
         },
 
         {
+            filter: /{dialogue}/g,
+            replacer: () =>
+                `<span blockquote-dialogue></span>`
+        },
+
+        {
             filter: /\[-([^\n\s]+)\s+([^\]]+)\s*\]/g,
             replacer: (_, mod, content) =>
                 `<span class="${mod}">${content}</span>`
