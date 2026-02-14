@@ -8,7 +8,8 @@
   <br>
 </p>
 
-... you can find them [here](https://open.spotify.com/playlist/7Gfvs4A320zPRQG1DG51nx), on spotify.
+... ~~you can find them [here](https://open.spotify.com/playlist/7Gfvs4A320zPRQG1DG51nx), on spotify.~~\
+[-mutter (edit) i'm no longer using this playlist; i'm now making a playlist monthly to put stuff that i'm currently interested in since that's not possible with the current singular playlist approach]
 > *evie, spotify **fucking** sucks! why aren't you using something else?????*
 
 yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now [-mutter (has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)].

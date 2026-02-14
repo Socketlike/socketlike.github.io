@@ -23,7 +23,10 @@
         --slight-evil: #ebeb8d;
         --good: #7bdf7b;
         --lawful-good: #8181d3;
+        --lawful-pure: #b8caf4;
         --chaotic-good: #8c64cc;
+        --chaotic-pure: #b979d6;
+        --neutral-pure: #d7b8ff;
     }
 }
 
@@ -198,6 +201,31 @@ nav svg {
 
 nav svg:hover {
     background-color: var(--bg);
+}
+
+nav a {
+    background-color: var(--lawful-good);
+    color: var(--bg-1) !important;
+
+    text-decoration: none;
+    line-height: 1.5rem;
+    font-weight: 600;
+
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: var(--lawful-pure);
+}
+
+nav a:visited {
+    background-color: var(--chaotic-pure);
+    text-decoration: underline 1px;
+}
+
+nav a:visited:hover {
+    background-color: var(--neutral-pure);
 }
 
 #changelog #changelog-container,
