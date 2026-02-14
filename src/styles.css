@@ -111,6 +111,8 @@ p {
 }
 
 .header svg {
+    display: none;
+
     height: 24px;
     aspect-ratio: 1;
     padding: 4px;
@@ -188,6 +190,8 @@ nav h3 {
 }
 
 nav svg {
+    display: none;
+
     height: 24px;
     aspect-ratio: 1;
     padding: 4px;
@@ -412,6 +416,11 @@ code {
         box-shadow: var(--bg-2) 10px 0 0 10px 2px;
         
         z-index: 9999;
+    }
+
+    nav svg,
+    .header svg {
+        display: initial;
     }
     
     nav #nav-container {
