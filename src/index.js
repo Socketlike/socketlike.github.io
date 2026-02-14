@@ -138,4 +138,6 @@ if (changelog)
         })
     )
 
-hljs.highlightAll()
+// okay since it's not rendering sometimes let's just make it wait a bit...
+await new Promise((r) => setTimeout(r, 500))
+    .then(() => hljs.highlightAll())
