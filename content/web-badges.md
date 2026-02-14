@@ -19,9 +19,24 @@ and here's [a list of them, linking to pages on neocities](https://neonaut.neoci
 after seeing that i really really wanted to make my own;\
 so i did! here it is: [-mutter (sorry if its low effort i made it in 2 minutes with aseprite)]
 
-[![evie's pages: blog](/resources/badge.png)](https://evie.is-a.dev)
+[![evie's pages: blog](/badge.png)](https://evie.is-a.dev)
 
- i DO wanna make a better one some day.\
+[-mutter (edit)] of course the badge would be useless without an embed code so here they are:
+- html:
+    ```html
+    <a href="{origin}">
+        <img
+            alt="evie's pages: blog"
+            src="{origin}/badge.png"
+        >
+    </a>
+    ```
+- markdown:
+    ```md
+    [![evie's pages: blog]({origin}/badge.png)]({origin})
+    ```
+
+i DO wanna make a better one some day.\
 [-mutter maybe tomorrow,\
 maybe never.\
 we'll see...]

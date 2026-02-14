@@ -48,9 +48,13 @@ const preprocessors = Object.freeze(
         },
 
         {
+            filter: /{origin}/g,
+            replacer: location.origin
+        },
+
+        {
             filter: /{dialogue}/g,
-            replacer: () =>
-                `<span blockquote-dialogue></span>`
+            replacer: '<span blockquote-dialogue></span>'
         },
 
         {

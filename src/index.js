@@ -1,4 +1,12 @@
-import { marked } from 'https://cdn.jsdelivr.net/npm/marked@17.0.1/lib/marked.esm.js'
+import { marked } from 'https://unpkg.com/marked@17.0.1/lib/marked.esm.js'
+import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/core.min.js'
+
+import hljsXML from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/xml.min.js'
+import hljsMarkdown from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/markdown.min.js'
+
+hljs.registerLanguage('html', hljsXML)
+hljs.registerLanguage('md', hljsMarkdown)
+
 import preprocess from '/src/preprocessor.js'
 import postprocess from '/src/postprocessor.js'
 
@@ -129,3 +137,5 @@ if (changelog)
             return line
         })
     )
+
+hljs.highlightAll()

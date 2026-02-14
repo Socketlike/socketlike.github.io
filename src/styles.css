@@ -409,6 +409,10 @@ a:visited {
     content: ')';
 }
 
+pre code {
+    font-size: 14px;
+}
+
 code {
     font-family: 'JetBrains Mono', monospace;
 }
