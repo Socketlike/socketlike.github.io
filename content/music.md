@@ -66,6 +66,8 @@ songs here are mostly from the [whitepine series (you should watch whitepine it'
 
 the majority of these are from [regretevator](https://www.roblox.com/games/4972273297/Regretevator) + the rest are random stuff i found
 
+there is one from block tales though
+
 - dithered shores ([spotify](https://open.spotify.com/track/5ANjGpK1768JncIm9A6BUw), [youtube](https://www.youtube.com/watch?v=2McNQxgGnZY)) by Xploshi ([spotify](https://open.spotify.com/artist/6qJ2E259NtR98v1OHBEfTF), [youtube](https://www.youtube.com/@Xploshi))
 - rafflesia online ([spotify](https://open.spotify.com/track/5ByNaNLNThAHXjQanON9eB), [youtube](https://www.youtube.com/watch?v=1z4HCGhZCv4)) by Xploshi ([spotify](https://open.spotify.com/artist/6qJ2E259NtR98v1OHBEfTF), [youtube](https://www.youtube.com/@Xploshi))
 - locks ([spotify](https://open.spotify.com/track/0DY8MPesSnZd31d7ESL8yn), [youtube](https://www.youtube.com/watch?v=qYY5EaEK4Hc)) by gabemtnz ([spotify](https://open.spotify.com/artist/5ILfP4cKaKUz1RLGsCdItR), [youtube](https://www.youtube.com/@gabemtnz4669))
@@ -75,6 +77,7 @@ the majority of these are from [regretevator](https://www.roblox.com/games/49722
 - ruined ([spotify](https://open.spotify.com/track/0YI2ItvDM9ygwWtW8yd6pQ), [youtube](https://www.youtube.com/watch?v=WCgf9H9WP_8)) by Ageless Muse ([spotify](https://open.spotify.com/artist/28zRcmAer44ky1BVGpmlrJ), [youtube](https://www.youtube.com/channel/UCOo5Zb7pfUKnvlaIsJqHlsw))
 - escape - alt. version ([spotify](https://open.spotify.com/track/3Y8le2p8JmNsnUqY9SBjF4), [youtube](https://www.youtube.com/watch?v=Wm-xhdrRIU8)) by jacal ([spotify](https://open.spotify.com/artist/1kgoGhvV1nEGVHFhY4VbcH), [youtube](https://www.youtube.com/channel/UCMOS8CWbvUO8aW8A33Jz9LQ))
 - wasteland ([spotify](https://open.spotify.com/track/3rF6JPHGnDf5fIQPqHW7U3), [youtube](https://www.youtube.com/watch?v=mlJWzAOprrI)) by royal & the serpent ([youtube](https://www.youtube.com/@royalandtheserpent), [spotify](https://open.spotify.com/artist/64EHXDoln95lnccszdPum0))
+- i'm your captain now / the ancients ([spotify](https://open.spotify.com/track/3kWVdohYldq6SR8Ue9e24T), [youtube](https://www.youtube.com/watch?v=qkAsBU9ccUQ)) by the recovery system ([spotify](https://open.spotify.com/artist/5xHYErbgLqN8PAdEpptG62), [youtube](https://www.youtube.com/channel/UCKB09SvPjQBsgAHAZKWBQjQ))
 
 ## honorary mentions
 
