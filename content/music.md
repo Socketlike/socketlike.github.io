@@ -14,7 +14,7 @@
 
 yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now [-mutter (has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)].
 
-but if for some reason you don't wanna click on that link here are some songs i like the most in that playlist:
+~~but if for some reason you don't wanna click on that link~~ here are some songs i like the most ~~in that playlist~~:
 
 ## by DIGITAL DESCENDANT ([spotify](https://open.spotify.com/artist/7EQqyAUZByxMFtC0Nz88EV), [youtube](https://www.youtube.com/channel/UCPa78LlIvBiDozF6iAuNPqg))
 
@@ -52,16 +52,12 @@ songs here are mostly from the [whitepine series (you should watch whitepine it'
 
 ## by Iglooghost ([spotify](https://open.spotify.com/artist/7LCDnUQYE07fnKbo46SVLB), [youtube](https://www.youtube.com/channel/UCglyPpj2leAkI40GnG5yddA))
 
-50/50 split between [Lei Line Eon](https://www.youtube.com/watch?v=8nr25L1dizE) and [Tidal Memory Exo](https://www.youtube.com/watch?v=MId3KYmvsXI)
-
 - pure grey circle ([spotify](https://open.spotify.com/track/6a5pBhYATvDOFkSNk7xki4), [youtube](https://www.youtube.com/watch?v=mlunO8DMMQw))
 - dewdrop signal ([spotify](https://open.spotify.com/track/1rL4CPIr2Um35bF4ljM3er), [youtube](https://www.youtube.com/watch?v=E95TMh772-w))
 - geo sprite exo ([spotify](https://open.spotify.com/track/128Yqy6rXaNPQXpAJCiadI), [youtube](https://www.youtube.com/watch?v=2-D-Iz7rtBc))
 - sylph fossil ([spotify](https://open.spotify.com/track/7mjqpvqJx68FS35V33fzoy), [youtube](https://www.youtube.com/watch?v=A0_Y3z93xVI))
 
 ## by nicopatty ([spotify](https://open.spotify.com/artist/3XvcSIeFlzkRTVGjGchOd3), [youtube](https://www.youtube.com/@nicopatty))
-
-1/2 [regretevator](https://www.roblox.com/games/4972273297/Regretevator) and 1/2 [nico's nextbots](https://www.roblox.com/games/10118559731/nicos-nextbots)
 
 - turbulence ([spotify](https://open.spotify.com/track/4ODsMudbgZONmG6q2GYpVz), [youtube](https://www.youtube.com/watch?v=ig_IPVHuMDY))
 - grand piano ([spotify](https://open.spotify.com/track/06jzSCMLK5rHyDL2kGQnCn), [youtube](https://www.youtube.com/watch?v=TDbbiLXYPLY))
@@ -78,6 +74,7 @@ the majority of these are from [regretevator](https://www.roblox.com/games/49722
 - express lane ([spotify](https://open.spotify.com/track/0dm0KVSlg2mo2T2VrGKRvy), [youtube](https://www.youtube.com/watch?v=YpGSLfGsxBc)) by GorillaWeb ([spotify](https://open.spotify.com/artist/6fpFx6z9CGwncqrh0HvlCq), [youtube](https://www.youtube.com/channel/UCnpPB7VM9_PcMz8FXw3flYQ))
 - ruined ([spotify](https://open.spotify.com/track/0YI2ItvDM9ygwWtW8yd6pQ), [youtube](https://www.youtube.com/watch?v=WCgf9H9WP_8)) by Ageless Muse ([spotify](https://open.spotify.com/artist/28zRcmAer44ky1BVGpmlrJ), [youtube](https://www.youtube.com/channel/UCOo5Zb7pfUKnvlaIsJqHlsw))
 - escape - alt. version ([spotify](https://open.spotify.com/track/3Y8le2p8JmNsnUqY9SBjF4), [youtube](https://www.youtube.com/watch?v=Wm-xhdrRIU8)) by jacal ([spotify](https://open.spotify.com/artist/1kgoGhvV1nEGVHFhY4VbcH), [youtube](https://www.youtube.com/channel/UCMOS8CWbvUO8aW8A33Jz9LQ))
+- wasteland ([spotify](https://open.spotify.com/track/3rF6JPHGnDf5fIQPqHW7U3), [youtube](https://www.youtube.com/watch?v=mlJWzAOprrI)) by royal & the serpent ([youtube](https://www.youtube.com/@royalandtheserpent), [spotify](https://open.spotify.com/artist/64EHXDoln95lnccszdPum0))
 
 ## honorary mentions
 
