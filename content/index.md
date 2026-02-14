@@ -37,7 +37,7 @@ i don't have a good design for a nav thingy yet so you get that for now.
 [-angry because i haven't figured out what to add yet okay shut UP you're so-]\
 whoops lost my composure there! anyways this webpage is to remain mostly empty until i figure out what to add to it. goodbye!
 
-> *but you haven't told me anything meaningful about yourself yet!*
+> {dialogue} *but you haven't told me anything meaningful about yourself yet!*
 
 i'm chronically online! you can almost always reach me through discord [-mutter (encyclopedic)].\
 \
