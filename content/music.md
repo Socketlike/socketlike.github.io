@@ -78,7 +78,7 @@ the majority of these are from [regretevator](https://www.roblox.com/games/49722
 
 ## honorary mentions
 
-not in the playlist but i still like them
+not on spotify
 
 - [hatred (block tales) cover](https://www.youtube.com/watch?v=B2RkodVm3Ks) by [kirbcicle](https://www.youtube.com/@kirbcicle9527)
 - [seraphic takedown](https://www.youtube.com/watch?v=TY_GeniI7qU) by [nicopatty](https://www.youtube.com/@nicopatty)
