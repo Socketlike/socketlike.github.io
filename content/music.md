@@ -1,18 +1,17 @@
 # the music i listen to
-<p class="github-only">
+<p modifier type="github-only">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
   <br>
   consider viewing this document on my github pages instead!
-  <br>
 </p>
 
 ... ~~you can find them [here](https://open.spotify.com/playlist/7Gfvs4A320zPRQG1DG51nx), on spotify.~~\
-[-mutter (edit) i'm no longer using this playlist; i'm now making a playlist monthly to put stuff that i'm currently interested in since that's not possible with the current singular playlist approach]
-> {dialogue} *evie, spotify **fucking** sucks! why aren't you using something else?????*
+<span class="mutter">(edit) i'm no longer using this playlist; i'm now making a playlist monthly to put stuff that i'm currently interested in since that's not possible with the current singular playlist approach</span>
+> <span modifier type="dialogue"></span> *evie, spotify **fucking** sucks! why aren't you using something else?????*
 
-yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now [-mutter (has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)].
+yes i know spotify may not be the most upright company but there are not that many good alternatives for me right now <span class="mutter">(has to be a streaming service with an expansive library + be easy and not take a thousand years to transfer my privated 1k+ songs playlist from spotify to it)</span>.
 
 ~~but if for some reason you don't wanna click on that link~~ here are some songs i like the most ~~in that playlist~~:
 

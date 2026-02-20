@@ -2,7 +2,7 @@
 name: web badges
 ---
 # web badges are neat
-<p class="github-only">
+<p modifier type="github-only">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
@@ -17,11 +17,11 @@ for those who don't know what they are, here's [a definition of what a web badge
 and here's [a list of them, linking to pages on neocities](https://neonaut.neocities.org/cyber/88x31). pretty neat, huh?
 
 after seeing that i really really wanted to make my own;\
-so i did! here it is: [-mutter (sorry if its low effort i made it in 2 minutes with aseprite)]
+so i did! here it is: <span class="mutter">(sorry if its low effort i made it in 2 minutes with aseprite)</span>
 
 [![evie's pages: blog](/badge.png)](https://evie.is-a.dev)
 
-[-mutter (edit)] of course the badge would be useless without an embed code so here they are:
+<span class="mutter">(edit)</span> of course the badge would be useless without an embed code so here they are:
 - html:
     ```html
     <a href="{origin}">
@@ -37,6 +37,6 @@ so i did! here it is: [-mutter (sorry if its low effort i made it in 2 minutes w
     ```
 
 i DO wanna make a better one some day.\
-[-mutter maybe tomorrow,\
+<span class="mutter">maybe tomorrow,\
 maybe never.\
-we'll see...]
+we'll see...</span>

@@ -1,54 +1,127 @@
-const postprocessors = Object.freeze(
-    [
-        (root) => root
-            .querySelectorAll('.github-only')
-            .forEach((e) => e.remove()),
+const main = document.querySelector('main')
 
-        (root) => root
-            .querySelectorAll('[blockquote-dialogue]')
-            .forEach((e) => {
-                if (e?.parentNode?.parentNode?.tagName === 'BLOCKQUOTE')
-                    e.parentNode.parentNode.classList.add('dialogue')
+const getRelativeFormatParameters = (value) => {
+    if (Math.abs(value) >= 365 * 24 * 60 * 60 * 1000)
+        return [Math.ceil(value / (365 * 24 * 60 * 60 * 1000)), 'years']
+    
+    if (Math.abs(value) >= 30 * 24 * 60 * 60 * 1000)
+        return [Math.ceil(value / (30 * 24 * 60 * 60 * 1000)), 'months']
 
-                e.remove()
-            }),
-        
-        // make img alts also show up as a tooltip on pc
-        (root) => root
-            .querySelectorAll('img[alt]')
-            .forEach((e) => e.title = e.alt),
-        
-        // history "link" hack - part 2
-        (root) => root
-            .querySelectorAll('a[href^="/__secretevilpathnoonewoulduseonpurpose_history_"]')
-            .forEach((e) => {
-                const amount = Number(
-                    new URL(e.href)
-                        .pathname
-                        .replace('/__secretevilpathnoonewoulduseonpurpose_history_', '')
-                )
+    if (Math.abs(value) >= 7 * 24 * 60 * 60 * 1000)
+        return [Math.ceil(value / (7 * 24 * 60 * 60 * 1000)), 'weeks']
 
-                e.href = ''
+    if (Math.abs(value) >= 24 * 60 * 60 * 1000)
+        return [Math.ceil(value / (24 * 60 * 60 * 1000)), 'days']
 
-                if (!Number.isNaN(amount)) {
-                    e.href = '/'
-                    e.title = `go ${amount < 0 ? 'back' : 'forward'} by ${Math.abs(amount)} page${Math.abs(amount) !== 1 ? 's' : ''}`
-                    e.addEventListener('click', (e) => {
-                        e.preventDefault()
-                        e.stopPropagation()
+    if (Math.abs(value) >= 60 * 60 * 1000)
+        return [Math.ceil(value / (60 * 60 * 1000)), 'hours']
 
-                        history.go(amount)
-                    })
-                }
+    if (Math.abs(value) >= 60 * 1000)
+        return [Math.ceil(value / (60 * 1000)), 'minutes']
+
+    return [Math.ceil(value / 1000), 'seconds']
+}
+
+const placeholders = {
+    age(e) {
+        const birthdayCounter = document.createElement('span')
+        birthdayCounter.classList.toggle('timestamp', true)
+        birthdayCounter.textContent = `birthday ${
+            new Intl.RelativeTimeFormat(undefined, {
+                numeric: 'auto'
             })
-    ]
-)
+                .format(...getRelativeFormatParameters(
+                    Date.UTC(new Date().getFullYear() + 1, 1, 9) - Date.now()
+                ))
+        }`
+
+        e.replaceChildren(
+            new Date().getFullYear() - new Date(1171040400000).getFullYear(),
+            ' ',
+            birthdayCounter
+        )
+    },
+
+    timestamp(e) {
+        const value = Number(e.getAttribute('value'))
+        const display = e.getAttribute('display') || 'short'
+
+        e.classList.toggle('timestamp', true)
+
+        if (Number.isNaN(value))
+            e.textContent = 'invalid timestamp'
+        else {
+            let label = ''
+            const title = new Intl.DateTimeFormat(undefined, {
+                dateStyle: 'long',
+                timeStyle: 'short'
+            })
+                .format(value)
+
+            switch (display) {
+                case 'long':
+                    label = title
+                    break
+
+                case 'relative':
+                    label = new Intl.RelativeTimeFormat(undefined, {
+                        numeric: 'auto'
+                    })
+                        .format(...getRelativeFormatParameters(value - Date.now()))
+
+                case 'short':
+                default:
+                    label = new Intl.DateTimeFormat(undefined, {
+                        timeStyle: 'short'
+                    })
+                        .format(value)
+                    break
+            }
+
+            e.textContent = label
+            e.title = title
+        }
+    },
+
+    go_back(e) {
+        e.href = '/'
+        e.addEventListener('click', (ev) => {
+            ev.stopPropagation()
+            ev.preventDefault()
+
+            history.back()
+        })
+    }
+}
+
+const modifiers = {
+    dialogue(e) {
+        if (e.parentElement.parentElement.nodeName === 'BLOCKQUOTE')
+            e.parentElement.parentElement.classList.toggle('dialogue', true)
+    }
+}
 
 export default (content) => {
     const _main = document.createElement('main')
     _main.innerHTML = content
 
-    postprocessors.forEach((postprocessor) => postprocessor(_main))
+    _main.querySelectorAll('[placeholder]')
+        .forEach((e) => {
+            const type = e.getAttribute('type')
+
+            if (type in placeholders)
+                placeholders[type](e)
+        })
+
+    _main.querySelectorAll('[modifier]')
+        .forEach((e) => {
+            const type = e.getAttribute('type')
+
+            if (type in modifiers && e.parentElement !== main && e.parentElement !== document.body)
+                modifiers[type](e)
+
+            e.remove()
+        })
 
     return [..._main.childNodes]
 }

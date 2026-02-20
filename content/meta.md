@@ -1,5 +1,5 @@
 # this website is
-<p class="github-only">
+<p modifier type="github-only">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
@@ -13,14 +13,14 @@ i thought i should start making one of my own!
 
 the technology behind this site is... jank, for the lack of a better word.
 
-the *"backend"* [-mutter (pffft)] of this webpage is literally just the github pages servers.\
+the *"backend"* <span class="mutter">(pffft)</span> of this webpage is literally just the github pages servers.\
 it does nothing but serve static files, because that's what github pages does.
 
 the *"frontend"* is where the magic truly happens.\
 this page that you're seeing right here is actually the 404 page,\
 **HOWEVER** i did some *witchcraft* with JavaScript to make it parse the current path and render the corresponding *"page"*,\
 like a normal website would do!\
-[-mutter (learned it from previous experience with weird path router wizardry like <a href="https://react.dev">react</a> and <a href="https://vuejs.org">vue</a> on github pages)]
+<span class="mutter">(learned it from previous experience with weird path router wizardry like [react](https://react.dev) and [vue](https://vuejs.org) on github pages)</span>
 
 the *"pages"* in question are mere markdown files pulled directly from the static file dump on this github pages instance, for example, [here's one!](/content/meta.md) it's this page itself.
 
@@ -32,20 +32,20 @@ then, on the *"frontend"*, i just have the webpage pull that list using a fetch 
 does it all make sense yet?\
 no?
 
-> {dialogue} *evie, you know, there are better ways to make a website. like buying a vps, and then putting a real web server on there...*
+> <span modifier type="dialogue"></span> *evie, you know, there are better ways to make a website. like buying a vps, and then putting a real web server on there...*
 
 oh yeah.\
 you're right...\
 i should have done that- i mean, i would have done that...\
-if i wasn't [-angry so broke!]
-it's not like, my family is [-angry struggling] to keep up with my college tuition or whatever...
+if i wasn't <span class="angry">so broke!</span>
+it's not like, my family is <span class="angry">struggling</span> to keep up with my college tuition or whatever...
 
 moving on...
 
-> {dialogue} *evie, even so, you know, there are better ways to make a static webpage... like generating html from markdown files or whatever...*
+> <span modifier type="dialogue"></span> *evie, even so, you know, there are better ways to make a static webpage... like generating html from markdown files or whatever...*
 
 but that's ***no fun***, is it?\
-my webpage would just be another *slop project*, with no [-rapid challenge] to it..\
+my webpage would just be another *slop project*, with no <span class="rapid">challenge</span> to it..\
 besides, at least i feel compelled to *do something*! *to make something*! **for once**!
 
 this webpage is my passion project. that just sounds so corny doesn't it.\
@@ -53,4 +53,4 @@ i've felt fun making this webpage. that's what matters, doesn't it?\
 it's just fun, making something from nothing.
 
 that's what matters. having fun.\
-[-mutter <i>i've never felt so much fun in my life.</i>]
+<span class="mutter">*i've never felt so much fun in my life.*</span>

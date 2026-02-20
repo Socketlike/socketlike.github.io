@@ -1,6 +1,5 @@
 import { marked } from 'https://unpkg.com/marked@17.0.1/lib/marked.esm.js'
 
-import preprocess from '/src/preprocessor.js'
 import postprocess from '/src/postprocessor.js'
 
 const main = document.querySelector('main')
@@ -37,9 +36,7 @@ export default async () => {
             .then((r) => r.text())
             .then((text) => text.replace(/---[\r\n].*?[\r\n]---/s, ''))
             .then((text) => main.replaceChildren(
-                    ...postprocess(marked.parse(
-                        preprocess(text)
-                    ))
+                    ...postprocess(marked.parse(text))
                 )
             )
             .catch(console.error)

@@ -1,4 +1,4 @@
-# some occasions in my life that i have decided to talk about
+# making stuff is fun
 <p modifier type="github-only">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
@@ -7,8 +7,5 @@
   consider viewing this document on my github pages instead!
 </p>
 
-truly no time like the past, the present and the future (to come!) to document all of my *fun* experiences at certain points in my life!
-
-here is the nav list:
-
-[my birthday in 2026](/occasions/birthday-2026)
+ever thought that you're probably not good enough to make something?
+and thus you'd thought you'll never try?
