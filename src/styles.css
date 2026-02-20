@@ -230,6 +230,8 @@ nav a {
 
     padding: 0 4px;
     border-radius: 4px;
+
+    white-space: nowrap;
 }
 
 nav a:hover {
