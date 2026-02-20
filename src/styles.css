@@ -409,12 +409,21 @@ a:visited {
     content: ')';
 }
 
-pre code {
+code {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
 }
 
-code {
-    font-family: 'JetBrains Mono', monospace;
+p code {
+    padding: 1px 4px;
+    border-radius: 4px;
+
+    background-color: var(--bg-2);
+    border: 1px solid var(--bg);
+}
+
+.hash {
+    font-size: 16px;
 }
 
 @media only screen and (max-width: 768px) {

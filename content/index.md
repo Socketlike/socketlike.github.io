@@ -1,7 +1,7 @@
 ---
 path: '/'
 ---
-# hi i'm evelyn nightshade
+# hi
 <p modifier type="github-only">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
@@ -10,43 +10,19 @@ path: '/'
   consider viewing this document on my github pages instead!
 </p>
 
-do you know [me](/me)? i probably don't know [you](/you).
-\
-again, my name is *evelyn nightshade*. it's a really odd name, but it's [one that i gave myself](https://youtube.com/watch?v=eoq2e4h_avs). if that's a mouthful for you, you can call me *evie*. anyways, let's move on with the introductions.\
-am <span placeholder type="age"> years old.\
-i'm a girl who really really loves procrastination. chronically tired, occasionally wired.\
-\
-because of that i haven't been doing anything of value.\
-i'd just randomly get an idea for something cool and get in the mood to make it happen\
-<span class="rapid">and then put it off immediately</span> because i'm *"doing something else"* or just don't have time for it.\
-\
-then later when i do have time, i'm just not in the mood anymore. so nothing ever ends up happening.\
-\
-i used to be obsessed with tinkering with web technologies but i've lost interest since a while ago (probably for the same reason?)\
-\
-\
-it's a miracle i'm even making this webpage right now .
-> <span modifier type="dialogue"></span> *hey evie! hi evie! isn't this supposed to be the index page? where's the list of pages?*
+my name is [evelyn nightshade](/evelyn-nightshade). if that's too long for you, here are some other alternative names that you can call me by:
+- evelyn
 
-shut the <span class="angry">angry HELL</span> up! <span class="mutter">when did i ever let YOU speak? who even are you? get out of here!!!</span>\
-**anyways** they're in that submenu accessible through the menu button on the top right of the page .\
-i don't have a good design for a nav thingy yet so you get that for now.
+- evie (my main nickname)
 
-> <span modifier type="dialogue"></span> *why is this webpage so damn empty?? blahblahblahblah*
+- ms. nightshade
 
-<span class="angry">because i haven't figured out what to add yet okay shut UP you're so-</span>\
-whoops lost my composure there! anyways this webpage is to remain mostly empty until i figure out what to add to it. goodbye!
+- [that one loner and quiet and stupid and boring girl](/alone-and-quiet-and-stupid-and-boring) who longs for nothing more than companionship and peace
 
-> <span modifier type="dialogue"></span> *but you haven't told me anything meaningful about yourself yet!*
+i'm <span placeholder type="age"></span>. my pronouns are [she/her](/gender).
 
-i'm chronically online! you can almost always reach me through discord <span class="mutter">(encyclopedic)</span>.\
-\
-you can also find me on *minecraft* <span class="mutter">(sillyevie)</span>.\
-yes i **DO** play minecraft sometimes. yes i play on hypixel.\
-\
-you **CAN** also find me on roblox <span class="mutter">(daydreamyevie)</span>\
-note that i do not have my joins on and if you friend me randomly there is a non zero but **VERY** low chance that i will hear you out.\
-\
-here's a post about [what music i listen to](/music). you can also click on it on the nav panel.
-\
-<span class="love">that's all i have to say for now! cya next time!</span>
+yes i do listen to [music](/music). [music](/music) is great! though my taste might not overlap with yours.
+
+why yes i do play [games](/games). thank you for asking.
+
+and yes i do have a [web 1.0 badge thingy](/web-badges). don't think anyone would ever embed it anywhere but here you go.

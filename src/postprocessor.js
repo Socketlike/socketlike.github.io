@@ -31,13 +31,18 @@ const placeholders = {
                 numeric: 'auto'
             })
                 .format(...getRelativeFormatParameters(
-                    Date.UTC(new Date().getFullYear() + 1, 1, 9) - Date.now()
+                    Date.UTC(new Date().getFullYear() + 1, 1, 9, 17) - Date.now()
                 ))
         }`
+        birthdayCounter.title = new Intl.DateTimeFormat(undefined, {
+            dateStyle: 'full',
+            timeStyle: 'short'
+        })
+            .format(Date.UTC(new Date().getFullYear() + 1, 1, 9, 17))
 
         e.replaceChildren(
             new Date().getFullYear() - new Date(1171040400000).getFullYear(),
-            ' ',
+            ' years old ',
             birthdayCounter
         )
     },
@@ -85,6 +90,7 @@ const placeholders = {
 
     go_back(e) {
         e.href = '/'
+        e.textContent = 'go back'
         e.addEventListener('click', (ev) => {
             ev.stopPropagation()
             ev.preventDefault()
