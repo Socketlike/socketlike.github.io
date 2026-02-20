@@ -1,5 +1,6 @@
 import { marked } from 'https://unpkg.com/marked@17.0.1/lib/marked.esm.js'
 
+import preprocessor from '/src/preprocessor.js'
 import postprocess from '/src/postprocessor.js'
 
 const main = document.querySelector('main')
@@ -14,7 +15,9 @@ export default async () => {
     }
 
     const path = location.pathname.slice(1)
-    const content = path ? contents[path]?.path || '/content/not-found.md' : '/content/index.md'
+    const contentIndex = path ? contents[path] ? path : 'not-found' : 'index'
+    const contentData = contents[contentIndex]
+    const contentPath = contentData.path
 
     navContainer.replaceChildren(
         ...Object
@@ -31,13 +34,13 @@ export default async () => {
             })
     )
 
-    if (content)
-        await fetch(content)
-            .then((r) => r.text())
-            .then((text) => text.replace(/---[\r\n].*?[\r\n]---/s, ''))
-            .then((text) => main.replaceChildren(
-                    ...postprocess(marked.parse(text))
-                )
+    await fetch(contentPath)
+        .then((r) => r.text())
+        .then((text) => text.replace(/---[\r\n].*?[\r\n]---/s, ''))
+        .then((text) => main.replaceChildren(
+                ...postprocess(marked.parse(preprocessor(text)))
             )
-            .catch(console.error)
+        )
+        .then(() => document.title = contentData.metadata.name || contentIndex)
+        .catch(console.error)
 }
