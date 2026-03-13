@@ -26,7 +26,7 @@ i don't know what's wrong with me, but i struggle *a lot* with:
 - being not stupid\
     <span class="mutter">sorry. i'm very stupid. i honestly can't comprehend a lot of topics that normal people throw at each other all the time. i don't know anything.</span>
 
-- being not quiet in public\
+- being not quiet in public [reference: probably relatable video](https://youtube.com/watch?v=QrYncjVh1T0)\
     <span class="mutter">i'm scared. i'm really scared. i'm scared of what people think of me. they judge me by every word i speak. if i say something wrong it's just over for me. i think about that in my head every single time i try to speak out (sometimes i do lash out because of my emotions so i don't always think of that) and the fear just takes over so i just end up not saying anything.</span>
 
 - and more that i can't think about right now...
