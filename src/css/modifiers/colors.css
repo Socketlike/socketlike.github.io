@@ -1,0 +1,27 @@
+.bg {
+	background-color: var(--bg);
+}
+
+.bg-highlighted {
+	background-color: var(--bg-highlighted);
+}
+
+.bg-content {
+	background-color: var(--bg-content);
+}
+
+.fg {
+	color: var(---fg);
+}
+
+.highlight {
+	color: var(--fg-highlighted);
+}
+
+.accent {
+	color: var(--fg-accented);
+}
+
+.muted {
+	color: var(--fg-muted);
+}

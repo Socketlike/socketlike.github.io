@@ -3,7 +3,7 @@ name: i'm alone. i'm quiet. i'm stupid. i'm boring.
 delisted: true
 ---
 # you're always alone. you're always quiet. you're stupid. you're boring me.
-<p modifier type="github-only">
+<p _special="destroy">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
@@ -34,4 +34,4 @@ i don't know what's wrong with me, but i struggle *a lot* with:
 i know this list of excuses isn't enough to justify how terrible of a person i am.\
 if you have thought of me so, i just ask you to please forgive me. i'm sorry.
 
-<a placeholder type="go_back">
+<a _special="go_back"></a>

@@ -1,0 +1,15 @@
+body > .container {
+	background-color: var(--bg-content);
+}
+
+body > .container,
+body > .translucent-container {
+	margin: .75rem;
+}
+
+body > .translucent-container .container,
+body > .container .container {
+	background-color: var(--bg-highlighted);
+	
+	padding: 1rem;
+}

@@ -1,75 +1,97 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/favicon.png">
-    <link rel="stylesheet" href="/src/styles.css">
-    <meta name="color-scheme" content="dark">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/favicon.png">
+	<link rel="stylesheet" href="/src/css/_main.css">
+	<meta name="color-scheme" content="dark">
 
-    <!-- external libraries -->
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/rose-pine.min.css">
+	<!-- external libraries -->
+	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/rose-pine.min.css">
 
-    <!-- google font bs -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+	<!-- google font bs -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <div class="header">
-      <a  class="me" href="/">evelyn nightshade</a>
-      <svg id="nav-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
-      </svg>
-    </div>
+	<div id="sidebar" class="translucent-container gap-p75rem">
+		<div id="nav">
+			<div class="header container">
+				<h2 class="muted light meditative compact">nav</h1>
+			</div>
 
-    <nav class="hidden">
-      <div class="title">
-        <h3>nav</h3>
+			<div id="nav-list" class="rubik bg-content"></div>
+		</div>
 
-        <svg id="nav-close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-        </svg>
-      </div>
+		<div id="changelog">
+			<div class="header container">
+				<h2 class="muted light meditative compact">changelog</h1>
+			</div>
 
-      <div id="nav-container"></div>
-    </nav>
+			<div id="changelog-list" class="rubik gap-4px bg-content"></div>
+		</div>
+	</div>
 
-    <div id="changelog">
-      <div class="title">
-        <h3>changelog</h3>
-      </div>
 
-      <div id="changelog-container"></div>
-    </div>
+	<div id="main" class="container no-container-margin">
+		<div id="header" class="container">
+			<h1 class="light meditative highlight-me compact">
+				<a class="no-default" href="/">evelyn nightshade</a>
+			</h1>
+		</div>
 
-    <main id="main">
-      loading ...<br>
-      <br>
-      <br>
-      if it takes too long then it is not actually loading. something's wrong with your wi-fi..<br>
-      <noscript>
-        <br>
-        <br>
-        well it's not actually the wi-fi. it's your browser...<br>
-        <br>
-        this webpage <b>depends on JavaScript.</b><br>
-        <br>
-        turn it back on if you have it disabled for some reason.
-      </noscript>
-    </main>
+		<div id="content" class="rubik">
+			<div class="fg">loading</div>
+			<div class="muted">loading</div>
+			<div class="accent">loading</div>
+			<div class="highlight">loading</div>
+		</div>
 
-    <footer>
-      <div>
-        made with <span class="love">&lt;3</span>
-        by <span class="me" style="font-weight: bold;">evelyn nightshade</span>
-      </div>
-      <div><a href="https://github.com/Socketlike/socketlike.github.io">github</a></div>
-    </footer>
+		<div id="footer" class="container rubik vertical-grid gap-4px">
+			<div class="muted">
+				made with love by <span class="accent">evelyn</span>
+			</div>
 
-    <div id="nav-overlay"></div>
+			<div class="horizontal-min-grid gap-4px">
+				<a href="https://github.com/Socketlike/socketlike.github.io">github</a>
+			</div>
+		</div>
+	</div>
 
-    <script type="module" src="/src/index.js"></script>
+	<!-- sorry for the fuckass name!! i can't think of anything better -->
+	<div id="rightbar" class="translucent-container gap-p75em">
+		<div id="earworm">
+			<div class="header container">
+				<h2 class="muted light meditative compact">my earworm</h1>
+			</div>
+
+			<div id="earworm-details" class="rubik gap-1p25rem bg-content">
+				<iframe
+					width="100%"
+					src="https://www.youtube.com/embed/WhfTaQQzBFI"
+					
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+				></iframe>
+
+				<div id="earworm-lyrics" class="jetbrains-mono gap-8px">
+					i think i'm falling and i can't reach you now~<br>
+					<span class="mutter">(think i'm falling and i can't reach you now)</span><br>
+					i plan to stall it, don't wanna feed the hound~<br>
+					<span class="mutter">(hound-hound-h-h-h-hound-hound)</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="sidebar-overlay"></div>
+
+	<script type="module" src="/src/index.js"></script>
   </body>
 </html>

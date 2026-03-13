@@ -1,5 +1,5 @@
 # y ay!! i'm [ONE] year closer to [the destruction of my current lifeforce]!!!
-<p modifier type="github-only">
+<p _special="destroy">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
@@ -7,7 +7,7 @@
   consider viewing this document on my github pages instead!
 </p>
 
-as of today <span placeholder type="timestamp" display="long" value="1770656400000"></span>
+as of today <span _special="timestamp" display="long" value="1770656400000"></span>
 i'm now 19!!! what an honor.\
 <span class="mutter">how did i even live for this long</span>
 
@@ -21,4 +21,4 @@ truly an extravagant birthday!! hopefully there won't be more to come.
 
 <span class="mutter">and yes the day went on as usual...</span>
 
-<a placeholder type="go_back">
+<a _special="go_back"></a>

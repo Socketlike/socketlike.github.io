@@ -2,7 +2,7 @@
 name: web badges
 ---
 # web badges are neat
-<p modifier type="github-only">
+<p _special="destroy">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have

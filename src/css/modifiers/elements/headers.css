@@ -1,0 +1,12 @@
+h1.compact {
+	margin: 0;
+}
+
+h2.compact {
+	margin: 0;
+}
+
+h1.muted,
+h2.muted {
+	color: var(--header-muted);
+}

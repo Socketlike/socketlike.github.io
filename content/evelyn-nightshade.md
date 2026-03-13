@@ -3,7 +3,7 @@ name: my name
 delisted: true
 ---
 # why "evelyn nightshade"?
-<p modifier type="github-only">
+<p _special="destroy">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
@@ -16,4 +16,4 @@ i don't really have a good reason to tell you about why i picked "evelyn"\
 
 but "nightshade" is deliberate. see [List of plants with symbolism, search "nightshade"](https://en.wikipedia.org/wiki/List_of_plants_with_symbolism) for more information.
 
-<a placeholder type="go_back">
+<a _special="go_back"></a>

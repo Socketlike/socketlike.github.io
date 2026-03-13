@@ -2,7 +2,7 @@
 delisted: true
 ---
 # are you really a girl???
-<p modifier type="github-only">
+<p _special="destroy">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
@@ -22,4 +22,4 @@ are you being disrespectful because i'm a woman-
 
 <span class="mutter">connection terminated. you have been thoroughly roasted and cancelled on Twitter. try again next life.</span>
 
-<a placeholder type="go_back">
+<a _special="go_back"></a>

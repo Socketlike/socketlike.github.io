@@ -2,7 +2,7 @@
 path: '/'
 ---
 # hi
-<p modifier type="github-only">
+<p _special="destroy">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
@@ -19,7 +19,7 @@ my name is [evelyn nightshade](/evelyn-nightshade). if that's too long for you, 
 
 - [that one loner and quiet and stupid and boring girl](/alone-and-quiet-and-stupid-and-boring) who longs for nothing more than companionship and peace
 
-i'm <span placeholder type="age"></span>. my pronouns are [she/her](/gender).
+i'm <span _special="age"></span>. my pronouns are [she/her](/gender).
 
 yes i do listen to [music](/music). [music](/music) is great! though my taste might not overlap with yours.
 

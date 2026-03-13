@@ -1,0 +1,18 @@
+a.no-default,
+a.no-default:hover {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+a.no-default:before,
+a.no-default:after {
+	content: none;
+}
+
+a:not(.prevent-alt):visited {
+	color: var(--link-visited);
+}
+
+a:not(.prevent-alt):visited:hover {
+	color: var(--link-visited-hovered);
+}

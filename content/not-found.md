@@ -1,8 +1,8 @@
 ---
 delisted: true
 ---
-# what are you trying to find???
-<p modifier type="github-only">
+# seeping through the crust + the seams of reality
+<p _special="destroy">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
@@ -10,16 +10,17 @@ delisted: true
   consider viewing this document on my github pages instead!
 </p>
 
-> <span modifier type="dialogue"></span> *i don't know!!! evie save me!!!!!!!*
+You were never supposed to go past the Walls
+I made for You
 
-dOES IT LOOK LIKE [-angry I KNOW????] go FIGURE IT OUT YOURSELF
+do You understand
 
-> <span modifier type="dialogue"></span> *what if i can't??*
+there was never a Reason for your Curiousness
+<br>
 
-i don't care! have fun .
+return to Me\
+for I shall guide You through
 
-<span class="mutter">
-check your URL.\
-if at first you don't URL, URL again.</span>
+<span class="mutter">connection terminated. reason: no such location ({pathname})</span>
 
-<a placeholder type="go_back">
+<a _special="go_back"></a>

@@ -1,15 +1,42 @@
-import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/core.min.js'
+import * as processors from './processors/index.js'
 
-import hljsXML from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/xml.min.js'
-import hljsMarkdown from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/markdown.min.js'
+const contents = await fetch('/content/index.json')
+        .then(r => r.json())
+        .catch(e => {
+			console.error(e)
+			return {}
+		})
+const changelogs = await fetch('/content/changelog.json')
+		.then(r => r.json())
+		.catch(e => {
+			console.error(e)
+			return []
+		})
 
-import loadContent from './content.js'
-import loadResponsivity from './responsivity.js'
-import loadChangelog from './changelog.js'
+const currentKey = location.pathname.slice(1) || 'index'
+const metadata = currentKey in contents
+	? contents[currentKey]
+	: contents['not-found']
 
-hljs.registerLanguage('html', hljsXML)
-hljs.registerLanguage('md', hljsMarkdown)
+const content = await fetch(metadata.content_path)
+	.then(r => r.text())
+	.then(text => text.replace(/^---[\r\n].*?[\r\n]---/s, ''))
 
-await loadResponsivity()
-await loadContent().then(() => hljs.highlightAll())
-await loadChangelog()
+const __info__ = Object.freeze({
+	...metadata,
+	explicit_metadata: Object.freeze(metadata.explicit_metadata),
+	key: currentKey
+})
+
+Object.defineProperty(window, '__info__', {
+	get: () => __info__,
+	configurable: false
+})
+
+const contentContainer = document.getElementById('content')
+const changelogContainer = document.getElementById('changelog-list')
+const navContainer = document.getElementById('nav-list')
+
+contentContainer.replaceChildren(...processors.content(content))
+navContainer.replaceChildren(...processors.nav(contents))
+changelogContainer.replaceChildren(...processors.changelog(changelogs))

@@ -1,5 +1,3 @@
-const main = document.querySelector('main')
-
 const getRelativeFormatParameters = (value) => {
     if (Math.abs(value) >= 365 * 24 * 60 * 60 * 1000)
         return [Math.ceil(value / (365 * 24 * 60 * 60 * 1000)), 'years']
@@ -22,7 +20,7 @@ const getRelativeFormatParameters = (value) => {
     return [Math.ceil(value / 1000), 'seconds']
 }
 
-const placeholders = {
+const processors = {
     age(e) {
         const birthdayCounter = document.createElement('span')
         birthdayCounter.classList.toggle('timestamp', true)
@@ -90,44 +88,32 @@ const placeholders = {
 
     go_back(e) {
         e.href = '/'
-        e.textContent = 'go back'
+        e.textContent = '[history: go back]'
         e.addEventListener('click', (ev) => {
             ev.stopPropagation()
             ev.preventDefault()
 
             history.back()
         })
-    }
+    },
+
+	destroy(e) {
+		e.remove()
+	}
 }
 
-const modifiers = {
-    dialogue(e) {
-        if (e.parentElement.parentElement.nodeName === 'BLOCKQUOTE')
-            e.parentElement.parentElement.classList.toggle('dialogue', true)
-    }
-}
+export default content => {
+    const fakeMain = document.createElement('div')
+    fakeMain.innerHTML = content
 
-export default (content) => {
-    const _main = document.createElement('main')
-    _main.innerHTML = content
+	fakeMain
+		.querySelectorAll('[_special]')
+		.forEach(e => {
+			const type = e.getAttribute('_special')
 
-    _main.querySelectorAll('[placeholder]')
-        .forEach((e) => {
-            const type = e.getAttribute('type')
+			if (type in processors)
+				processors[type](e)
+		})
 
-            if (type in placeholders)
-                placeholders[type](e)
-        })
-
-    _main.querySelectorAll('[modifier]')
-        .forEach((e) => {
-            const type = e.getAttribute('type')
-
-            if (type in modifiers && e.parentElement !== main && e.parentElement !== document.body)
-                modifiers[type](e)
-
-            e.remove()
-        })
-
-    return [..._main.childNodes]
+    return [...fakeMain.childNodes]
 }

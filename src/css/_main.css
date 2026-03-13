@@ -1,0 +1,121 @@
+@import url('./font-faces.css');
+@import url('./defaults.css');
+@import url('./layout.css');
+@import url('./colors.css');
+@import url('./modifiers/_main.css');
+@import url('./content.css');
+@import url('./containers.css');
+@import url('./responsive-design.css');
+@import url('./changelog.css');
+
+#sidebar {
+	margin-right: 0;
+}
+
+#rightbar {
+	margin-left: 0;
+}
+
+#main {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#sidebar,
+#rightbar {
+	position: sticky;
+	height: calc(100dvh - (.75rem * 2));
+	top: .75rem;
+}
+
+#header,
+#nav > .header,
+#changelog > .header,
+#earworm > .header {
+	position: relative;
+
+	box-shadow: 0 8px 16px 0 var(--bg-highlighted);
+}
+
+#earworm-details {
+	display: grid;
+
+	grid-template-rows: auto auto;
+
+	height: fit-content;
+}
+
+#earworm-details > #earworm-lyrics {
+	display: flex;
+	flex-direction: column;
+
+	text-align: center;
+	font-style: italic;
+}
+
+#content {
+	color: var(--fg);
+
+	padding: 1.25rem;
+}
+
+#nav-list,
+#changelog-list,
+#earworm-details {
+	color: var(--fg);
+	
+	padding: 1rem;
+}
+
+#earworm-details {
+	padding-bottom: 1.5rem;
+}
+
+#earworm-details > iframe {
+	aspect-ratio: 2 / 1;
+}
+
+#footer {
+	position: relative;
+
+	box-shadow: 0 -8px 16px 0 var(--bg-highlighted);
+}
+
+#nav-list a {
+    background-color: var(--link);
+    color: var(--bg-content);
+
+    text-decoration: none;
+    line-height: 1.5rem;
+    font-weight: 600;
+
+    padding: 0 4px;
+    border-radius: 4px;
+
+    white-space: nowrap;
+}
+
+#nav-list a:hover {
+    background-color: var(--link-hovered);
+}
+
+#nav-list a:not(.prevent-alt):visited {
+	background-color: var(--link-visited);
+}
+
+#nav-list a:not(.prevent-alt):visited:hover {
+	background-color: var(--link-visited-hovered);
+}
+
+.timestamp {
+	font-size: 12px;
+	color: var(--fg-muted);
+}
+
+.timestamp:before {
+	content: '(';
+}
+
+.timestamp:after {
+	content: ')'
+}

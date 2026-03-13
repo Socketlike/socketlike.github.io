@@ -1,23 +1,23 @@
 {
-  "name": "socketlike.github.io",
-  "version": "1.0.0",
-  "type": "module",
-  "packageManager": "pnpm@10.29.1",
-  "engines": {
-    "node": ">=24.13.0"
-  },
-  "scripts": {
-    "make-content-index": "node scripts/make-content-index.js",
-    "make-changelog": "node scripts/make-changelog.js",
-    "make-404": "node scripts/make-404.js",
-    "make-assets": "node scripts/make-assets.js",
-    "run-server": "node scripts/run.js"
-  },
-  "devDependencies": {
-    "http-server": "^14.1.1"
-  },
-  "dependencies": {
-    "gray-matter": "^4.0.3",
-    "shelljs": "^0.10.0"
-  }
+	"name": "socketlike.github.io",
+	"version": "1.0.0",
+	"type": "module",
+	"packageManager": "pnpm@10.29.1",
+	"engines": {
+		"node": ">=24.13.0"
+	},
+	"scripts": {
+		"make-content-index": "node scripts/make-content-index.js",
+		"make-changelog": "node scripts/make-changelog.js",
+		"make-404": "node scripts/make-404.js",
+		"make-assets": "node scripts/make-assets.js",
+		"run-server": "node scripts/run.js"
+	},
+	"devDependencies": {
+		"http-server": "^14.1.1"
+	},
+	"dependencies": {
+		"gray-matter": "^4.0.3",
+		"shelljs": "^0.10.0"
+	}
 }

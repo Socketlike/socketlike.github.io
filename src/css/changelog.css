@@ -1,0 +1,36 @@
+#changelog-list {
+	display: flex;
+	flex-direction: column;
+
+	min-width: 0;
+}
+
+#changelog-list .line {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#changelog-list .line .hash {
+    background-color: var(--fg-muted);
+    color: var(--bg-content);
+    
+    padding: 0 4px;
+    border-radius: 4px;
+    
+    height: fit-content;
+    
+    font-weight: bold;
+}
+
+#changelog-list .line .hash.local-latest {
+    background-color: var(--warning);
+}
+
+#changelog-list .line .hash.latest {
+    background-color: var(--safe-muted);
+}
+
+#changelog-list .line .changelog-title {
+	margin-left: 1rex;
+}

@@ -3,7 +3,7 @@ name: the games i play
 delisted: true
 ---
 # what games??? what games do you play???
-<p modifier type="github-only">
+<p _special="destroy">
   <b>hi curious github user skimming through my page's source code</b>
   <br>
   this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
@@ -24,4 +24,4 @@ i play only a selection of games. because i'm picky <span class="mutter">and bro
 
   - stardew valley <span class="mutter">(my friend bought it for me! but it's boring to play alone..)</span>
 
-<a placeholder type="go_back">
+<a _special="go_back"></a>
