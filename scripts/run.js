@@ -1,8 +1,6 @@
 import { createServer } from 'http-server'
+import all from './generators/all.js'
 
-import makeAssets from './make-assets.js'
-
-await makeAssets(true)
+await all()
 
 createServer().listen(8080)
-console.log('listening on 8080')

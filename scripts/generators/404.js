@@ -5,7 +5,7 @@ const _default = () => access('./404.html', constants.F_OK)
 	.catch(() => {})
 	.finally(() => copyFile('./index.html', './404.html'))
 
+export default _default
+
 if (import.meta.main)
 	await _default()
-
-export default _default

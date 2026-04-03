@@ -44,9 +44,9 @@ jobs:
                 run: |
                     pnpm i
             -
-                name: make assets
+                name: generate assets
                 run: |
-                    pnpm make-assets
+                    pnpm generate-assets
             -
                 name: upload
                 uses: actions/upload-pages-artifact@v4

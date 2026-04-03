@@ -1,13 +1,10 @@
+---
+placeholders:
+  today: $timestamp(1770656400000)$
+---
 # y ay!! i'm [ONE] year closer to [the destruction of my current lifeforce]!!!
-<p _special="destroy">
-  <b>hi curious github user skimming through my page's source code</b>
-  <br>
-  this markdown document may not be displayed properly because i have added custom """formatting""" that regular or github markdown doesn't have
-  <br>
-  consider viewing this document on my github pages instead!
-</p>
 
-as of today <span _special="timestamp" display="long" value="1770656400000"></span>
+as of today ({{today}})
 i'm now 19!!! what an honor.\
 <span class="mutter">how did i even live for this long</span>
 
@@ -20,5 +17,3 @@ presents received this year: 0 <span class="mutter">(i really couldn't care less
 truly an extravagant birthday!! hopefully there won't be more to come.
 
 <span class="mutter">and yes the day went on as usual...</span>
-
-<a _special="go_back"></a>
