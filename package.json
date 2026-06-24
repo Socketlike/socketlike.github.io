@@ -6,10 +6,7 @@
 	"engines": {
 		"node": ">=24.13.0"
 	},
-	"scripts": {
-		"generate-assets": "node scripts/generators/all.js",
-		"run-server": "node scripts/run.js"
-	},
+	"scripts": {},
 	"devDependencies": {
 		"http-server": "^14.1.1"
 	},
