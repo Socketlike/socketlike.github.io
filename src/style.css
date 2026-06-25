@@ -18,12 +18,14 @@ html {
 body {
 	min-height: 100%;
 	background-color: black;
+	font-family: 'Fira Code', monospace;
+}
+
+body:not(.override) {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
-	font-family: 'Fira Code', monospace;
 }
 
 a {
@@ -58,6 +60,13 @@ a.stealth {
 	z-index: -9999;
 
 	animation: 15s overlay-opacity alternate linear infinite;
+}
+
+.dialog {
+	border: 1px solid var(--dialog-accent, white);
+	background-color: black;
+	padding: 16px;
+	margin: 8px;
 }
 
 .c5vpjt {
