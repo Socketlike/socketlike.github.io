@@ -47,5 +47,35 @@
 		bottom: 8px;
 		left: 8px;
 	">take me to the future...</a>
+
+	<div id="bgm-button">
+		<button name="handler">enable bgm</button>
+	</div>
+
+	<script>
+		const bgm = new Audio('/resources/void(star).ogg')
+		bgm.loop = true
+
+		const button = document.getElementById('bgm-button').children.handler
+
+		bgm.addEventListener('canplaythrough', (ev) => {
+			ev.target.play().then(() => {
+				button.textContent = 'disable bgm'
+			}).catch(() => {})
+		})
+
+		button.addEventListener('click', ev => {
+			if (bgm.paused)
+				bgm.play().then(() => 
+					ev.target.textContent = 'disable bgm'
+				).catch(() =>
+					ev.target.textContent = 'enable bgm'
+				)
+			else {
+				bgm.pause()
+				ev.target.textContent = 'enable bgm'
+			}
+		})
+	</script>
 </body>
 </html>
