@@ -78,7 +78,7 @@ script {
 	display: none
 }
 
-#bgm-button {
+#bgm {
 	position: absolute;
 	right: 8px;
 	bottom: 8px;
@@ -86,15 +86,6 @@ script {
 	border: 1px solid white;
 	background-color: black;
 	padding: 8px;
-}
 
-#bgm-button button {
-	appearance: none;
-	background: none;
-	border: none;
-
-	font-family: inherit;
-
-	user-select: none;
-	cursor: pointer;
+	font-size: 14px;
 }
