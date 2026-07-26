@@ -75,7 +75,13 @@
 		.header > .sub {
 			font-family: 'Fira Code', monospace;
 
-			color: white;
+			/** darkgray is certainly a color...
+			 * it's darker than lightgray,
+			 * but lighter than gray.
+			 * also darker than white.
+			 * make it make SOME sense??
+			 **/
+			color: darkgray;
 			text-shadow: 0 0 8px black;
 			font-size: 8px;
 		}
@@ -163,6 +169,13 @@
 			cursor: pointer;
 		}
 
+		.whitepine {
+			font-size: x-large;
+			font-family: 'Meditative';
+			
+			margin-right: 2px;
+		}
+
 		@media screen and (max-width: 767px) {
 			.header > .main {
 				font-size: 86px;
@@ -186,7 +199,7 @@
 		<span class="sub">yeah i know the font isn't right shut up</span>
 	</div>
 	<div class="container">
-		<b style="font-size: x-large; font-family: 'Meditative'; margin-right: 2px">whitepine</b> is a period drama by IvoryTV that uses minecraft as a medium to<br>
+		<b class="whitepine">whitepine</b> is a period drama by IvoryTV that uses minecraft as a medium to<br>
 		 tell the story of a shy girl named Ivory who begins working as a maid<br>
 		 for the Hemlocke family.<br><br>
 
@@ -206,7 +219,7 @@
 		</svg>
 		<div style="display: inline-block; line-height: 1em; vertical-align: center;">
 			charred wood<br>
-			<span style="font-size: 12px; color: gray">(my own creation, not original)</span>
+			<span style="font-size: 12px; color: darkgray">(my own creation, not original)</span>
 		</div>
 		<svg
 			class="play-button paused"
